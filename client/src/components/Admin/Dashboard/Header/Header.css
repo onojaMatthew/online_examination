@@ -1,0 +1,18 @@
+.navbar-container {
+  display: none !important;
+}
+
+.header-container {
+  display: block;
+}
+
+@media only screen and (max-width: 490px) {
+  .navbar-container {
+    display: block !important;
+    margin-bottom: 15px;
+  }
+
+  .header-container {
+    display: none !important;
+  }
+}

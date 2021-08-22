@@ -1,0 +1,252 @@
+.dashboard-container-wrapper {
+  margin: 0 16px;
+}
+
+.dashboard-content {
+  padding: 24px;
+  min-height: 360;
+}
+
+.greeting p {
+  font-size: 14px;
+  font-weight: 700px;
+  color: #a5aaad;
+  margin-top: -10px;
+}
+
+.greeting h1 {
+  font-size: 24px;
+  color: #2e4a66;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+
+.fcard-p {
+  color: #a5aaad;
+  font-size: 14px;
+  font-weight: 700;
+  padding-top: 10px;
+}
+
+.c-number {
+  font-weight: 700;
+  color: #039be5 !important;
+  font-size: 25px;
+}
+
+.report-card h1 {
+  font-size: 24px;
+  color: #2e4a66;
+  margin-bottom: 5px;
+}
+
+.rp-container {
+  min-height: 500px;
+}
+
+.st-card {
+  background: #d1ecf1;
+  color: #35a4ba;
+  min-height: 130px;
+  max-height: 130px;
+  text-align: center;
+  padding-top: 20px;
+  font-size: 14px;
+}
+
+.st-card2 {
+  background: #d2f9ee;
+  color: #38e1b0;
+  min-height: 130px;
+  max-height: 130px;
+  text-align: center;
+  padding-top: 20px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.st-card3 {
+  background: #d6d8d9;
+  color: #3a3e41;
+  text-align: center;
+  min-height: 130px;
+  max-height: 130px;
+  border-radius: 5px;
+  padding-top: 20px;
+  font-size: 14px;
+}
+
+.st-card4 {
+  background: #fddcdf;
+  color: #f65acf;
+  min-height: 130px;
+  max-height: 130px;
+  text-align: center;
+  padding-top: 20px;
+  font-size: 14px;
+}
+
+.st-card h1 {
+  color: #35a4ba;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.st-card2 h1 {
+  color: #38e1b0;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.st-card3 h1 {
+  color: #3a3e41;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.st-card4 h1 {
+  color: #f65acf;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.st-card p, .st-card2 p, .st-card3 p, .st-card4 p {
+  margin-top: -25px;
+}
+
+@media only screen and (max-width: 768px) {
+  .dashboard-container-wrapper {
+    margin: 0 1px !important;
+  }
+  .dashboard-content {
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+    padding-top: 5px !important;
+    min-height: 360px;
+  }
+
+  .fcard {
+    margin-bottom: 10px;
+  }
+
+  .chart-area {
+    margin-bottom: 20px;
+  }
+
+  .st-card {
+    background: #d1ecf1;
+    color: #35a4ba;
+    min-height: 100px;
+    max-height: 100px;
+    text-align: center;
+    font-size: 14px;
+    padding-top: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .st-card2 {
+    background: #d2f9ee;
+    color: #38e1b0;
+    min-height: 100px;
+    max-height: 100px;
+    text-align: center;
+    border-radius: 5px;
+    padding-top: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+  
+  .st-card3 {
+    background: #d6d8d9;
+    color: #3a3e41;
+    text-align: center;
+    min-height: 100px;
+    max-height: 100px;
+    border-radius: 5px;
+    margin-top: -20px;
+    margin-bottom: 15px;
+    padding-top: 10px;
+    font-size: 14px;
+  }
+  
+  .st-card4 {
+    background: #fddcdf;
+    color: #f65acf;
+    min-height: 100px;
+    max-height: 100px;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .st-card p, .st-card2 p, .st-card3 p, .st-card4 p {
+    margin-top: -19px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .dashboard-content {
+    padding: 5px !important;
+    min-height: 360;
+    z-index: 0;
+  }
+
+  .fcard {
+    margin-bottom: 10px;
+  }
+
+  .chart-area {
+    margin-bottom: 20px;
+  }
+
+  .st-card {
+    background: #d1ecf1;
+    color: #35a4ba;
+    min-height: 100px;
+    max-height: 100px;
+    text-align: center;
+    font-size: 14px;
+    padding-top: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .st-card2 {
+    background: #d2f9ee;
+    color: #38e1b0;
+    min-height: 100px;
+    max-height: 100px;
+    text-align: center;
+    border-radius: 5px;
+    padding-top: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+  
+  .st-card3 {
+    background: #d6d8d9;
+    color: #3a3e41;
+    text-align: center;
+    min-height: 100px;
+    max-height: 100px;
+    border-radius: 5px;
+    margin-top: -20px;
+    margin-bottom: 15px;
+    padding-top: 10px;
+    font-size: 14px;
+  }
+  
+  .st-card4 {
+    background: #fddcdf;
+    color: #f65acf;
+    min-height: 100px;
+    max-height: 100px;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .st-card p, .st-card2 p, .st-card3 p, .st-card4 p {
+    margin-top: -19px;
+  }
+}

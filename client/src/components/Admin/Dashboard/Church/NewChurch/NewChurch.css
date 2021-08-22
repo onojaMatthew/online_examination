@@ -1,0 +1,34 @@
+.newchurch-form input, select {
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.newchurch-form {
+  padding: 20px;
+}
+
+.newchurch-form label {
+  margin-top: 10px;
+}
+
+.newchurch-form button {
+  width: 100%;
+  height: 50px;
+  background: rgb(104,187,228);
+  border: none;
+}
+
+.newchurch-form button:hover {
+  width: 100%;
+  height: 50px;
+  background: rgb(104,187,228);
+  border: none;
+}
+
+.newchurch-form button:focus {
+  width: 100%;
+  height: 50px;
+  background: rgb(104,187,228);
+  border: none;
+  outline: none;
+}
