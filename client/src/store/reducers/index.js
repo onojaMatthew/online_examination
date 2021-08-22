@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import { account } from "./reducers_login";
-import { church } from "./reducers_church";
+import { user } from "./reducers_user";
 import { role } from "./reducers_role";
 import { member } from "./reducers_member";
 import { category } from "./reducers_mem_category";
@@ -9,7 +9,7 @@ import { group } from "./reducers_group";
 
 export const rootReducer = combineReducers({
   account,
-  church,
+  user,
   role,
   member,
   category,

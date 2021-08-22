@@ -100,6 +100,8 @@ export const emial_notification = async (req, res) => {
       const isUser = await User.findOne({ email: email });
       if (isUser) {
         const user_name = email.split("@")[0];
+        isUser.domain_name = user_name;
+        await isUser.save();
         const link = `http://localhost:3000/${user_name}/test`;
         const receiver = email;
         const sender = "onoja.matthew@ojirehprime.com";

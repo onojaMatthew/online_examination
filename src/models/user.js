@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 import mongoosePaginate from "mongoose-paginate-v2";
-import questionSchema  from "./question";
 
 const { Schema } = mongoose;
 
@@ -9,6 +8,7 @@ const userSchema = new Schema({
   first_name: { type: String },
   last_name: { type: String },
   password: { type: String },
+  domain_name: { type: String },
   phone: { type: String },
 }, { timestamps: true });
 

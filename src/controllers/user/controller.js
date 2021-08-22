@@ -47,7 +47,7 @@ export const users = async (req, res) => {
 
 export const userDetail = async (req, res) => {
   try {
-    const user = await User.findByIdAndUpdate({ _id: req.query.id });
+    const user = await User.findOne({ domain_name: req.query.domain_name });
     return res.json(success("Success", user, res.statusCode));
   } catch (err) {
     return res.status(400).json(error(err.message, res.statusCode));
