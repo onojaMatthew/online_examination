@@ -1,12 +1,14 @@
 const _ = require("underscore");
 
-var arr = [1,2,3,4,5,6];
+var arr = [4,5,2,3,6.1];
 // Testing _.shuffle
 var testShuffle = function () {
+  for (let i = 0; i < 3; i++) {
+    const shuffle = _.shuffle(arr)
+    const mappedArr = shuffle.map(a => a);
+    console.log(shuffle, " the shuffled")
+    console.log(mappedArr, " the arr")
+  }
   
-  // for (let i = 0; i < 1000; i++) {
-    arr = _.shuffle(arr);
-  // }
-  console.log(arr, " the arr")
 };
 testShuffle();

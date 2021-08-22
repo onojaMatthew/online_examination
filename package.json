@@ -15,6 +15,7 @@
     "test": "cd build && mocha --recursive --exit"
   },
   "dependencies": {
+    "@sendgrid/mail": "^7.4.6",
     "accesscontrol": "^2.2.1",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",

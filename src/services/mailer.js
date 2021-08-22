@@ -1,10 +1,9 @@
 import path from "path";
 import sgMail from '@sendgrid/mail';
-
-require("dotenv").config({ path: path.resolve(__dirname, "/../../.env")});
+import key from "../config/key";
 
 export const sendEmail = async (data) => {
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+  sgMail.setApiKey(key.sendGridApiKey);
 
   var msg = {
     from: data.sender,
@@ -16,10 +15,10 @@ export const sendEmail = async (data) => {
   
   try {
     const result = await sgMail.send(msg);
+    console.log(result, " the result in send grid")
     return result;
   } catch (err) {
     console.log(err.message);
-    // return res.status(400).json(error("Internal Server Error. Please try again", res.statusCode));
   }
 
 }

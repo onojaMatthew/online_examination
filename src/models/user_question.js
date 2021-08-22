@@ -1,12 +1,17 @@
 import mongoose from "mongoose";
 import mongoosePaginate from "mongoose-paginate-v2";
+import userSchema from "./user";
+import questionSchema from "./question";
 
-const { Schema, ObjectId } = mongoose;
+const { Schema } = mongoose;
 
-userQuestionSchema = new Schema({
-  question: { type: ObjectId, required: true, ref: "Question" },
-  answer: { type: String },
-  userId: { type: ObjectId, required: true, ref: "User" },
+const userQuestionSchema = new Schema({
+  questions: [{
+    question: { type: questionSchema, default: "" },
+    user_answer: { type: String, default: "" },
+  }],
+  time: { type: String },
+  userId: { type: userSchema },
   completed: { type: Boolean, default: false },
 }, { timestamps: true });
 
