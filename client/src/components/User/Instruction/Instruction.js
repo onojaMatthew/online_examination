@@ -1,13 +1,17 @@
 import React, { useState } from "react";
-import { useRouteMatch } from "react-router-dom";
+import { useRouteMatch, useHistory } from "react-router-dom";
 import { Button } from "antd";
 import { Row, Col } from "reactstrap";
 import "./Instruction.css";
-import { Link } from "react-router-dom";
 
 const Instruction = () => {
   const [ count, setCount ] = useState(0);
   const match = useRouteMatch();
+  const history = useHistory();
+
+  const url = match.url.split("/").slice(1)
+  url.pop();
+  const path = url.join("/");
   return (
     <div className="instruction-container">
       <Row>
@@ -57,7 +61,7 @@ const Instruction = () => {
       </Row> 
       <Row className="continue-text">
         <Col xs="12" sm="12" md={{ size: 6, offset: 3 }} lg={{ size: 4, offset: 4 }}>
-          <p>To continue taking test, click <Link to={`${match.url}/start`}>continue</Link></p>
+          <p>To continue taking test, click <span onClick={() => history.push(`/${path}/start`)}>continue</span></p>
         </Col>
       </Row>
     </div>

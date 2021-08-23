@@ -30,7 +30,6 @@ const HomePage = () => {
     }
   }, [ user, domain_name ]);
 
-  console.log(user, " the user")
   return (
     <div className="login-container">
       {loading ? (
