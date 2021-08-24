@@ -58,6 +58,17 @@ export const user_questions = async (req, res) => {
   }
 }
 
+export const getUserQuestions = async (req, res) => {
+  const { userId } = req.query;
+  console.log(userId, " the user id")
+  try {
+    let question = await UserQuestion.findOne({ "userId._id": userId });
+    return res.json(success("Success", question, res.statusCode));
+  } catch (err) {
+    return res.status(400).json(error(err.message, res.statusCode));
+  }
+}
+
 export const answer = async (req, res) => {
   const { user, qxns } = req.body;
   try {
