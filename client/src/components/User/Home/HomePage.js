@@ -16,7 +16,6 @@ const HomePage = () => {
 
   useEffect(() => {
     const url = match.url.split("/").slice(2)
-    console.log(url)
     const path = url[0];
     setSubdomain(path)
   }, [ match ]);
@@ -32,7 +31,6 @@ const HomePage = () => {
       setMessage("You are not invited to take this test");
     }
   }, [ user, domain_name ]);
-  console.log(match, "domain name")
 
   return (
     <div className="login-container">

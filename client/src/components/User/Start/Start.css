@@ -3,3 +3,114 @@
   height: 100vh;
   padding-top: 10%;
 }
+
+.question {
+  font-size: 22px;
+}
+
+.question-next-btn {
+  background-color: #1e1e1e;
+  border-radius: 3px;
+  color: #f3f7f7 !important;
+  border: 1px solid #1e1e1e;
+  float: right;
+  height: 45px;
+}
+
+.question-next-btn:hover {
+  background-color: #1e1e1e;
+  border-radius: 3px;
+  color: #f3f7f7 !important;
+  border: 1px solid #1e1e1e;
+  float: right;
+  height: 45px;
+}
+
+.question-next-btn:focus {
+  background-color: #1e1e1e;
+  border-radius: 3px;
+  color: #f3f7f7 !important;
+  border: 1px solid #1e1e1e;
+  float: right;
+  height: 45px;
+}
+
+.start-btn {
+  background-color: #1e1e1e;
+  border-radius: 3px;
+  color: #f3f7f7 !important;
+  border: 1px solid #1e1e1e;
+  height: 45px;
+}
+
+.start-btn:hover {
+  background-color: #1e1e1e;
+  border-radius: 3px;
+  color: #f3f7f7 !important;
+  border: 1px solid #1e1e1e;
+  height: 45px;
+}
+
+.start-btn:focus {
+  background-color: #1e1e1e;
+  border-radius: 3px;
+  color: #f3f7f7 !important;
+  border: 1px solid #1e1e1e;
+  height: 45px;
+}
+
+@media only screen and (max-width: 768px) {
+  .question-next-btn {
+    background-color: #1e1e1e;
+    border-radius: 3px;
+    color: #f3f7f7 !important;
+    border: 1px solid #1e1e1e;
+    float: right;
+    height: 45px;
+  }
+
+  .question-next-btn:hover {
+    background-color: #1e1e1e;
+    border-radius: 3px;
+    color: #f3f7f7 !important;
+    border: 1px solid #1e1e1e;
+    float: right;
+    height: 45px;
+  }
+
+  .question-next-btn:focus {
+    background-color: #1e1e1e;
+    border-radius: 3px;
+    color: #f3f7f7 !important;
+    border: 1px solid #1e1e1e;
+    float: right;
+    
+  }
+
+  .start-btn {
+    background-color: #1e1e1e;
+    border-radius: 3px;
+    color: #f3f7f7 !important;
+    border: 1px solid #1e1e1e;
+    height: 50px;
+  }
+
+  
+  .start-btn:hover {
+    background-color: #1e1e1e;
+    border-radius: 3px;
+    color: #f3f7f7 !important;
+    border: 1px solid #1e1e1e;
+    height: 50px;
+  }
+
+  
+  .start-btn:focus {
+    background-color: #1e1e1e;
+    border-radius: 3px;
+    color: #f3f7f7 !important;
+    border: 1px solid #1e1e1e;
+    height: 50px;
+  }
+  
+}
