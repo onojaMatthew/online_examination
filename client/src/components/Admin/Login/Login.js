@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
-import { Row, Col, Input } from "reactstrap";
-import { Avatar, Button, Image } from "antd";
-// import User from "../../../assets/images/User.jpeg";
+import { Row, Col, Input, Alert } from "reactstrap";
+import { Button, Image } from "antd";
 import "./Login.css";
 import { useDispatch, useSelector } from "react-redux";
 import { adminLogin } from "../../../store/actions/actions_login";
 import Icon from "../../../assets/images/employee.jpg";
+// import { success, errorMsg } from "../../../helper/message";
 
 const Login = () => {
   const dispatch = useDispatch();
-  const { loginLoading, loginSuccess } = useSelector(state => state.account);
+  const { loginLoading, loginSuccess, error } = useSelector(state => state.account);
   const [ values, setValues ] = useState({ email: "", password: "" });
+  // const [ countDown, setCountDown ] = useState(5);
 
   const { email, password } = values;
   useEffect(() => {
@@ -39,14 +40,10 @@ const Login = () => {
     <div>
       <Row>
         <Col xs="12" sm="12" md="12" lg="4" xl="4" className="instruction-left-cont">
-          <h3 className="text-center">Welcome to XYZ Test</h3>
+          <h3 className="text-center">Welcome</h3>
           <Row className="mt-5">
-            <Col xs="6" sm="6" md="6" lg="6" xl="6">
-              <p className="questn-no">No. of questions</p>
-              <p className="questn-no">50</p>
-            </Col>
-            <Col xs="6" sm="6" md="6" lg="6" xl="6">
-              <p>Test duration</p>
+            <Col xs="12" sm="12" md="12" lg="12" xl="12">
+              <p className="text-center">Login with your credentials</p>
             </Col>
           </Row>  
           <Row className="text-center pl-5">

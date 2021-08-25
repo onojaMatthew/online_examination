@@ -115,6 +115,16 @@
   margin-top: -25px;
 }
 
+.action-div {
+  display: none;
+}
+
+.action-td:hover .action-div {
+  display: block;
+}
+
+
+
 @media only screen and (max-width: 768px) {
   .dashboard-container-wrapper {
     margin: 0 1px !important;

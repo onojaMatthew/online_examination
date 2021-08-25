@@ -32,7 +32,7 @@ export const dashboardDataFaild = (error) => {
 export const dashboardData = () => {
   return dispatch => {
     dispatch(dashboardDataStart());
-    fetch(`${BASE_URL}/church/dashbord_data?church=${id}`, {
+    fetch(`${BASE_URL}/admin/dashboard`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

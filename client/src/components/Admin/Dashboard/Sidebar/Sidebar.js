@@ -5,7 +5,8 @@ import {
   DashboardOutlined,
   FileOutlined,
   BankFilled,
-  LogoutOutlined
+  LogoutOutlined,
+  QuestionCircleFilled
 } from '@ant-design/icons';
 import Logo from "../../../../assets/images/User.jpeg";
 import "./Sidebar.css";
@@ -40,7 +41,7 @@ const Sidebar = () => {
           <Menu.Item onClick={() => history.push("/dashboard")} key="1" icon={<DashboardOutlined />}>
             Dashboard
           </Menu.Item>
-          <Menu.Item key="2" icon={<FileOutlined />}>
+          <Menu.Item key="2" icon={<QuestionCircleFilled />}>
             Question Management
           </Menu.Item>
           <Menu.Item key="3" icon={<FileOutlined />}>

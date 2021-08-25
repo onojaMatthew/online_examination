@@ -1,4 +1,7 @@
 import { Admin } from "../../models/admin";
+import { Question } from "../../models/question"
+import { UserQuestion } from "../../models/user_question"
+import { User } from "../../models/user";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { error, success } from "../../config/response";
@@ -161,5 +164,24 @@ export const deleteAdmin = async (req, res) => {
     return res.json(success("Account deleted", deletedAccount, res.statusCode));
   } catch (err) {
     return res.status(400).json(error("Internal Server Error. Try again after few minutes", res.statusCode));
+  }
+}
+
+export const dashboardData = async (req, res) => {
+  try {
+    let result = {};
+    const users = await User.find({});
+    const questions = await Question.find({});
+    const userQuestion = await UserQuestion.find({});
+    const admins = await Admin.find({});
+
+    result["users"] = users && users;
+    result["questions"] = questions && questions;
+    result["userQuestions"] = userQuestion && userQuestion;
+    result["admins"] = admins && admins;
+
+    return res.json(success("Success", result, res.statusCode));
+  } catch (err) {
+    return res.status(400).json(error(err.message));
   }
 }
