@@ -1,4 +1,6 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Home from "./Admin/Dashboard/Home/Home";
+import Login from "./Admin/Login/Login";
 import LandingPage from "./User/Home/LandingPage";
 
 function App() {
@@ -6,8 +8,9 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" render={(props) => <div><h2>Hello Admin</h2></div>} />
+          <Route exact path="/" render={() => <Login />} />
           <Route path="/test/:domain_name" render={() => <LandingPage />} />
+          <Route exact path="/dashboard" render={(props) => <Home {...props} />} />
         </Switch>
       </BrowserRouter>
     </div>

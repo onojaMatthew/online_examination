@@ -3,13 +3,13 @@ import mongoosePaginate from "mongoose-paginate-v2";
 
 const { Schema } = mongoose;
 
-const userSchema = new Schema({
+const adminSchema = new Schema({
   email: { type: String , unique: true },
   first_name: { type: String },
   last_name: { type: String },
   password: { type: String },
 }, { timestamps: true });
 
-userSchema.plugin(mongoosePaginate);
+adminSchema.plugin(mongoosePaginate);
 
-export const Amin = mongoose.model("Admin", adminSchema);
+export const Admin = mongoose.model("Admin", adminSchema);

@@ -11,14 +11,16 @@ import "./Start.css";
 const Start = () => {
   const dispatch = useDispatch();
   const { questions, questionLoading, error } = useSelector(state => state.user);
+  const [ time, setTime ] = useState(0);
   const [ userQuestions, setUserQuestions ] = useState([]);
-  const [ countDown, setCountDown ] = useState("120min");
+  const [ timer, setTimer ] = useState(60);
   const [ num, setNum ] = useState(0);
   const [ toggle, setToggle ] = useState(false);
   const [ token, setToken ] = useState({});
   const [ currentQuestion, setCurrentQuestion ] = useState({});
   const [ userAnswer, setUserAnswer ] = useState({ "ans": "", "question": "" });
   const [ answer, setAnswer ] = useState("");
+  const [ start, setStart ] = useState(false);
 
   let myAnswer = [];
 
@@ -35,6 +37,7 @@ const Start = () => {
   useEffect(() => {
     if (questions) {
       setUserQuestions(questions?.questions)
+      setTime(questions.time && Number(questions.time.split(/([0-9]+)/)[1]));
     }
   }, [ questions ]);
 
@@ -49,14 +52,23 @@ const Start = () => {
   const handleToggle = () => {
     setToggle(true);
     setNum(1);
+    setStart(true);
   }
 
   const handleChange = (e) => {
     const { value, name } = e.target
-    console.log(value, name, " the value from input");
-    // console.log(e)
     myAnswer.push({ "ans": answer, "question": currentQuestion?._id });
   }
+ 
+  // useEffect(() => {
+  //   const timer =
+  //     timer > 0 && setInterval(() => setTimer(timer - 1), 1000);
+  //     if (timer) {
+        
+  //     }
+  //   return () => clearInterval(timer);
+  // }, [timer]);
+
 
   return (
     <div>
@@ -70,7 +82,7 @@ const Start = () => {
             </Col>
             <Col xs="6" sm="6" md="6" lg="6" xl="6">
             <p>Test duration</p>
-              <p>1hr</p>
+              <p>{`${time} mins left`}</p>
             </Col>
           </Row>  
           <Row className="text-center pl-5">

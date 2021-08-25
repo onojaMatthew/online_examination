@@ -27,7 +27,18 @@ const Charts = ({data}) => {
       height={400}
       chartType="ColumnChart"
       loader={<div>Loading Chart</div>}
-      data={chartData}
+      data={[
+        ["Label", "Questions", "Users"],
+        ["Jan", 50, 2000 ],
+        ["Feb", 40, 100 ],
+        ["Mar", 45, 1500 ],
+        ["Apr", 50, 300 ],
+        ["May", 50, 100 ],
+        ["Jun", 60, 500 ],
+        ["Jul", 60, 400 ],
+        ["Aug", 40, 500 ],
+        ["Sep", 50, 3500 ]
+      ]}
       options={{
         title: 'Number of new members',
         chartArea: { width: '80%', height: '70%' },
@@ -36,7 +47,7 @@ const Charts = ({data}) => {
           minValue: 0,
         },
         vAxis: {
-          title: 'New Members',
+          title: 'Number of Questions',
         },
       }}
       legendToggle

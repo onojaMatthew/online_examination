@@ -8,7 +8,8 @@ export const LOGOUT_START = "LOGOUT_START";
 export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
 export const LOGOUT_FAILED = "LOGOUT_FAILED";
 
-const BASE_URL = process.env.REACT_APP_URL;
+const BASE_URL = process.env.REACT_APP_URL
+;
 export const loginStart = () => {
   return {
     type: LOGIN_START
@@ -29,10 +30,10 @@ export const loginFailed = (error) => {
   }
 }
 
-export const login = (data) => {
+export const adminLogin = (data) => {
   return dispatch => {
     dispatch(loginStart());
-    fetch(`${BASE_URL}/auth/login`, {
+    fetch(`${BASE_URL}/admin/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -42,6 +43,7 @@ export const login = (data) => {
     })
       .then(response => response.json())
       .then(resp => {
+        console.log(resp)
         if (resp.error) return dispatch(loginFailed(resp.message));
         Auth.authenticateUser(JSON.stringify(resp.results))
         dispatch(loginSuccess(resp.results));
@@ -73,7 +75,7 @@ export const logoutFailed = (error) => {
 export const logout = () => {
   return dispatch => {
     dispatch(logoutStart());
-    fetch(`${BASE_URL}/auth/logout`, {
+    fetch(`${BASE_URL}/admin/logout`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

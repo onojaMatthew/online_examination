@@ -1,6 +1,7 @@
 import { Admin } from "../../models/admin";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import { error, success } from "../../config/response";
 
 export const createAdmin = async (req, res) => {
   const { first_name, last_name, email, password, phone } = req.body;
@@ -114,6 +115,7 @@ export const fetchAdmins = async (req, res) => {
     if (!admins) return res.json(success("No records found", admins, res.statusCode));
     return res.json(success("Success", admins, res.statusCode));
   } catch (err) {
+    console.log(err)
     return res.status(400).json(error("Internal Server Error. Try again after few minutes", res.statusCode));
   }
 }

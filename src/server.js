@@ -20,11 +20,6 @@ app.use(morgan("combined"));
 app.use(express.json());
 app.use(cors());
 
-app.use((req, res, next) => {
-  res.locals.role = null;
-  next();
-});
-
 app.get( '/', ( req, res ) => {
   res.send({ message: "Welcome to Express API"})
   // res.sendFile( path.join( __dirname + '/client/build/index.html' ) );

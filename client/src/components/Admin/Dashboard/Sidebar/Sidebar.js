@@ -41,22 +41,11 @@ const Sidebar = () => {
             Dashboard
           </Menu.Item>
           <Menu.Item key="2" icon={<FileOutlined />}>
-            Create Admins
+            Question Management
           </Menu.Item>
           <Menu.Item key="3" icon={<FileOutlined />}>
-            Admin List
+            User Management
           </Menu.Item>
-          <Menu.Item onClick={() => history.push("/dashboard/create-church")} key="4" icon={<FileOutlined />}>
-            Create Church
-          </Menu.Item>
-          <Menu.Item key="5" onClick={() => history.push("/dashboard/church-list")} icon={<FileOutlined />}>
-            Church List
-          </Menu.Item>
-          <SubMenu key="sub1" icon={<BankFilled />} title="Manage Church">
-            <Menu.Item key="3">Create Church</Menu.Item>
-            <Menu.Item key="4">Church List</Menu.Item>
-            <Menu.Item key="5">Alex</Menu.Item>
-          </SubMenu>
           <Menu.Item onClick={onLogout} key="6" icon={<LogoutOutlined />}>
             Logout
           </Menu.Item>
