@@ -5,7 +5,7 @@ import {
   FaUser,
   FaQuestion,
   FaPowerOff,
-  FaTh
+  FaTachometerAlt
 } from 'react-icons/fa';
 import Logo from "../../../../assets/images/User.jpeg";
 import "./Sidebar.css";
@@ -37,7 +37,7 @@ const Sidebar = () => {
           <Avatar src={<Image src={Logo} />} size={90}/>
         </div>
         <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-          <Menu.Item onClick={() => history.push("/dashboard")} key="1" icon={<FaTh />}>
+          <Menu.Item onClick={() => history.push("/dashboard")} key="1" icon={<FaTachometerAlt />}>
             Dashboard
           </Menu.Item>
           <Menu.Item onClick={() => history.push("/dashboard/questions")} key="2" icon={<FaQuestion />}>
