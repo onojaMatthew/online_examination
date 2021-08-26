@@ -36,7 +36,7 @@ const Start = () => {
     setToken(JSON.parse(Auth.getToken()));
     const has_submitted = localStorage.getItem("has_submitted");
     if (questions && questions.completed) {
-      window.location.href = `/${path}/complete`;
+      window.location.href = `/test/complete`;
     }
   }, []);
 
@@ -114,7 +114,7 @@ const Start = () => {
       toggleModal();
       localStorage.setItem("has_submitted", true);
       setTimeout(() => {
-        history.push(`/${path}/complete`);
+        history.push(`/test/complete`);
       }, 5000);
     }
   }, [ solutionSuccess ]);

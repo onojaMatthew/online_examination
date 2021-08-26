@@ -6,14 +6,20 @@ import "./Login.css";
 import { useDispatch, useSelector } from "react-redux";
 import { userDetail } from "../../../store/actions/actions_user";
 import Icon from "../../../assets/images/employee.jpg";
+import Auth from "../../../helper/Auth";
 
 const HomePage = () => {
   const dispatch = useDispatch();
   const [ domain_name, setSubdomain ] = useState("");
   const { user, loading } = useSelector(state => state.user);
   const [ message, setMessage ] = useState("");
+  const [ token, setToken ] = useState({});
   const match = useRouteMatch();
   const history = useHistory();
+
+  useEffect(() => {
+    setToken(JSON.parse(Auth.getToken()));
+  }, []);
 
   useEffect(() => {
     const url = match.url.split("/").slice(2)
@@ -28,22 +34,23 @@ const HomePage = () => {
   }, [ dispatch, domain_name ]);
 
   useEffect(() => {
-    if (user && user.domain_name && user.domain_name.toString() !== domain_name.toString()) {
+    if (!user) {
       setMessage("You are not invited to take this test");
     }
   }, [ user, domain_name ]);
 
+  console.log(user && user.domain_name, domain_name, "the user")
   return (
     <div>
       {loading ? (
-        <div className="text-center">
+        <div className="text-center spinn">
           <Spinner style={{ fontSize: 100}}>
             <span className="visually-hidden">Loading</span>
           </Spinner>
         </div>
       ) : message.length > 0 ? (
         <Row>
-        <Col xs="12" sm="12" md={{ size: 6, offset: 3 }} lg={{ size: 4, offset: 4 }}>
+        <Col className="error_message">
           <h3 className="text-center">Oops!</h3>
           <p>
             You were not invited to this test
@@ -66,15 +73,19 @@ const HomePage = () => {
           </Row>   
         </Col>
         <Col xs="12" sm="12" md="12" lg="8" className="login-right-cont">
-          <Row>
-            <Col xs="12" sm="12" md={{ size: 6, offset: 3 }} lg={{ size: 4, offset: 4 }}>
+          <Row className="text-center">
+            <Col xs="12" sm="12" md="12" lg="12">
               <h3 className="text-center">Welcome</h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero 
                 ultricies, tristique purus a, dictum nulla. Nunc malesuada lobortis odio ut 
                 molestie. Maecenas accumsan et turpis nec mollis.
               </p>
-              <Button onClick={() => history.push(`${match.url}/instruction`)} className="continue-button">Continue</Button>
+              <Row>
+                <Col xs="12" sm="12" md="12" lg={{ size: 4, offset: 4}} xl={{ size: 4, offset: 4}}>
+                  <Button onClick={() => history.push(`${match.url}/instruction`)} className="continue-button">Continue</Button>
+                </Col>
+              </Row>
             </Col>
           </Row>
         </Col>
@@ -85,14 +96,3 @@ const HomePage = () => {
 }
 
 export default HomePage;
-
-<div className="login-container">
-      
-      //   
-      // 
-      //   <Row>
-      //     
-      //   </Row>
-      
-      
-    </div>
