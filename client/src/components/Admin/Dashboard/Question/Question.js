@@ -1,23 +1,26 @@
 import { Button } from "antd";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FaTrash } from "react-icons/fa";
 import { BsPencilSquare } from "react-icons/bs";
 import { Col, Row, Table, Spinner, Card, CardBody } from "reactstrap";
-import { getQuestionList } from "../../../../store/actions/actions_dashboard_data";
+import { getQuestionList, deleteQuestion } from "../../../../store/actions/actions_dashboard_data";
 
 import "./Question.css";
 
 const Question = () => {
   const dispatch = useDispatch();
-  const { questions, list_loading, list_success, question } = useSelector(state => state.dashboard_data);
+  const [ toggle, setToggle ] = useState(false);
+  const { questions, list_loading, delete_loading, list_success, question } = useSelector(state => state.dashboard_data);
   const { page, totalPages, nextPage, prevPage, docs } = questions;
 
   useEffect(() => {
     dispatch(getQuestionList());
   }, [ dispatch ]);
 
-
+  const onDelete = (id) => {
+    dispatch(deleteQuestion(id));
+  }
 
   return (
     <div>
@@ -42,7 +45,7 @@ const Question = () => {
                 </thead>
                 <tbody>
                 {list_loading ?
-                  <div className="spin">
+                  <div className="question-loader">
                     <Spinner className="my-loader">
                       <span className="visually-hidden">Loading...</span>
                     </Spinner>
@@ -57,7 +60,10 @@ const Question = () => {
                       <td>{d?.optionE}</td>
                       <td className="icon-td">
                         
-                        <BsPencilSquare className="icon-update" /> {""}<FaTrash className="icon-delete" />
+                        <BsPencilSquare onClick={toggle} className="icon-update" /> {""}{delete_loading ? 
+                        <Spinner>
+                          <span className="visually-hidden">Loading...</span>
+                        </Spinner> : <FaTrash onClick={() => onDelete(d?._id)} className="icon-delete" />}
                       </td>
                     </tr>
                   )) : <div className="no-data"></div>}

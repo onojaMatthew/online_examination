@@ -136,3 +136,44 @@ export const updateQuestion = (data) => {
       .catch(err => dispatch(updateQuestionFailed(err.message)));
   }
 }
+
+
+export const deleteQuestionStart = () => {
+  return {
+    type: DELETE_QUESTION_START
+  }
+}
+
+export const deleteQuestionSuccess = (data) => {
+  return {
+    type: DELETE_QUESTION_SUCCESS,
+    data
+  }
+}
+
+export const deleteQuestionFailed = (error) => {
+  return {
+    type: DELETE_QUESTION_FAILED,
+    error
+  }
+}
+
+export const deleteQuestion = (data) => {
+  return dispatch => {
+    dispatch(deleteQuestionStart());
+    fetch(`${BASE_URL}/question/delete?id=${data}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        ACCEPT: "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+      .then(response => response.json())
+      .then(resp => {
+        if (resp.error) return dispatch(deleteQuestionFailed(resp.message));
+        dispatch(deleteQuestionSuccess(resp.results));
+      })
+      .catch(err => dispatch(deleteQuestionFailed(err.message)));
+  }
+}
