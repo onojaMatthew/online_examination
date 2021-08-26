@@ -5,16 +5,22 @@ import {
   GET_QUESTIONS_START,
   GET_QUESTIONS_SUCCESS,
   GET_QUESTIONS_FAILED,
+  SOLUTION_START,
+  SOLUTION_SUCCESS,
+  SOLUTION_FAILED,
 } from "../../actions/actions_user";
 
 const initialState = {
   users: [],
   user: {},
   questions: {},
+  solution: {},
   loading: false,
   success: false,
   questionLoading: false,
   questionSuccess: false,
+  solutionLoading: false,
+  solutionSuccess: false,
   error: ""
 }
 
@@ -58,6 +64,23 @@ export const user = (state=initialState, action) => {
         ...state,
         questionLoading: false,
         questionSuccess: false,
+        error: action.error
+      }
+    case SOLUTION_START:
+      return {
+        solutionLoading: true,
+        solutionSuccess: false,
+      }
+    case SOLUTION_SUCCESS:
+      return {
+        solutionLoading: false,
+        solutionSuccess: true,
+        solution: action.data,
+      }
+    case SOLUTION_FAILED:
+      return {
+        solutionLoading: false,
+        solutionSuccess: false,
         error: action.error
       }
     default:

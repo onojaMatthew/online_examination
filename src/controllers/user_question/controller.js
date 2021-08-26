@@ -50,7 +50,7 @@ export const assign_question = async (req, res) => {
 
 export const user_questions = async (req, res) => {
   try {
-    const questions = await UserQuestion.find();
+    const questions = await UserQuestion.find({ completed: false });
 
     return res.json(success("Success", questions, res.statusCode));
   } catch (err) {
@@ -60,7 +60,6 @@ export const user_questions = async (req, res) => {
 
 export const getUserQuestions = async (req, res) => {
   const { userId } = req.query;
-  console.log(userId, " the user id")
   try {
     let question = await UserQuestion.findOne({ "userId._id": userId });
     return res.json(success("Success", question, res.statusCode));
@@ -93,7 +92,7 @@ export const answer = async (req, res) => {
     question.userId = { _id, email };
     question.completed = true
 
-    question = await question.save()
+    question = await question.save();
     // console.log(all_questions);
 
     return res.json(success("Success", question, res.statusCode));

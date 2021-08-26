@@ -1,17 +1,15 @@
 import { useEffect, useState } from "react";
-import { Row, Col, Input, Alert } from "reactstrap";
+import { Row, Col, Input } from "reactstrap";
 import { Button, Image } from "antd";
 import "./Login.css";
 import { useDispatch, useSelector } from "react-redux";
 import { adminLogin } from "../../../store/actions/actions_login";
 import Icon from "../../../assets/images/employee.jpg";
-// import { success, errorMsg } from "../../../helper/message";
 
 const Login = () => {
   const dispatch = useDispatch();
   const { loginLoading, loginSuccess, error } = useSelector(state => state.account);
   const [ values, setValues ] = useState({ email: "", password: "" });
-  // const [ countDown, setCountDown ] = useState(5);
 
   const { email, password } = values;
   useEffect(() => {
@@ -52,7 +50,7 @@ const Login = () => {
             </Col>
           </Row>   
         </Col>
-        <Col xs="12" sm="12" md="12" lg="8" className="instruction-right-cont">
+        <Col xs="12" sm="12" md="12" lg="8" className="login-right-cont">
           <Row>
             <Col xs="12" sm="12" md="12" lg={{ size: 6, offset: 3 }} xl={{ size: 6, offset: 3 }}>
               <h3 className="mb-5">Sign in by entering the information below</h3>
