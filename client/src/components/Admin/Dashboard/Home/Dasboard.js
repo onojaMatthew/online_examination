@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Row, Col, Card, CardBody, Table, } from "reactstrap";
+import { Row, Col, Card, CardBody, Table, Spinner, } from "reactstrap";
 import { dashboardData } from "../../../../store/actions/actions_dashboard_data";
 
 import "./Home.css";
@@ -13,7 +13,15 @@ const Dashboard = () => {
     dispatch(dashboardData())
   }, [ dispatch ]);
   return (
-    <div>
+    <>
+    {loading ?
+      <div className="spin">
+        <Spinner className="my-loader">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      </div> : (
+       
+      <div>
       <Row className="mt-3">
         <Col xs="12" sm="12" md="12" lg="3" xl="3"  className="fcard">
           <Card>
@@ -85,7 +93,7 @@ const Dashboard = () => {
                   <th>Action</th>
                 </thead>
                 <tbody>
-                  {data.questions && data.questions.length > 0 ? data.questions.map((q,i) => (
+                  {data.questions && data.questions.length > 0 ? data.questions.slice(0,5).map((q,i) => (
                     <tr key={i}>
                       
                       <td>{q.question}</td>
@@ -120,7 +128,7 @@ const Dashboard = () => {
                 <th>Action</th>
               </thead>
               <tbody>
-                {data.users && data.users.length > 0 ? data.users.map((u, i) => (
+                {data.users && data.users.length > 0 ? data.users.slice(0.5).map((u, i) => (
                   <tr key={i}>
                     <td>{u.first_name}</td>
                     <td>{u.last_name}</td>
@@ -129,28 +137,6 @@ const Dashboard = () => {
                     <td>Delete</td>
                   </tr>
                 )) : <h4 className="text-center mt-5">No records found</h4>}
-                
-                <tr>
-                  <td>Onoja</td>
-                  <td>Matthew</td>
-                  <td>onoja@gmail.com</td>
-                  <td>09012345678</td>
-                  <td>Delete</td>
-                </tr>
-                <tr>
-                  <td>Onoja</td>
-                  <td>Matthew</td>
-                  <td>onoja@gmail.com</td>
-                  <td>09012345678</td>
-                  <td>Delete</td>
-                </tr>
-                <tr>
-                  <td>Onoja</td>
-                  <td>Matthew</td>
-                  <td>onoja@gmail.com</td>
-                  <td>09012345678</td>
-                  <td>Delete</td>
-                </tr>
               </tbody>
              </Table>
             </CardBody>
@@ -158,6 +144,9 @@ const Dashboard = () => {
         </Col>
       </Row>
     </div>
+    )}
+    </>
+    
   );
 }
 

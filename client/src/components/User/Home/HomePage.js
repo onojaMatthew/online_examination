@@ -39,7 +39,6 @@ const HomePage = () => {
     }
   }, [ user, domain_name ]);
 
-  console.log(user && user.domain_name, domain_name, "the user")
   return (
     <div>
       {loading ? (

@@ -40,7 +40,7 @@ const Sidebar = () => {
           <Menu.Item onClick={() => history.push("/dashboard")} key="1" icon={<FaTh />}>
             Dashboard
           </Menu.Item>
-          <Menu.Item onClick={() => history.push("/dashboard/question")} key="2" icon={<FaQuestion />}>
+          <Menu.Item onClick={() => history.push("/dashboard/questions")} key="2" icon={<FaQuestion />}>
             Question Management
           </Menu.Item>
           <Menu.Item key="3" icon={<FaUser />}>

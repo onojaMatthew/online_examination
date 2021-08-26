@@ -12,7 +12,7 @@ function App() {
           <Route exact path="/" render={() => <Login />} />
           <Route path="/test/complete" render={() => <Complete />} />
           <Route path="/test/:domain_name" render={() => <LandingPage />} />
-          <Route exact path="/dashboard" render={(props) => <Home {...props} />} />
+          <Route path="/dashboard" render={(props) => <Home {...props} />} />
         </Switch>
       </BrowserRouter>
     </div>
