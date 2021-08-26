@@ -12,7 +12,6 @@ import "./Start.css";
 const Start = () => {
   const dispatch = useDispatch();
   const { questions, questionLoading, solutionLoading, solutionSuccess, error } = useSelector(state => state.user);
-  // const [ time, setTime ] = useState(0);
   const [ userQuestions, setUserQuestions ] = useState([]);
   const [ time, setTime ] = useState(0);
   const [ counter, setCounter ] = useState("");
@@ -28,14 +27,15 @@ const Start = () => {
 
   let timeoutHandle;
 
-  const url = match && match.url.split("/").slice(1)
-  url.pop()
+  const url = match && match.url.split("/").slice(1);
+
+  url.pop();
   const path = url.join("/");
 
   useEffect(() => {
     setToken(JSON.parse(Auth.getToken()));
     const has_submitted = localStorage.getItem("has_submitted");
-    if (questions && questions.completed) {
+    if (has_submitted === true) {
       window.location.href = `/test/complete`;
     }
   }, []);
@@ -123,10 +123,14 @@ const Start = () => {
     setModal(true);
   }
 
-  console.log(questions)
-
   return (
     <div>
+      {solutionLoading ? 
+      <div className="text-center spinn">
+        <Spinner>
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      </div> :
       <Row>
         <Col xs="12" sm="12" md="12" lg="4" xl="4" className="start-left-cont">
           <h3 className="text-center">Welcome to XYZ Test</h3>
@@ -219,6 +223,8 @@ const Start = () => {
           </Row>}
         </Col>
       </Row> 
+    }
+      
     </div>
   )
 }

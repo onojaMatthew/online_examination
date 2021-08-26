@@ -19,13 +19,8 @@ const Instruction = () => {
         <Col xs="12" sm="12" md="12" lg="4" xl="4" className="instruction-left-cont">
           <h3 className="text-center">Welcome to XYZ Test</h3>
           <Row className="mt-5">
-            <Col xs="6" sm="6" md="6" lg="6" xl="6">
-              <p className="questn-no">No. of questions</p>
-              <p className="questn-no">50</p>
-            </Col>
-            <Col xs="6" sm="6" md="6" lg="6" xl="6">
-            <p>Test duration</p>
-              <p>1hr</p>
+            <Col xs="12" sm="12" md="12" lg="12" xl="12">
+              <p className="questn-no">Read the instruction carefully</p>
             </Col>
           </Row>  
           <Row className="text-center pl-5">
@@ -77,7 +72,7 @@ const Instruction = () => {
           </Row>
           <Row className="continue-text">
             <Col xs="12" sm="12" md="12" lg="12">
-              <p>To continue taking test, click <span onClick={() => history.push(`/${path}/start`)}>continue</span></p>
+              <p>To continue taking test, click <span className="continue-span" onClick={() => window.location.href=`/${path}/start`}>continue</span></p>
             </Col>
           </Row>
         </Col>

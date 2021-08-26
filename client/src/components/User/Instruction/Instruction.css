@@ -6,6 +6,11 @@
   padding-top: 12%;
 }
 
+.continue-span {
+  color: rgb(104,187,228);
+  cursor: pointer;
+}
+
 .instruction-right-cont {
   background: #f3f7f7;
   height: 100vh;
