@@ -39,7 +39,7 @@ const Login = () => {
   return (
     <div>
       <Row>
-        <Col xs="12" sm="12" md="12" lg="4" xl="4" className="instruction-left-cont">
+        <Col xs="12" sm="12" md="12" lg="4" xl="4" className="login-left-cont">
           <h3 className="text-center">Welcome</h3>
           <Row className="mt-5">
             <Col xs="12" sm="12" md="12" lg="12" xl="12">

@@ -4,6 +4,15 @@
   padding-top: 10%;
 }
 
+.start-left-cont {
+  background-color: #fcfcfc;
+  height: 100vh !important;
+  padding-left: 5% !important;
+  padding-right: 5% !important;
+  padding-top: 12% !important;
+}
+
+
 .question {
   font-size: 22px;
 }

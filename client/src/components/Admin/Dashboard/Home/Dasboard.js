@@ -120,13 +120,16 @@ const Dashboard = () => {
                 <th>Action</th>
               </thead>
               <tbody>
-                <tr>
-                  <td>Onoja</td>
-                  <td>Matthew</td>
-                  <td>onoja@gmail.com</td>
-                  <td>09012345678</td>
-                  <td>Delete</td>
-                </tr>
+                {data.users && data.users.length > 0 ? data.users.map((u, i) => (
+                  <tr key={i}>
+                    <td>{u.first_name}</td>
+                    <td>{u.last_name}</td>
+                    <td>{u.email}</td>
+                    <td>{u.phone}</td>
+                    <td>Delete</td>
+                  </tr>
+                )) : <h4 className="text-center mt-5">No records found</h4>}
+                
                 <tr>
                   <td>Onoja</td>
                   <td>Matthew</td>

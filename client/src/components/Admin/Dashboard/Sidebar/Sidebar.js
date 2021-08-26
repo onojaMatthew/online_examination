@@ -2,12 +2,11 @@ import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Avatar, Image, Layout, Menu } from 'antd';
 import {
-  DashboardOutlined,
-  FileOutlined,
-  BankFilled,
-  LogoutOutlined,
-  QuestionCircleFilled
-} from '@ant-design/icons';
+  FaUser,
+  FaQuestion,
+  FaPowerOff,
+  FaTh
+} from 'react-icons/fa';
 import Logo from "../../../../assets/images/User.jpeg";
 import "./Sidebar.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -38,16 +37,16 @@ const Sidebar = () => {
           <Avatar src={<Image src={Logo} />} size={90}/>
         </div>
         <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-          <Menu.Item onClick={() => history.push("/dashboard")} key="1" icon={<DashboardOutlined />}>
+          <Menu.Item onClick={() => history.push("/dashboard")} key="1" icon={<FaTh />}>
             Dashboard
           </Menu.Item>
-          <Menu.Item key="2" icon={<QuestionCircleFilled />}>
+          <Menu.Item onClick={() => history.push("/dashboard/question")} key="2" icon={<FaQuestion />}>
             Question Management
           </Menu.Item>
-          <Menu.Item key="3" icon={<FileOutlined />}>
+          <Menu.Item key="3" icon={<FaUser />}>
             User Management
           </Menu.Item>
-          <Menu.Item onClick={onLogout} key="6" icon={<LogoutOutlined />}>
+          <Menu.Item onClick={onLogout} key="6" icon={<FaPowerOff />}>
             Logout
           </Menu.Item>
         </Menu>
