@@ -1,0 +1,1782 @@
+{
+  "header": "Top Curated Genre Stations",
+  "genre_category_name": "top stations",
+  "genres": [
+  {
+  "url": "/browse_music/genre/Suggestions",
+  "name": "Suggestions"
+  },
+  {
+  "url": "/browse_music/genre/Recent",
+  "name": "Recent"
+  },
+  {
+  "url": "/browse_music/genre/Top%20Artists",
+  "name": "Top Artists"
+  },
+  {
+  "url": "/browse_music/genre/Top%20Stations",
+  "name": "Top Stations"
+  },
+  {
+  "url": "/browse_music/genre/Christmas%20&%20Holidays",
+  "name": "Christmas & Holidays"
+  },
+  {
+  "url": "/browse_music/genre/Trending",
+  "name": "Trending"
+  },
+  {
+  "url": "/browse_music/genre/Pop",
+  "name": "Pop"
+  },
+  {
+  "url": "/browse_music/genre/K-pop",
+  "name": "K-pop"
+  },
+  {
+  "url": "/browse_music/genre/Country",
+  "name": "Country"
+  },
+  {
+  "url": "/browse_music/genre/Hip%20Hop",
+  "name": "Hip Hop"
+  },
+  {
+  "url": "/browse_music/genre/Workout",
+  "name": "Workout"
+  },
+  {
+  "url": "/browse_music/genre/Dance/EDM",
+  "name": "Dance/EDM"
+  },
+  {
+  "url": "/browse_music/genre/Party",
+  "name": "Party"
+  },
+  {
+  "url": "/browse_music/genre/Moods",
+  "name": "Moods"
+  },
+  {
+  "url": "/browse_music/genre/Sleep",
+  "name": "Sleep"
+  },
+  {
+  "url": "/browse_music/genre/Dinner",
+  "name": "Dinner"
+  },
+  {
+  "url": "/browse_music/genre/Chill",
+  "name": "Chill"
+  },
+  {
+  "url": "/browse_music/genre/Love%20Songs",
+  "name": "Love Songs"
+  },
+  {
+  "url": "/browse_music/genre/R&B%20/%20Soul",
+  "name": "R&B / Soul"
+  },
+  {
+  "url": "/browse_music/genre/Seasonal",
+  "name": "Seasonal"
+  },
+  {
+  "url": "/browse_music/genre/Events",
+  "name": "Events"
+  },
+  {
+  "url": "/browse_music/genre/Rock",
+  "name": "Rock"
+  },
+  {
+  "url": "/browse_music/genre/Punk",
+  "name": "Punk"
+  },
+  {
+  "url": "/browse_music/genre/Metal",
+  "name": "Metal"
+  },
+  {
+  "url": "/browse_music/genre/Indie",
+  "name": "Indie"
+  },
+  {
+  "url": "/browse_music/genre/Alternative",
+  "name": "Alternative"
+  },
+  {
+  "url": "/browse_music/genre/Classical%20&%20Opera",
+  "name": "Classical & Opera"
+  },
+  {
+  "url": "/browse_music/genre/Gospel%20&%20Christian",
+  "name": "Gospel & Christian"
+  },
+  {
+  "url": "/browse_music/genre/Jazz",
+  "name": "Jazz"
+  },
+  {
+  "url": "/browse_music/genre/Blues",
+  "name": "Blues"
+  },
+  {
+  "url": "/browse_music/genre/Latin",
+  "name": "Latin"
+  },
+  {
+  "url": "/browse_music/genre/Folk",
+  "name": "Folk"
+  },
+  {
+  "url": "/browse_music/genre/Reggae",
+  "name": "Reggae"
+  },
+  {
+  "url": "/browse_music/genre/Kids",
+  "name": "Kids"
+  },
+  {
+  "url": "/browse_music/genre/Travel",
+  "name": "Travel"
+  },
+  {
+  "url": "/browse_music/genre/Funk",
+  "name": "Funk"
+  },
+  {
+  "url": "/browse_music/genre/Focus",
+  "name": "Focus"
+  },
+  {
+  "url": "/browse_music/genre/Music%20Fests",
+  "name": "Music Fests"
+  },
+  {
+  "url": "/browse_music/genre/World%20&%20International",
+  "name": "World & International"
+  },
+  {
+  "url": "/browse_music/genre/Independent",
+  "name": "Independent"
+  },
+  {
+  "url": "/browse_music/genre/New%20Age",
+  "name": "New Age"
+  },
+  {
+  "url": "/browse_music/genre/Decades:%2060's",
+  "name": "Decades: 60's"
+  },
+  {
+  "url": "/browse_music/genre/Decades:%2070's",
+  "name": "Decades: 70's"
+  },
+  {
+  "url": "/browse_music/genre/Decades:%2080's",
+  "name": "Decades: 80's"
+  },
+  {
+  "url": "/browse_music/genre/Decades:%2090's",
+  "name": "Decades: 90's"
+  },
+  {
+  "url": "/browse_music/genre/Decades:%202000's",
+  "name": "Decades: 2000's"
+  },
+  {
+  "url": "/browse_music/genre/Decades:%202010's",
+  "name": "Decades: 2010's"
+  }
+  ],
+  "stations": [
+  {
+  "id": 401391314,
+  "name": "Best of 2020",
+  "blurb": "Check out the tunes that got us through the toughest year yet!",
+  "imgs": [
+  {
+  "url": "https://album1.cdn107.com/7a/b1/7ab1ddf520d920f2bcbe8a83e7196bef_md.jpg",
+  "artist_name": "Taylor Swift's cardigan from folklore Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/59/70/59709b497e1ff781207cbfdbc6117616_md.jpg",
+  "artist_name": "The Weeknd's Blinding Lights from After Hours Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/10/af/10af0da5a0ec5d7381c395aae81286a4_md.jpg",
+  "artist_name": "Trevor Daniel's Falling from Falling Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/54/b9/54b989ea0697c2c92be828d3eb468749_md.jpg",
+  "artist_name": "Justin Bieber's Intentions from Changes Album art"
+  }
+  ],
+  "artists": [
+  {
+  "url": "https://www.jango.com/music/The+Weeknd",
+  "name": "The Weeknd"
+  },
+  {
+  "url": "https://www.jango.com/music/DaBaby",
+  "name": "DaBaby"
+  },
+  {
+  "url": "https://www.jango.com/music/Ariana+Grande",
+  "name": "Ariana Grande"
+  },
+  {
+  "url": "https://www.jango.com/music/Trevor+Daniel",
+  "name": "Trevor Daniel"
+  },
+  {
+  "url": "https://www.jango.com/music/Taylor+Swift",
+  "name": "Taylor Swift"
+  },
+  {
+  "url": "https://www.jango.com/music/Justin+Bieber",
+  "name": "Justin Bieber"
+  },
+  {
+  "url": "https://www.jango.com/music/Harry+Styles",
+  "name": "Ha"
+  }
+  ]
+  },
+  {
+  "id": 263448187,
+  "name": "Today's Top 100",
+  "blurb": "Plays the biggest hits from billboards top 100.",
+  "imgs": [
+  {
+  "url": "https://album1.cdn107.com/07/14/071451a267fb6e5b6f85cabf1de940a9_md.jpg",
+  "artist_name": "Masked Wolf's Astronaut In The Ocean from Astronaut In The Ocean Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/0f/14/0f14243d8c7b6212c75d8f84950788e4_md.jpg",
+  "artist_name": "The Weeknd's Save Your Tears (with Ariana Grande) (Remix) from Save Your Tears (Remix) - Single Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/50/7d/507dfa6ce9142f08d78ae4f75befb6cf_md.jpg",
+  "artist_name": "Bruno Mars's Leave The Door Open from Leave The Door Open - Single Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/51/b9/51b93787133028bb54c4ba7b5df4bdda_md.jpg",
+  "artist_name": "Doja Cat's Kiss Me More (feat. SZA) from Planet Her Album art"
+  }
+  ],
+  "artists": [
+  {
+  "url": "https://www.jango.com/music/The+Weeknd",
+  "name": "The Weeknd"
+  },
+  {
+  "url": "https://www.jango.com/music/Bruno+Mars",
+  "name": "Bruno Mars"
+  },
+  {
+  "url": "https://www.jango.com/music/Dua+Lipa",
+  "name": "Dua Lipa"
+  },
+  {
+  "url": "https://www.jango.com/music/Doja+Cat",
+  "name": "Doja Cat"
+  },
+  {
+  "url": "https://www.jango.com/music/Polo+G",
+  "name": "Polo G"
+  },
+  {
+  "url": "https://www.jango.com/music/Masked+Wolf",
+  "name": "Masked Wolf"
+  },
+  {
+  "url": "https://www.jango.com/music/The+Kid+LAROI",
+  "name": "The Kid LAROI"
+  },
+  {
+  "url": "https://www.jango.com/music/Lil+Nas+X",
+  "name": "L"
+  }
+  ]
+  },
+  {
+  "id": 397867344,
+  "name": "Top Hits of Today",
+  "blurb": "Always keeping you up to date on the hottest hits",
+  "imgs": [
+  {
+  "url": "https://album1.cdn107.com/dc/4c/dc4ce92bbc25aa3e39e1685976e72a1f_md.jpg",
+  "artist_name": "Lil Nas X's MONTERO (Call Me By Your Name) from MONTERO (Call Me By Your Name) - EP Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/c4/b1/c4b11869f44f43043b1f2b3f34172164_md.jpg",
+  "artist_name": "Olivia Rodrigo's good 4 u from SOUR Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/62/91/6291f567779458f66469579aaaa65b3c_md.jpg",
+  "artist_name": "Dua Lipa's Levitating (feat. DaBaby) from Future Nostalgia (The Moonlight Edition) Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/f4/1b/f41b57cd9cfd9ad8ba8fdaf5ef41fe7c_md.jpg",
+  "artist_name": "Billie Eilish's Lost Cause from Happier Than Ever Album art"
+  }
+  ],
+  "artists": [
+  {
+  "url": "https://www.jango.com/music/Dua+Lipa",
+  "name": "Dua Lipa"
+  },
+  {
+  "url": "https://www.jango.com/music/Doja+Cat",
+  "name": "Doja Cat"
+  },
+  {
+  "url": "https://www.jango.com/music/Olivia+Rodrigo",
+  "name": "Olivia Rodrigo"
+  },
+  {
+  "url": "https://www.jango.com/music/Billie+Eilish",
+  "name": "Billie Eilish"
+  },
+  {
+  "url": "https://www.jango.com/music/Lil+Nas+X",
+  "name": "Lil Nas X"
+  },
+  {
+  "url": "https://www.jango.com/music/Rauw+Alejandro",
+  "name": "Rauw Alejandro"
+  },
+  {
+  "url": "https://www.jango.com/music/The+Weeknd",
+  "name": "The"
+  }
+  ]
+  },
+  {
+  "id": 361346219,
+  "name": "Today's Top 100 (Clean)",
+  "blurb": "Plays an edited version of our \"today's top 100\"",
+  "imgs": [
+  {
+  "url": "https://album1.cdn107.com/c4/b1/c4b11869f44f43043b1f2b3f34172164_md.jpg",
+  "artist_name": "Olivia Rodrigo's good 4 u (Clean) from SOUR Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/c4/b1/c4b11869f44f43043b1f2b3f34172164_md.jpg",
+  "artist_name": "Olivia Rodrigo's deja vu (Clean) from SOUR Album art"
+  },
+  {
+  "url": "https://artist1.cdn107.com/60e/60edadd136cbab61d805dd1e2435d17a_md.jpg",
+  "artist_name": "Lil Nas X"
+  },
+  {
+  "url": "https://artist1.cdn107.com/968/9682812813565260f2fb64ae0ef3eaf8_md.jpg",
+  "artist_name": "Olivia Rodrigo"
+  }
+  ],
+  "artists": [
+  {
+  "url": "https://www.jango.com/music/BTS",
+  "name": "BTS"
+  },
+  {
+  "url": "https://www.jango.com/music/Olivia+Rodrigo",
+  "name": "Olivia Rodrigo"
+  },
+  {
+  "url": "https://www.jango.com/music/Dua+Lipa",
+  "name": "Dua Lipa"
+  },
+  {
+  "url": "https://www.jango.com/music/Bruno+Mars",
+  "name": "Bruno Mars"
+  },
+  {
+  "url": "https://www.jango.com/music/Justin+Bieber",
+  "name": "Justin Bieber"
+  },
+  {
+  "url": "https://www.jango.com/music/The+Weeknd",
+  "name": "The Weeknd"
+  },
+  {
+  "url": "https://www.jango.com/music/Doja+Cat",
+  "name": "Doja Cat"
+  },
+  {
+  "url": "https://www.jango.com/music/Masked+Wolf",
+  "name": "M"
+  }
+  ]
+  },
+  {
+  "id": 399063352,
+  "name": "Top Pop Hits",
+  "blurb": "Tune into today's top pop artist.",
+  "imgs": [
+  {
+  "url": "https://album1.cdn107.com/d9/c7/d9c79862a98d0f6dbf23b24c0eef4a2c_md.jpg",
+  "artist_name": "Dua Lipa's Don't Start Now from Don't Start Now - Single Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/9b/5f/9b5f62ecd2b37f4381f8822b85b390df_md.jpg",
+  "artist_name": "Roddy Ricch's The Box from Please Excuse Me For Being Antisocial Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/89/b4/89b4c4cd77a893bec2c8cb4933232a22_md.jpg",
+  "artist_name": "Doja Cat's Say So from Hot Pink Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/22/30/2230cecc73ff612468d04b31bc084fbd_md.jpg",
+  "artist_name": "Lady Gaga's Stupid Love from Stupid Love Album art"
+  }
+  ],
+  "artists": [
+  {
+  "url": "https://www.jango.com/music/The+Weeknd",
+  "name": "The Weeknd"
+  },
+  {
+  "url": "https://www.jango.com/music/Lady+Gaga",
+  "name": "Lady Gaga"
+  },
+  {
+  "url": "https://www.jango.com/music/Dua+Lipa",
+  "name": "Dua Lipa"
+  },
+  {
+  "url": "https://www.jango.com/music/Justin+Bieber",
+  "name": "Justin Bieber"
+  },
+  {
+  "url": "https://www.jango.com/music/Doja+Cat",
+  "name": "Doja Cat"
+  },
+  {
+  "url": "https://www.jango.com/music/Roddy+Ricch",
+  "name": "Roddy Ricch"
+  },
+  {
+  "url": "https://www.jango.com/music/Trevor+Daniel",
+  "name": "Trevor Dan"
+  }
+  ]
+  },
+  {
+  "id": 319639266,
+  "name": "Hot Rap",
+  "blurb": "Plays the hottest rap songs of today.",
+  "imgs": [
+  {
+  "url": "https://album1.cdn107.com/4a/be/4abef88bba273aaa0b09152973b6f8e7_md.jpg",
+  "artist_name": "DJ Khaled's EVERY CHANCE I GET (feat. Lil Baby & Lil Durk) from KHALED KHALED Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/1e/d7/1ed72c47fcc983f6352cf5c8951060de_md.jpg",
+  "artist_name": "Drake's Wants and Needs (feat. Lil Baby) from Scary Hours 2 Album art"
+  },
+  {
+  "url": "https://artist1.cdn107.com/04f/04f6e2a124eca3455972bdc314935738_md.jpg",
+  "artist_name": "Lil Tjay"
+  },
+  {
+  "url": "https://artist1.cdn107.com/ca1/ca15a85d6977d1229e1cddcd0ed0cd05_md.jpg",
+  "artist_name": "Trippie Redd"
+  }
+  ],
+  "artists": [
+  {
+  "url": "https://www.jango.com/music/Lil+Tecca",
+  "name": "Lil Tecca"
+  },
+  {
+  "url": "https://www.jango.com/music/Roddy+Ricch",
+  "name": "Roddy Ricch"
+  },
+  {
+  "url": "https://www.jango.com/music/Polo+G",
+  "name": "Polo G"
+  },
+  {
+  "url": "https://www.jango.com/music/Young+Stoner+Life",
+  "name": "Young Stoner Life"
+  },
+  {
+  "url": "https://www.jango.com/music/DJ+Khaled",
+  "name": "DJ Khaled"
+  },
+  {
+  "url": "https://www.jango.com/music/Drake",
+  "name": "Drake"
+  },
+  {
+  "url": "https://www.jango.com/music/Lil+Tjay",
+  "name": "Lil Tjay"
+  },
+  {
+  "url": "https://www.jango.com/music/Migos",
+  "name": "Mi"
+  }
+  ]
+  },
+  {
+  "id": 339129795,
+  "name": "Hot Hip Hop & R&B",
+  "blurb": "Where r&b comes to play with hip hop! tune into the hottest hip hop & r&b songs.",
+  "imgs": [
+  {
+  "url": "https://album1.cdn107.com/fd/4c/fd4c4dbd0186ef6665f44d04e6a9fab6_md.jpg",
+  "artist_name": "Chris Brown's Go Crazy from Slime & B Album art"
+  },
+  {
+  "url": "https://artist1.cdn107.com/e4e/e4e7720871973441d3a64f95990bed76_md.jpg",
+  "artist_name": "RIMON"
+  },
+  {
+  "url": "https://artist1.cdn107.com/014/0140c6931af019244e5b5e7c4801498e_md.jpg",
+  "artist_name": "Masego"
+  },
+  {
+  "url": "https://artist1.cdn107.com/a0d/a0d44da1e2b529524a03f519d6bdc308_md.jpg",
+  "artist_name": "Tory Lanez"
+  }
+  ],
+  "artists": [
+  {
+  "url": "https://www.jango.com/music/Tory+Lanez",
+  "name": "Tory Lanez"
+  },
+  {
+  "url": "https://www.jango.com/music/Partynextdoor",
+  "name": "Partynextdoor"
+  },
+  {
+  "url": "https://www.jango.com/music/Koffee",
+  "name": "Koffee"
+  },
+  {
+  "url": "https://www.jango.com/music/Jhene+Aiko",
+  "name": "Jhené Aiko"
+  },
+  {
+  "url": "https://www.jango.com/music/Chris+Brown",
+  "name": "Chris Brown"
+  },
+  {
+  "url": "https://www.jango.com/music/dvsn",
+  "name": "dvsn"
+  },
+  {
+  "url": "https://www.jango.com/music/Chloe+x+Halle",
+  "name": "Chloe x Halle"
+  }
+  ]
+  },
+  {
+  "id": 263448190,
+  "name": "Hot Country",
+  "blurb": "Crack open a nice cold beer and listen to the hottest country songs of today.",
+  "imgs": [
+  {
+  "url": "https://album1.cdn107.com/97/77/977721dde385145909a7a4f06f410de4_md.jpg",
+  "artist_name": "Chris Stapleton's You Should Probably Leave from Starting Over Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/11/0f/110f72ef503f8db13c1991a46bfa872c_md.jpg",
+  "artist_name": "Dylan Scott's Nobody from Nothing To Do Town Album art"
+  },
+  {
+  "url": "https://artist1.cdn107.com/c3d/c3dd2b8576d214599a5b23fda059431e_md.jpg",
+  "artist_name": "Lee Brice"
+  },
+  {
+  "url": "https://artist1.cdn107.com/9b0/9b0a3260a97ce37aa872d4e2d1edfbce_md.jpg",
+  "artist_name": "Chris Stapleton"
+  }
+  ],
+  "artists": [
+  {
+  "url": "https://www.jango.com/music/Brett+Young",
+  "name": "Brett Young"
+  },
+  {
+  "url": "https://www.jango.com/music/Luke+Combs",
+  "name": "Luke Combs"
+  },
+  {
+  "url": "https://www.jango.com/music/Ryan+Hurd",
+  "name": "Ryan Hurd"
+  },
+  {
+  "url": "https://www.jango.com/music/Chris+Stapleton",
+  "name": "Chris Stapleton"
+  },
+  {
+  "url": "https://www.jango.com/music/Lainey+Wilson",
+  "name": "Lainey Wilson"
+  },
+  {
+  "url": "https://www.jango.com/music/Dylan+Scott",
+  "name": "Dylan Scott"
+  }
+  ]
+  },
+  {
+  "id": 265138255,
+  "name": "Hot Dance & EDM",
+  "blurb": "Playing the hottest dance and edm songs that'll get you in the mood to move.",
+  "imgs": [
+  {
+  "url": "https://artist1.cdn107.com/04b/04b9a9a83a5ca0ba3c86e29cbb71e8cd_md.jpg",
+  "artist_name": "Illenium"
+  },
+  {
+  "url": "https://artist1.cdn107.com/bc6/bc69d32d2a2adb30bcb6c6b94617a044_md.jpg",
+  "artist_name": "Master KG"
+  },
+  {
+  "url": "https://artist1.cdn107.com/b56/b563bcef3f90fae48e85fb51b038a73c_md.jpg",
+  "artist_name": "Gaullin"
+  },
+  {
+  "url": "https://artist1.cdn107.com/00c/00cc19489a381f89b990fc6a3877c785_md.jpg",
+  "artist_name": "Sonny Fodera"
+  }
+  ],
+  "artists": [
+  {
+  "url": "https://www.jango.com/music/Calvin+Harris",
+  "name": "Calvin Harris"
+  },
+  {
+  "url": "https://www.jango.com/music/Galantis",
+  "name": "Galantis"
+  },
+  {
+  "url": "https://www.jango.com/music/Dragonette",
+  "name": "Dragonette"
+  },
+  {
+  "url": "https://www.jango.com/music/Master+KG",
+  "name": "Master KG"
+  },
+  {
+  "url": "https://www.jango.com/music/Illenium",
+  "name": "Illenium"
+  },
+  {
+  "url": "https://www.jango.com/music/Regard",
+  "name": "Regard"
+  },
+  {
+  "url": "https://www.jango.com/music/SIDEPIECE",
+  "name": "SIDEPIECE"
+  },
+  {
+  "url": "https://www.jango.com/music/Jax+Jones",
+  "name": "Jax"
+  }
+  ]
+  },
+  {
+  "id": 323117799,
+  "name": "Latin's Top Hits",
+  "blurb": "Plays some of your all time favorite and top latin hits.",
+  "imgs": [
+  {
+  "url": "https://artist1.cdn107.com/927/927f1aedb0887f86c1c4d647759dd811_md.jpg",
+  "artist_name": "Los Legendarios"
+  },
+  {
+  "url": "https://artist1.cdn107.com/12a/12aaef6ee85207c8a52b12ca84d2993a_md.jpg",
+  "artist_name": "Sech"
+  },
+  {
+  "url": "https://artist1.cdn107.com/3f6/3f6f06fbe2ce539758f48763ba91bbc0_md.jpg",
+  "artist_name": "Nio Garcia"
+  },
+  {
+  "url": "https://artist1.cdn107.com/eab/eab366f0b4d297eb8dd1d4f17d84d2a9_md.jpg",
+  "artist_name": "Rauw Alejandro"
+  }
+  ],
+  "artists": [
+  {
+  "url": "https://www.jango.com/music/Rauw+Alejandro",
+  "name": "Rauw Alejandro"
+  },
+  {
+  "url": "https://www.jango.com/music/Bad+Bunny",
+  "name": "Bad Bunny"
+  },
+  {
+  "url": "https://www.jango.com/music/Los+Legendarios",
+  "name": "Los Legendarios"
+  },
+  {
+  "url": "https://www.jango.com/music/Luis+Fonsi",
+  "name": "Luis Fonsi"
+  },
+  {
+  "url": "https://www.jango.com/music/Sebastian+Yatra",
+  "name": "Sebastian Yatra"
+  },
+  {
+  "url": "https://www.jango.com/music/Maluma",
+  "name": "Maluma"
+  }
+  ]
+  },
+  {
+  "id": 263448192,
+  "name": "Hot Adult Pop & Rock",
+  "blurb": "Plays today's biggest pop & rock artist of our time.",
+  "imgs": [
+  {
+  "url": "https://album1.cdn107.com/79/86/7986f8b01c020d1b5051ec6b4354a717_md.jpg",
+  "artist_name": "Disturbed's A Reason to Fight from Evolution Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/0a/a2/0aa28f143dc10dec3b5cef41800bc1ae_md.jpg",
+  "artist_name": "Greta Van Fleet's You're The One from Anthem of the Peaceful Army Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/94/06/9406c16823702e7e3b89e4a0d8773291_md.jpg",
+  "artist_name": "Vampire Weekend's Harmony Hall from Harmony Hall / 2021 Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/5c/90/5c909ec42ca846926fa443710ddcc23d_md.jpg",
+  "artist_name": "Walk The Moon's Timebomb from Timebomb Album art"
+  }
+  ],
+  "artists": [
+  {
+  "url": "https://www.jango.com/music/Hollywood+Undead",
+  "name": "Hollywood Undead"
+  },
+  {
+  "url": "https://www.jango.com/music/Ajr",
+  "name": "Ajr"
+  },
+  {
+  "url": "https://www.jango.com/music/Vampire+Weekend",
+  "name": "Vampire Weekend"
+  },
+  {
+  "url": "https://www.jango.com/music/Walk+The+Moon",
+  "name": "Walk The Moon"
+  },
+  {
+  "url": "https://www.jango.com/music/Disturbed",
+  "name": "Disturbed"
+  },
+  {
+  "url": "https://www.jango.com/music/Greta+Van+Fleet",
+  "name": "Greta Van Fleet"
+  }
+  ]
+  },
+  {
+  "id": 349814956,
+  "name": "Hot Pop Remix",
+  "blurb": "Playing the hottest and most current artist of dance pop",
+  "imgs": [
+  {
+  "url": "https://artist1.cdn107.com/fe8/fe8c933f2478bb9534ba57c9ef69ae6d_md.jpg",
+  "artist_name": "Bazzi"
+  },
+  {
+  "url": "https://artist1.cdn107.com/ca1/ca170075dfcd4d8c611ce6547793e35c_md.jpg",
+  "artist_name": "Steve Aoki"
+  },
+  {
+  "url": "https://artist1.cdn107.com/1e3/1e34f411d3bb23f16acba1673cda5c83_md.jpg",
+  "artist_name": "Felix Jaehn"
+  },
+  {
+  "url": "https://artist1.cdn107.com/f7a/f7ae607ace9b32813b5be2019aafe9a7_md.jpg",
+  "artist_name": "Estelle"
+  }
+  ],
+  "artists": [
+  {
+  "url": "https://www.jango.com/music/John+Newman",
+  "name": "John Newman"
+  },
+  {
+  "url": "https://www.jango.com/music/Steve+Aoki",
+  "name": "Steve Aoki"
+  },
+  {
+  "url": "https://www.jango.com/music/Why+Don+t+We",
+  "name": "Why Don&#39;t We"
+  },
+  {
+  "url": "https://www.jango.com/music/Bazzi",
+  "name": "Bazzi"
+  },
+  {
+  "url": "https://www.jango.com/music/The+Weeknd",
+  "name": "The Weeknd"
+  },
+  {
+  "url": "https://www.jango.com/music/Skrillex",
+  "name": "Skrillex"
+  },
+  {
+  "url": "https://www.jango.com/music/Ali+Gatie",
+  "name": "Ali Gatie"
+  }
+  ]
+  },
+  {
+  "id": 400861007,
+  "name": "Working From Home",
+  "blurb": "Enjoy working from the comfort of your home with 8 hours of pure gold.",
+  "imgs": [
+  {
+  "url": "https://album1.cdn107.com/60/c1/60c131d052c01b8173f2bc4bdf9c5215_md.jpg",
+  "artist_name": "Marshmello's Here With Me from Here with Me (Feat. CHVRCHES) - Single Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/cd/c1/cdc1882ad9a4200f2796df83688e681d_md.jpg",
+  "artist_name": "James Arthur's Say You Won't Let Go from Back from the Edge Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/e4/f6/e4f6aaca55fbd25b5f370986c0db3bc0_md.jpg",
+  "artist_name": "Sam Fischer's This City from This City Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/05/85/0585c4a657603eb2e43a7c955d1382a2_md.jpg",
+  "artist_name": "Maroon 5's Memories from Memories - Single Album art"
+  }
+  ],
+  "artists": [
+  {
+  "url": "https://www.jango.com/music/Marshmello",
+  "name": "Marshmello"
+  },
+  {
+  "url": "https://www.jango.com/music/JP+Cooper",
+  "name": "JP Cooper"
+  },
+  {
+  "url": "https://www.jango.com/music/Harry+Styles",
+  "name": "Harry Styles"
+  },
+  {
+  "url": "https://www.jango.com/music/Maroon+5",
+  "name": "Maroon 5"
+  },
+  {
+  "url": "https://www.jango.com/music/James+Arthur",
+  "name": "James Arthur"
+  },
+  {
+  "url": "https://www.jango.com/music/Sam+Fischer",
+  "name": "Sam Fischer"
+  },
+  {
+  "url": "https://www.jango.com/music/Adele",
+  "name": "Adele"
+  }
+  ]
+  },
+  {
+  "id": 276877882,
+  "name": "UK Top Hits",
+  "blurb": "Plays the hottest tracks on the uk top charts.",
+  "imgs": [
+  {
+  "url": "https://album1.cdn107.com/dc/4c/dc4ce92bbc25aa3e39e1685976e72a1f_md.jpg",
+  "artist_name": "Lil Nas X's MONTERO (Call Me By Your Name) from MONTERO (Call Me By Your Name) - EP Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/c4/b1/c4b11869f44f43043b1f2b3f34172164_md.jpg",
+  "artist_name": "Olivia Rodrigo's deja vu from SOUR Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/c4/b1/c4b11869f44f43043b1f2b3f34172164_md.jpg",
+  "artist_name": "Olivia Rodrigo's good 4 u from SOUR Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/c4/b1/c4b11869f44f43043b1f2b3f34172164_md.jpg",
+  "artist_name": "Olivia Rodrigo's traitor from SOUR Album art"
+  }
+  ],
+  "artists": [
+  {
+  "url": "https://www.jango.com/music/Olivia+Rodrigo",
+  "name": "Olivia Rodrigo"
+  },
+  {
+  "url": "https://www.jango.com/music/Doja+Cat",
+  "name": "Doja Cat"
+  },
+  {
+  "url": "https://www.jango.com/music/Lil+Nas+X",
+  "name": "Lil Nas X"
+  },
+  {
+  "url": "https://www.jango.com/music/ArrDee",
+  "name": "ArrDee"
+  },
+  {
+  "url": "https://www.jango.com/music/Dua+Lipa",
+  "name": "Dua Lipa"
+  },
+  {
+  "url": "https://www.jango.com/music/Joel+Corry",
+  "name": "Joel Corry"
+  },
+  {
+  "url": "https://www.jango.com/music/Polo+G",
+  "name": "Polo G"
+  },
+  {
+  "url": "https://www.jango.com/music/The+Weeknd",
+  "name": "The We"
+  }
+  ]
+  },
+  {
+  "id": 401287516,
+  "name": "Black History Salute",
+  "blurb": "Saluting the artists that have filled us with pride",
+  "imgs": [
+  {
+  "url": "https://album1.cdn107.com/04/9e/049ef8df7e0619dadce0aa68e92d38cc_md.jpg",
+  "artist_name": "Black Pumas's Colors from Black Pumas Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/bf/c6/bfc68d94eee64dc0b19cb093da5b780f_md.jpg",
+  "artist_name": "Jamila Woods's Blk Girl Soldier from HEAVN Album art"
+  },
+  {
+  "url": "https://artist1.cdn107.com/371/371a1ec0e70be36da297d8e3e497cbc8_md.jpg",
+  "artist_name": "Saint Cassius"
+  },
+  {
+  "url": "https://artist1.cdn107.com/f69/f6990573796d2d4a9101c3f3063bff44_md.jpg",
+  "artist_name": "Jill Scott"
+  }
+  ],
+  "artists": [
+  {
+  "url": "https://www.jango.com/music/Samm+Henshaw",
+  "name": "Samm Henshaw"
+  },
+  {
+  "url": "https://www.jango.com/music/Black+Pumas",
+  "name": "Black Pumas"
+  },
+  {
+  "url": "https://www.jango.com/music/Jamila+Woods",
+  "name": "Jamila Woods"
+  },
+  {
+  "url": "https://www.jango.com/music/Leslie+Odom+Jr+",
+  "name": "Leslie Odom Jr."
+  },
+  {
+  "url": "https://www.jango.com/music/Anderson+Paak",
+  "name": "Anderson .Paak"
+  },
+  {
+  "url": "https://www.jango.com/music/Royce+Da+5+9+dupe+see+11428+",
+  "name": "Royce D"
+  }
+  ]
+  },
+  {
+  "id": 375261139,
+  "name": "Workday Pop",
+  "blurb": "Perfect mix that will help you cruise through that work day.",
+  "imgs": [
+  {
+  "url": "https://album1.cdn107.com/91/f9/91f96e4ee102841b862c778eec0e5d73_md.jpg",
+  "artist_name": "Selena Gomez's Lose You To Love Me from Rare Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/c7/2f/c72fec634e2a9bdaf26843848598b10a_md.jpg",
+  "artist_name": "Billie Eilish's everything i wanted from everything i wanted - Single Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/d9/c7/d9c79862a98d0f6dbf23b24c0eef4a2c_md.jpg",
+  "artist_name": "Dua Lipa's Don't Start Now from Don't Start Now - Single Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/56/18/561888e7600197cdf8df1fb9f903d917_md.jpg",
+  "artist_name": "Sam Smith's How Do You Sleep? from How Do You Sleep? - Single Album art"
+  }
+  ],
+  "artists": [
+  {
+  "url": "https://www.jango.com/music/Goldfish",
+  "name": "Goldfish"
+  },
+  {
+  "url": "https://www.jango.com/music/Post+Malone",
+  "name": "Post Malone"
+  },
+  {
+  "url": "https://www.jango.com/music/Sam+Smith",
+  "name": "Sam Smith"
+  },
+  {
+  "url": "https://www.jango.com/music/Dua+Lipa",
+  "name": "Dua Lipa"
+  },
+  {
+  "url": "https://www.jango.com/music/Billie+Eilish",
+  "name": "Billie Eilish"
+  },
+  {
+  "url": "https://www.jango.com/music/Selena+Gomez",
+  "name": "Selena Gomez"
+  },
+  {
+  "url": "https://www.jango.com/music/Stormzy",
+  "name": "Stormzy"
+  }
+  ]
+  },
+  {
+  "id": 400529559,
+  "name": "Best of 2019",
+  "blurb": "Tune into the best hits of 2019",
+  "imgs": [
+  {
+  "url": "https://album1.cdn107.com/a1/cb/a1cbb15b53aad29cc57e18c21028a7c0_md.jpg",
+  "artist_name": "Drake's Money In The Grave (Drake ft. Rick Ross) from The Best in the World Pack Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/65/0a/650adcad24f3e4977b5ba8ab10a49551_md.jpg",
+  "artist_name": "Post Malone's Wow. from Wow. (Single) Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/6d/38/6d3804f14481a123c218b9ebc46b3b9a_md.jpg",
+  "artist_name": "Billie Eilish's bad guy (with Justin Bieber) from bad guy - Single Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/6f/e0/6fe0a5146b24cd9a6f365582a98bb7c1_md.jpg",
+  "artist_name": "J. Cole's MIDDLE CHILD from MIDDLE CHILD Album art"
+  }
+  ],
+  "artists": [
+  {
+  "url": "https://www.jango.com/music/Billie+Eilish",
+  "name": "Billie Eilish"
+  },
+  {
+  "url": "https://www.jango.com/music/J+Cole",
+  "name": "J. Cole"
+  },
+  {
+  "url": "https://www.jango.com/music/Jonas+Brothers",
+  "name": "Jonas Brothers"
+  },
+  {
+  "url": "https://www.jango.com/music/Drake",
+  "name": "Drake"
+  },
+  {
+  "url": "https://www.jango.com/music/Ed+Sheeran",
+  "name": "Ed Sheeran"
+  },
+  {
+  "url": "https://www.jango.com/music/Post+Malone",
+  "name": "Post Malone"
+  },
+  {
+  "url": "https://www.jango.com/music/Selena+Gomez",
+  "name": "Selena Go"
+  }
+  ]
+  },
+  {
+  "id": 361643959,
+  "name": "Workout Hits",
+  "blurb": "Plays some of the hottest upbeat hits that'll keep your work out going",
+  "imgs": [
+  {
+  "url": "https://album1.cdn107.com/59/70/59709b497e1ff781207cbfdbc6117616_md.jpg",
+  "artist_name": "The Weeknd's Blinding Lights from After Hours Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/d9/c7/d9c79862a98d0f6dbf23b24c0eef4a2c_md.jpg",
+  "artist_name": "Dua Lipa's Don't Start Now from Don't Start Now - Single Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/cc/25/cc253683829cd00acd2edbcbef899750_md.jpg",
+  "artist_name": "Gryffin's Need Your Love (with Noah Kahan) from Gravity Album art"
+  },
+  {
+  "url": "https://artist1.cdn107.com/93d/93df3b4dce2f7b175985a4f9b24edde9_md.jpg",
+  "artist_name": "Tones and I"
+  }
+  ],
+  "artists": [
+  {
+  "url": "https://www.jango.com/music/Bastille",
+  "name": "Bastille"
+  },
+  {
+  "url": "https://www.jango.com/music/Young+Bombs",
+  "name": "Young Bombs"
+  },
+  {
+  "url": "https://www.jango.com/music/R3hab",
+  "name": "R3hab"
+  },
+  {
+  "url": "https://www.jango.com/music/Gryffin",
+  "name": "Gryffin"
+  },
+  {
+  "url": "https://www.jango.com/music/The+Weeknd",
+  "name": "The Weeknd"
+  },
+  {
+  "url": "https://www.jango.com/music/Dua+Lipa",
+  "name": "Dua Lipa"
+  },
+  {
+  "url": "https://www.jango.com/music/Martin+Garrix",
+  "name": "Martin Garrix"
+  },
+  {
+  "url": "https://www.jango.com/music/Sam+Smith",
+  "name": "Sam S"
+  }
+  ]
+  },
+  {
+  "id": 399286358,
+  "name": "TGIF",
+  "blurb": "Get the weekend started with the hottest artist around.",
+  "imgs": [
+  {
+  "url": "https://artist1.cdn107.com/60e/60edadd136cbab61d805dd1e2435d17a_md.jpg",
+  "artist_name": "Lil Nas X"
+  },
+  {
+  "url": "https://artist1.cdn107.com/85f/85f2a5ef803f9a806d3eea6d181457f7_md.jpg",
+  "artist_name": "Katy Perry"
+  },
+  {
+  "url": "https://artist1.cdn107.com/126/126641586b0d83f21c5cdb27e7f0e633_md.jpg",
+  "artist_name": "Wiz Khalifa"
+  },
+  {
+  "url": "https://artist1.cdn107.com/1cf/1cf35624805e053c70357b1496b7f248_md.jpg",
+  "artist_name": "Jolyon Petch"
+  }
+  ],
+  "artists": [
+  {
+  "url": "https://www.jango.com/music/Masked+Wolf",
+  "name": "Masked Wolf"
+  },
+  {
+  "url": "https://www.jango.com/music/Wiz+Khalifa",
+  "name": "Wiz Khalifa"
+  },
+  {
+  "url": "https://www.jango.com/music/ATB",
+  "name": "ATB"
+  },
+  {
+  "url": "https://www.jango.com/music/Galantis",
+  "name": "Galantis"
+  },
+  {
+  "url": "https://www.jango.com/music/Jolyon+Petch",
+  "name": "Jolyon Petch"
+  },
+  {
+  "url": "https://www.jango.com/music/Steve+Aoki",
+  "name": "Steve Aoki"
+  },
+  {
+  "url": "https://www.jango.com/music/OneRepublic",
+  "name": "OneRepublic"
+  },
+  {
+  "url": "https://www.jango.com/music/Joel+Corry",
+  "name": "J"
+  }
+  ]
+  },
+  {
+  "id": 336593253,
+  "name": "Chart Topping 200",
+  "blurb": "Plays a range of hits from current artists appearing on today's pop charts.",
+  "imgs": [
+  {
+  "url": "https://album1.cdn107.com/6d/82/6d8221765264df6ee145dd9f20a2f66a_md.jpg",
+  "artist_name": "Demi Lovato's Sober from Sober Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/4c/6a/4c6af5f433077836fe7303d95c3cecc8_md.jpg",
+  "artist_name": "Kygo's Born To Be Yours (feat. Imagine Dragons) from Born To Be Yours - Single Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/09/01/0901198c46c1885d9eca1a427ad20ca2_md.jpg",
+  "artist_name": "Panic! At The Disco's Say Amen (Saturday Night) from Pray For the Wicked Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/c0/04/c004924f380e2dbe710587ad66f88150_md.jpg",
+  "artist_name": "Nicki Minaj's Bed (feat. Ariana Grande) from Queen Album art"
+  }
+  ],
+  "artists": [
+  {
+  "url": "https://www.jango.com/music/Panic+At+The+Disco",
+  "name": "Panic! At The Disco"
+  },
+  {
+  "url": "https://www.jango.com/music/Nicki+Minaj",
+  "name": "Nicki Minaj"
+  },
+  {
+  "url": "https://www.jango.com/music/The+Carters",
+  "name": "The Carters"
+  },
+  {
+  "url": "https://www.jango.com/music/Kygo",
+  "name": "Kygo"
+  },
+  {
+  "url": "https://www.jango.com/music/KIDS+SEE+GHOSTS",
+  "name": "KIDS SEE GHOSTS"
+  },
+  {
+  "url": "https://www.jango.com/music/Gorillaz",
+  "name": "Gorillaz"
+  },
+  {
+  "url": "https://www.jango.com/music/Kanye+West",
+  "name": "K"
+  }
+  ]
+  },
+  {
+  "id": 268802010,
+  "name": "Easy Listening",
+  "blurb": "Plays your perfect mix of smooth and easy music.",
+  "imgs": [
+  {
+  "url": "https://album1.cdn107.com/10/31/103123e85e4cd717c55df44dd80a47b2_md.jpg",
+  "artist_name": "Drax Project's Woke Up Late (feat. Hailee Steinfeld) from Woke Up Late (feat. Hailee Steinfeld) - Single Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/79/9f/799f908162a63f14072c945625ff55c8_md.jpg",
+  "artist_name": "Post Malone's Circles from Hollywood's Bleeding Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/75/c0/75c049b6b9cdbba4e6046539e177e27f_md.jpg",
+  "artist_name": "Miley Cyrus's Slide Away from Slide Away - Single Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/46/df/46dfa9e1963fec52e90dc998ce5b8dba_md.jpg",
+  "artist_name": "Tones and I's Never Seen the Rain from The Kids are Coming Album art"
+  }
+  ],
+  "artists": [
+  {
+  "url": "https://www.jango.com/music/Post+Malone",
+  "name": "Post Malone"
+  },
+  {
+  "url": "https://www.jango.com/music/Tones+and+I",
+  "name": "Tones and I"
+  },
+  {
+  "url": "https://www.jango.com/music/Miley+Cyrus",
+  "name": "Miley Cyrus"
+  },
+  {
+  "url": "https://www.jango.com/music/Freya+Ridings",
+  "name": "Freya Ridings"
+  },
+  {
+  "url": "https://www.jango.com/music/Drax+Project",
+  "name": "Drax Project"
+  },
+  {
+  "url": "https://www.jango.com/music/Lauv",
+  "name": "Lauv"
+  },
+  {
+  "url": "https://www.jango.com/music/Maroon+5",
+  "name": "Maroon"
+  }
+  ]
+  },
+  {
+  "id": 375153566,
+  "name": "Teen Pop",
+  "blurb": "Plays every teens favorite pop music!",
+  "imgs": [
+  {
+  "url": "https://album1.cdn107.com/93/96/9396c642f81a36772a4195c1d26e3465_md.jpg",
+  "artist_name": "Rita Ora's Only Want You from Phoenix (Deluxe) [Explicit] Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/f7/bd/f7bd6deee8ba1589212e911f4ecb082f_md.jpg",
+  "artist_name": "Sabrina Carpenter's Sue Me from Sue Me (Remixes) - EP Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/68/b1/68b1c46d0e36df5351e02b4ad2300e1e_md.jpg",
+  "artist_name": "DJ Khaled's No Brainer (feat. Justin Bieber, Quavo & Chance the Rapper) from No Brainer (Feat. Justin Bieber, Chance the Rapper & Quavo) Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/ee/56/ee5614ea9379c817bc83a89045211698_md.jpg",
+  "artist_name": "5 Seconds Of Summer's Youngblood from Youngblood (Deluxe) Album art"
+  }
+  ],
+  "artists": [
+  {
+  "url": "https://www.jango.com/music/Jennifer+Lopez",
+  "name": "Jennifer Lopez"
+  },
+  {
+  "url": "https://www.jango.com/music/Rita+Ora",
+  "name": "Rita Ora"
+  },
+  {
+  "url": "https://www.jango.com/music/DJ+Khaled",
+  "name": "DJ Khaled"
+  },
+  {
+  "url": "https://www.jango.com/music/5+Seconds+Of+Summer",
+  "name": "5 Seconds Of Summer"
+  },
+  {
+  "url": "https://www.jango.com/music/James+Arthur",
+  "name": "James Arthur"
+  },
+  {
+  "url": "https://www.jango.com/music/Sabrina+Carpenter",
+  "name": "Sabrina C"
+  }
+  ]
+  },
+  {
+  "id": 397521132,
+  "name": "Ultimate Workout Mix",
+  "blurb": "Plays an extensive collection of energetic and uptempo songs.",
+  "imgs": [
+  {
+  "url": "https://album1.cdn107.com/db/83/db83c6f07a1ac39516c1b8e84185bbb4_md.jpg",
+  "artist_name": "Galantis's Holy Water from Church Album art"
+  },
+  {
+  "url": "https://artist1.cdn107.com/fc9/fc91ccfb68f1f597ce6926b6b43b5ce8_md.jpg",
+  "artist_name": "Armin van Buuren"
+  },
+  {
+  "url": "https://artist1.cdn107.com/ca1/ca170075dfcd4d8c611ce6547793e35c_md.jpg",
+  "artist_name": "Steve Aoki"
+  },
+  {
+  "url": "https://artist1.cdn107.com/dc7/dc769fd4c754744a1eb189571c2ccb63_md.jpg",
+  "artist_name": "Becky Hill"
+  }
+  ],
+  "artists": [
+  {
+  "url": "https://www.jango.com/music/Galantis",
+  "name": "Galantis"
+  },
+  {
+  "url": "https://www.jango.com/music/Becky+Hill",
+  "name": "Becky Hill"
+  },
+  {
+  "url": "https://www.jango.com/music/Don+Diablo",
+  "name": "Don Diablo"
+  },
+  {
+  "url": "https://www.jango.com/music/Kaskade",
+  "name": "Kaskade"
+  },
+  {
+  "url": "https://www.jango.com/music/Zara+Larsson",
+  "name": "Zara Larsson"
+  },
+  {
+  "url": "https://www.jango.com/music/Sam+Feldt",
+  "name": "Sam Feldt"
+  },
+  {
+  "url": "https://www.jango.com/music/Cheat+Codes",
+  "name": "Cheat Codes"
+  }
+  ]
+  },
+  {
+  "id": 371115759,
+  "name": "Mood Boosting Hits",
+  "blurb": "Need a mood boost?  listen to these upbeat songs and they'll be sure to put a smile on your face.",
+  "imgs": [
+  {
+  "url": "https://album1.cdn107.com/12/08/1208ccf5cd55f65bd067386965dfd07e_md.jpg",
+  "artist_name": "Drax Project's Catching Feelings (feat. SIX60) from Drax Project Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/de/f2/def247bd943d3965fbf62f1d8e615baa_md.jpg",
+  "artist_name": "Kygo's Higher Love from Higher Love - Single (with Whitney Houston) Album art"
+  },
+  {
+  "url": "https://artist1.cdn107.com/93d/93df3b4dce2f7b175985a4f9b24edde9_md.jpg",
+  "artist_name": "Tones and I"
+  },
+  {
+  "url": "https://artist1.cdn107.com/e17/e17ca93366f4b0b5b9fe5a3348b5fd04_md.jpg",
+  "artist_name": "Gryffin"
+  }
+  ],
+  "artists": [
+  {
+  "url": "https://www.jango.com/music/Labrinth",
+  "name": "Labrinth"
+  },
+  {
+  "url": "https://www.jango.com/music/Drax+Project",
+  "name": "Drax Project"
+  },
+  {
+  "url": "https://www.jango.com/music/R3hab",
+  "name": "R3hab"
+  },
+  {
+  "url": "https://www.jango.com/music/Bastille",
+  "name": "Bastille"
+  },
+  {
+  "url": "https://www.jango.com/music/X+Ambassadors",
+  "name": "X Ambassadors"
+  },
+  {
+  "url": "https://www.jango.com/music/Kygo",
+  "name": "Kygo"
+  },
+  {
+  "url": "https://www.jango.com/music/The+Chainsmokers",
+  "name": "The Chainsmokers"
+  },
+  {
+  "url": "https://www.jango.com/music/Dua+Lipa",
+  "name": "D"
+  }
+  ]
+  },
+  {
+  "id": 253933216,
+  "name": "Classic Rock",
+  "blurb": "Plays tracks from the biggest rock bands of all time.",
+  "imgs": [
+  {
+  "url": "https://album1.cdn107.com/f2/df/f2df484010f7020bef9d90fde0984c1f_md.jpg",
+  "artist_name": "Thin Lizzy's The Boys Are Back in Town from The Definitive Collection Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/47/38/47383dd2bff1a574260a603bee9bb234_md.jpg",
+  "artist_name": "Creedence Clearwater Revival's Down on the Corner from Platinum Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/f9/13/f913b190d238c6a91c39f9b634b807e8_md.jpg",
+  "artist_name": "Kansas's Carry On Wayward Son from The Best Of Kansas Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/d4/31/d43121ce88cb791982c18ee31cb575d0_md.jpg",
+  "artist_name": "Black Sabbath's Paranoid (Live) from Live At Last Album art"
+  }
+  ],
+  "artists": [
+  {
+  "url": "https://www.jango.com/music/Thin+Lizzy",
+  "name": "Thin Lizzy"
+  },
+  {
+  "url": "https://www.jango.com/music/Kansas",
+  "name": "Kansas"
+  },
+  {
+  "url": "https://www.jango.com/music/Black+Sabbath",
+  "name": "Black Sabbath"
+  },
+  {
+  "url": "https://www.jango.com/music/Pink+Floyd",
+  "name": "Pink Floyd"
+  },
+  {
+  "url": "https://www.jango.com/music/The+Marshall+Tucker+Band",
+  "name": "The Marshall Tucker Band"
+  },
+  {
+  "url": "https://www.jango.com/music/Supertramp",
+  "name": "Supertra"
+  }
+  ]
+  },
+  {
+  "id": 266643968,
+  "name": "Relaxing Piano",
+  "blurb": "Plays classical and modern piano music.",
+  "imgs": [
+  {
+  "url": "https://album1.cdn107.com/d1/cb/d1cbc03fc7403cc07a861dc01a6acc50_md.jpg",
+  "artist_name": "Firstnighter's Davvi Plays from 100 words for fear Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/84/b9/84b9ed86fb0f993e5d43ccde9a32779c_md.jpg",
+  "artist_name": "Aaron Lansing's Arctic Tern from Arctic Tern Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/fc/26/fc260622e1ee817fddb6d9fdc78a2deb_md.jpg",
+  "artist_name": "Saeko Seki's Aoyama Bochi from Aoyama Bochi Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/b5/80/b58027aee45e0ed28eb8aaf076e0a9a4_md.jpg",
+  "artist_name": "Max Swan's After The Rain from After The Rain Album art"
+  }
+  ],
+  "artists": [
+  {
+  "url": "https://www.jango.com/music/Aaron+Lansing",
+  "name": "Aaron Lansing"
+  },
+  {
+  "url": "https://www.jango.com/music/Dirk+Maassen",
+  "name": "Dirk Maassen"
+  },
+  {
+  "url": "https://www.jango.com/music/Max+Swan",
+  "name": "Max Swan"
+  },
+  {
+  "url": "https://www.jango.com/music/Saeko+Seki",
+  "name": "Saeko Seki"
+  },
+  {
+  "url": "https://www.jango.com/music/Firstnighter",
+  "name": "Firstnighter"
+  },
+  {
+  "url": "https://www.jango.com/music/Joep+Beving",
+  "name": "Joep Beving"
+  },
+  {
+  "url": "https://www.jango.com/music/Alex+Kozobolis",
+  "name": "Ale"
+  }
+  ]
+  },
+  {
+  "id": 253933125,
+  "name": "Pop Rock",
+  "blurb": "Tune into the pop rock songs of today!",
+  "imgs": [
+  {
+  "url": "https://album1.cdn107.com/52/0e/520e4c5dc05d8ff6c015f0afe61423f5_md.jpg",
+  "artist_name": "Machine Gun Kelly's forget me too (feat. Halsey) from Tickets To My Downfall Album art"
+  },
+  {
+  "url": "https://artist1.cdn107.com/1f2/1f26cf52f7b489770db9cdec2f7db9e6_md.jpg",
+  "artist_name": "Girl Wilde"
+  },
+  {
+  "url": "https://artist1.cdn107.com/bc8/bc8e7b9f0db3fb0cc6c3d70e998c05c8_md.jpg",
+  "artist_name": "grandson"
+  },
+  {
+  "url": "https://artist1.cdn107.com/ecc/ecc534ad111a621912677e3da3abbb8e_md.jpg",
+  "artist_name": "American Authors"
+  }
+  ],
+  "artists": [
+  {
+  "url": "https://www.jango.com/music/Bad+Suns",
+  "name": "Bad Suns"
+  },
+  {
+  "url": "https://www.jango.com/music/Bishop+Briggs",
+  "name": "Bishop Briggs"
+  },
+  {
+  "url": "https://www.jango.com/music/MAGIC+GIANT",
+  "name": "MAGIC GIANT"
+  },
+  {
+  "url": "https://www.jango.com/music/Machine+Gun+Kelly",
+  "name": "Machine Gun Kelly"
+  },
+  {
+  "url": "https://www.jango.com/music/grandson",
+  "name": "grandson"
+  },
+  {
+  "url": "https://www.jango.com/music/NEFFEX",
+  "name": "NEFFEX"
+  },
+  {
+  "url": "https://www.jango.com/music/Smallpools",
+  "name": "Smallp"
+  }
+  ]
+  },
+  {
+  "id": 399109705,
+  "name": "New Rock Hits",
+  "blurb": "Jam out to the latest rock songs and artist of today.",
+  "imgs": [
+  {
+  "url": "https://album1.cdn107.com/8e/a5/8ea5add1f40d066ff9434f93a9cb8df5_md.jpg",
+  "artist_name": "You Me at Six's Our House (The Mess We Made) from Our House (The Mess We Made) Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/64/69/6469081334cd39737cba83d640498a15_md.jpg",
+  "artist_name": "Palaye Royale's Lonely from The Bastards Album art"
+  },
+  {
+  "url": "https://artist1.cdn107.com/0c6/0c6d7baa7fe0b006d9c0b92381444f4e_md.jpg",
+  "artist_name": "Asking Alexandria"
+  },
+  {
+  "url": "https://artist1.cdn107.com/fd2/fd2152f46b6c8232f2a6809d7e590053_md.jpg",
+  "artist_name": "The Killers"
+  }
+  ],
+  "artists": [
+  {
+  "url": "https://www.jango.com/music/Asking+Alexandria",
+  "name": "Asking Alexandria"
+  },
+  {
+  "url": "https://www.jango.com/music/You+Me+at+Six",
+  "name": "You Me at Six"
+  },
+  {
+  "url": "https://www.jango.com/music/Weezer",
+  "name": "Weezer"
+  },
+  {
+  "url": "https://www.jango.com/music/The+Pretty+Reckless",
+  "name": "The Pretty Reckless"
+  },
+  {
+  "url": "https://www.jango.com/music/Bush",
+  "name": "Bush"
+  },
+  {
+  "url": "https://www.jango.com/music/Palaye+Royale",
+  "name": "Palaye Royal"
+  }
+  ]
+  },
+  {
+  "id": 253933285,
+  "name": "Hits from the 80s",
+  "blurb": "Plays the top hits from\r\nthe biggest artists of\r\nthe 80's.",
+  "imgs": [
+  {
+  "url": "https://album1.cdn107.com/af/c4/afc49781e4a9f76b8953e86d3ebe72f3_md.jpg",
+  "artist_name": "Eddy Grant's Romancing The Stone from The Greatest Hits Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/3f/ec/3fec0b6748ae198a92ac5d9ba48585f2_md.jpg",
+  "artist_name": "Eurythmics's Sweet Dreams (Are Made of This) from Greatest Hits Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/14/d7/14d7188f7c02a67b6a73daa9fde27b1d_md.jpg",
+  "artist_name": "Rockwell's Somebody's Watching Me from The Millennium Collection: The Best of Motown '80s, Vol. 1 Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/09/ad/09ad170615ebfe3f586b92423961b282_md.jpg",
+  "artist_name": "Madonna's Live to Tell from The Immaculate Collection Album art"
+  }
+  ],
+  "artists": [
+  {
+  "url": "https://www.jango.com/music/Sananda+Maitreya",
+  "name": "Sananda Maitreya"
+  },
+  {
+  "url": "https://www.jango.com/music/Rockwell",
+  "name": "Rockwell"
+  },
+  {
+  "url": "https://www.jango.com/music/Eddy+Grant",
+  "name": "Eddy Grant"
+  },
+  {
+  "url": "https://www.jango.com/music/George+Michael",
+  "name": "George Michael"
+  },
+  {
+  "url": "https://www.jango.com/music/Glass+Tiger",
+  "name": "Glass Tiger"
+  },
+  {
+  "url": "https://www.jango.com/music/Fleetwood+Mac",
+  "name": "Fleetwood Ma"
+  }
+  ]
+  },
+  {
+  "id": 273685649,
+  "name": "Gospel",
+  "blurb": "Plays the best gospel and worship music.",
+  "imgs": [
+  {
+  "url": "https://album1.cdn107.com/65/0b/650b5bf4cc83a23a4d27f99875d216aa_md.jpg",
+  "artist_name": "Anthony Brown & Group Therapy's Testimony from Anthony Brown & group therAPy Album art"
+  },
+  {
+  "url": "https://album1.cdn107.com/3b/97/3b9787c8625e3b9a97a2bc129af2a421_md.jpg",
+  "artist_name": "Charlie Wilson's I'm Blessed from In It To Win It Album art"
+  },
+  {
+  "url": "https://artist1.cdn107.com/ff3/ff3525beff2ecb76f105667b219b788d_md.jpg",
+  "artist_name": "William Murphy"
+  },
+  {
+  "url": "https://artist1.cdn107.com/413/4130448ae8d7486cc122f30539eb6e72_md.jpg",
+  "artist_name": "Tasha Cobbs Leonard"
+  }
+  ],
+  "artists": [
+  {
+  "url": "https://www.jango.com/music/Charlie+Wilson",
+  "name": "Charlie Wilson"
+  },
+  {
+  "url": "https://www.jango.com/music/Ledisi",
+  "name": "Ledisi"
+  },
+  {
+  "url": "https://www.jango.com/music/Bebe+Winans",
+  "name": "Bebe Winans"
+  },
+  {
+  "url": "https://www.jango.com/music/Ted+Winn",
+  "name": "Ted Winn"
+  },
+  {
+  "url": "https://www.jango.com/music/Ruth+La+Ontra",
+  "name": "Ruth La&#39;Ontra"
+  },
+  {
+  "url": "https://www.jango.com/music/Avery+Sunshine",
+  "name": "Avery Sunshine"
+  }
+  ]
+  }
+  ]
+  }

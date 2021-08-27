@@ -1,9 +1,29 @@
 import React, { useState } from "react";
-import { Modal, ModalBody, ModalHeader, Button, ModalFooter, Input } from "reactstrap";
+import { Modal, ModalBody, ModalHeader, ModalFooter, Input } from "reactstrap";
+import { Button } from "antd";
 import { BsChevronDown } from "react-icons/bs";
 import "./Question.css";
 
-const NewQuestion = ({ handleChange, question, answer, optionA, optionB, optionC, optionD, optionE, modal, toggle }) => {
+const NewQuestion = ({ 
+  handleChange, 
+  question, 
+  answer, 
+  optionA, 
+  optionB, 
+  optionC, 
+  optionD, 
+  optionE, 
+  modal, 
+  toggle,
+  create_loading,
+  // optionAFile,
+  // optionBFile,
+  // optionCFile,
+  // optionDFile,
+  // optionEFile,
+  // answerFile,
+  handleNewQuestion
+}) => {
   const [isAnswerFile, setIsAnswerFile ] = useState(false);
   const [ isAFile, setIsAFile ] = useState(false);
   const [ isBFile, setIsBFile ] = useState(false);
@@ -23,7 +43,7 @@ const NewQuestion = ({ handleChange, question, answer, optionA, optionB, optionC
             <label htmlFor="answer">Answer</label>
             {isAnswerFile ? (
               <div className="input-option">
-                <Input onChange={(e) => handleChange(e)} type="file" name="answer" value={answer} id="answer" />
+                <Input onChange={(e) => handleChange(e)} type="file" name="answerFile" value={answer} id="answer" />
                 <div className="option">
                   <BsChevronDown className="option-icon" />
                   <div className="option-display">
@@ -34,7 +54,7 @@ const NewQuestion = ({ handleChange, question, answer, optionA, optionB, optionC
               </div>
             ) : (
               <div className="input-option">
-                <Input onChange={(e) => handleChange(e)} name="answer" value={optionA} id="answer" placeholder="Enter Question Answer here..." />
+                <Input onChange={(e) => handleChange(e)} name="answer" value={answer} id="answer" placeholder="Enter Question Answer here..." />
                 <div className="option">
                   <BsChevronDown className="option-icon" />
                   <div className="option-display">
@@ -50,7 +70,7 @@ const NewQuestion = ({ handleChange, question, answer, optionA, optionB, optionC
             <label htmlFor="optionA">Option A</label>
             {isAFile ? (
               <div className="input-option">
-                <Input onChange={(e) => handleChange(e)} type="file" name="optionA" value={optionA} id="optionA" placeholder="Enter option A here..." />
+                <Input onChange={(e) => handleChange(e)} type="file" name="optionAFile" value={optionA} id="optionA" placeholder="Enter option A here..." />
                 <div className="option">
                   <BsChevronDown className="option-icon" />
                   <span className="option-display">
@@ -77,7 +97,7 @@ const NewQuestion = ({ handleChange, question, answer, optionA, optionB, optionC
             <label htmlFor="optionB">Option B</label>
             {isBFile ? (
               <div className="input-option">
-                <Input onChange={(e) => handleChange(e)} type="file" name="optionB" value={optionB} id="optionB" placeholder="Enter option B here..." />
+                <Input onChange={(e) => handleChange(e)} type="file" name="optionBFile" value={optionB} id="optionB" placeholder="Enter option B here..." />
                 <div className="option">
                   <BsChevronDown className="option-icon" />
                   <span className="option-display">
@@ -104,7 +124,7 @@ const NewQuestion = ({ handleChange, question, answer, optionA, optionB, optionC
             <label htmlFor="optionA">Option C</label>
             {isCFile ? (
               <div className="input-option">
-                <Input onChange={(e) => handleChange(e)} type="file" name="optionC" value={optionC} id="optionC" placeholder="Enter option C here..." />
+                <Input onChange={(e) => handleChange(e)} type="file" name="optionCFile" value={optionC} id="optionC" placeholder="Enter option C here..." />
                 <div className="option">
                   <BsChevronDown className="option-icon" />
                   <span className="option-display">
@@ -131,7 +151,7 @@ const NewQuestion = ({ handleChange, question, answer, optionA, optionB, optionC
             <label htmlFor="optionA">Option D</label>
             {isDFile ? (
               <div className="input-option">
-                <Input onChange={(e) => handleChange(e)} type="file" name="optionD" value={optionD} id="optionD" placeholder="Enter option D here..." />
+                <Input onChange={(e) => handleChange(e)} type="file" name="optionDFile" value={optionD} id="optionD" placeholder="Enter option D here..." />
                 <div className="option">
                   <BsChevronDown className="option-icon" />
                   <span className="option-display">
@@ -158,7 +178,7 @@ const NewQuestion = ({ handleChange, question, answer, optionA, optionB, optionC
             <label htmlFor="optionE">Option E</label>
             {isEFile ? (
               <div className="input-option">
-                <Input onChange={(e) => handleChange(e)} type="file" name="optionE" value={optionA} id="optionE" placeholder="Enter option E here..." />
+                <Input onChange={(e) => handleChange(e)} type="file" name="optionEFile" value={optionA} id="optionE" placeholder="Enter option E here..." />
                 <div className="option">
                   <BsChevronDown className="option-icon" />
                   <span className="option-display">
@@ -182,8 +202,10 @@ const NewQuestion = ({ handleChange, question, answer, optionA, optionB, optionC
           </div>
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={toggle}>Submit</Button>{' '}
-          <Button color="secondary" onClick={toggle}>Cancel</Button>
+          {create_loading ? <Button loading>Processing...</Button> : 
+          <Button className="submit-button" color="primary" onClick={handleNewQuestion}>Submit</Button>}
+          
+          <Button className="submit-button" color="secondary" onClick={toggle}>Cancel</Button>
         </ModalFooter>
       </Modal>
     </div>

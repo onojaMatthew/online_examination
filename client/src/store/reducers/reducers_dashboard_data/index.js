@@ -11,12 +11,17 @@ import {
   UPDATE_QUESTION_START,
   UPDATE_QUESTION_SUCCESS,
   UPDATE_QUESTION_FAILED,
+  NEW_QUESTION_START,
+  NEW_QUESTION_SUCCESS,
+  NEW_QUESTION_FAILED,
 } from "../../actions/actions_dashboard_data";
 
 const initialState = {
   data: {},
   questions: [],
   question: {},
+  create_loading: false,
+  create_success: false,
   loading: false,
   success: false,
   list_loading: false,
@@ -108,6 +113,26 @@ export const dashboard_data = (state=initialState, action) => {
         ...state,
         update_loading: true,
         update_success: false,
+        error: action.error
+      }
+    case NEW_QUESTION_START:
+      return {
+        ...state,
+        create_loading: true,
+        create_success: false,
+      }
+    case NEW_QUESTION_SUCCESS:
+      return {
+        ...state,
+        create_loading: false,
+        create_success: true,
+        questions: state.questions.concat(action.data),
+      }
+    case NEW_QUESTION_FAILED:
+      return {
+        ...state,
+        create_loading: false,
+        create_success: false,
         error: action.error
       }
     default:

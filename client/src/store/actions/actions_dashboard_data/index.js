@@ -12,6 +12,9 @@ export const DELETE_QUESTION_FAILED = "DELETE_QUESTION_FAILED";
 export const UPDATE_QUESTION_START = "UPDATE_QUESTION_START";
 export const UPDATE_QUESTION_SUCCESS = "UPDATE_QUESTION_SUCCESS";
 export const UPDATE_QUESTION_FAILED = "UPDATE_QUESTION_FAILED";
+export const NEW_QUESTION_START = "NEW_QUESTION_START";
+export const NEW_QUESTION_SUCCESS = "NEW_QUESTION_SUCCESS";
+export const NEW_QUESTION_FAILED = "NEW_QUESTION_FAILED";
 
 const BASE_URL = process.env.REACT_APP_URL;
 
@@ -175,5 +178,45 @@ export const deleteQuestion = (data) => {
         dispatch(deleteQuestionSuccess(resp.results));
       })
       .catch(err => dispatch(deleteQuestionFailed(err.message)));
+  }
+}
+
+export const createQuestionStart = () => {
+  return {
+    type: NEW_QUESTION_START
+  }
+}
+
+export const createQuestionSuccess = (data) => {
+  return {
+    type: NEW_QUESTION_SUCCESS,
+    data
+  }
+}
+
+export const createQuestionFailed = (error) => {
+  return {
+    type: NEW_QUESTION_FAILED,
+    error
+  }
+}
+
+export const createQuestion = (data) => {
+  return dispatch => {
+    dispatch(createQuestionStart());
+    fetch(`${BASE_URL}/question/new`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        ACCEPT: "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+      .then(response => response.json())
+      .then(resp => {
+        if (resp.error) return dispatch(createQuestionFailed(resp.message));
+        dispatch(createQuestionSuccess(resp.results));
+      })
+      .catch(err => dispatch(createQuestionFailed(err.message)));
   }
 }

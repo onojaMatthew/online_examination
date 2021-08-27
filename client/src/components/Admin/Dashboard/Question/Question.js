@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { FaTrash } from "react-icons/fa";
 import { BsPencilSquare } from "react-icons/bs";
 import { Col, Row, Table, Spinner, Card, CardBody } from "reactstrap";
-import { getQuestionList, deleteQuestion } from "../../../../store/actions/actions_dashboard_data";
+import { getQuestionList, deleteQuestion, createQuestion } from "../../../../store/actions/actions_dashboard_data";
 
 import "./Question.css";
 import NewQuestion from "./NewQuestion";
@@ -12,8 +12,15 @@ import NewQuestion from "./NewQuestion";
 const Question = () => {
   const dispatch = useDispatch();
   const [ modal, setModal ] = useState(false);
-  const { questions, list_loading, delete_loading } = useSelector(state => state.dashboard_data);
-  const { page, totalPages, nextPage, prevPage, docs } = questions;
+  const { questions, list_loading, delete_loading, create_loading } = useSelector(state => state.dashboard_data);
+  const { docs } = questions;
+  // page, totalPages, nextPage, prevPage, 
+  const [ answerFile, setAnswerFile ] = useState({});
+  const [ optionAFile, setoptionAFile ] = useState({});
+  const [ optionBFile, setoptionBFile ] = useState({});
+  const [ optionCFile, setoptionCFile ] = useState({});
+  const [ optionDFile, setoptionDFile ] = useState({});
+  const [ optionEFile, setoptionEFile ] = useState({});
   const [ values, setValues ] = useState({ question: "", answer: "", optionA: "", optionB: "", optionC: "", optionD: "", optionE: "" });
 
   const { question, answer, optionA, optionB, optionC, optionD, optionE } = values;
@@ -31,6 +38,21 @@ const Question = () => {
     setModal(!modal);
   }
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setValues({...values, [name]: value });
+  }
+
+  const handleToggleCreate = () => {
+    setValues({ question: "", answer: "", optionA: "", optionB: "", optionC: "", optionD: "", optionE: "" });
+    setModal(true);
+  }
+
+  const handleNewQuestion = () => {
+    const data = { question, answer, optionA, optionB, optionC, optionD, optionE };
+    dispatch(createQuestion(data));
+  }
+
   return (
     <div>
       <Row>
@@ -39,7 +61,7 @@ const Question = () => {
             <CardBody>
               <div className="header-dev">
                 <h2>Question List</h2>
-                <Button>Set New Question</Button>
+                <Button onClick={handleToggleCreate}>Set New Question</Button>
               </div>
               <Table responsive hover>
                 <thead className="th">
@@ -89,6 +111,15 @@ const Question = () => {
             optionE={optionE}
             modal={modal}
             toggle={toggle}
+            answerFile={answerFile}
+            optionAFile={optionAFile}
+            optionBFile={optionBFile}
+            optionCFile={optionCFile}
+            optionDFile={optionDFile}
+            optionEFile={optionEFile}
+            handleChange={handleChange}
+            handleNewQuestion={handleNewQuestion}
+            create_loading={create_loading}
           />
         </Col>
       </Row>
