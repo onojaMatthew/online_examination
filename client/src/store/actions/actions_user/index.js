@@ -10,6 +10,12 @@ export const GET_QUESTIONS_FAILED = "GET_QUESTIONS_FAILED";
 export const SOLUTION_START = "SOLUTION_START";
 export const SOLUTION_SUCCESS = "SOLUTION_SUCCESS";
 export const SOLUTION_FAILED = "SOLUTION_FAILED";
+export const USER_LIST_START = "USER_LIST_START";
+export const USER_LIST_SUCCESS = "USER_LIST_SUCCESS";
+export const USER_LIST_FAILED = "USER_LIST_FAILED";
+export const DELETE_START = "DELETE_START";
+export const DELETE_SUCCESS = "DELETE_SUCCESS";
+export const DELETE_FAILED = "DELETE_FAILED";
 
 const BASE_URL = process.env.REACT_APP_URL;
 
@@ -134,5 +140,84 @@ export const submitSolution = (data) => {
         dispatch(solutionSuccess(resp.results));
       })
       .catch(err => dispatch(solutionFailed(err.message)));
+  }
+}
+
+export const userListStart = () => {
+  return {
+    type: USER_LIST_START
+  }
+}
+
+export const userListSuccess = (data) => {
+  return {
+    type: USER_LIST_SUCCESS,
+    data
+  }
+}
+
+export const userListFailed = (error) => {
+  return {
+    type: USER_LIST_FAILED,
+    error
+  }
+}
+
+export const getUserList = () => {
+  return dispatch => {
+    dispatch(userListStart());
+    fetch(`${BASE_URL}/user/all`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        ACCEPT: "application/json"
+      },
+    })
+      .then(response => response.json())
+      .then(resp => {
+        if (resp.error) return dispatch(userListFailed(resp.message));
+        dispatch(userListSuccess(resp.results));
+      })
+      .catch(err => dispatch(userListFailed(err.message)));
+  }
+}
+
+export const deleteStart = () => {
+  return {
+    type: DELETE_START
+  }
+}
+
+export const deleteSuccess = (data) => {
+  return {
+    type: DELETE_SUCCESS,
+    data
+  }
+}
+
+export const deleteFailed = (error) => {
+  return {
+    type: DELETE_FAILED,
+    error
+  }
+}
+
+export const deleteUser = (id) => {
+  return dispatch => {
+    dispatch(deleteStart());
+    fetch(`${BASE_URL}/user/delete?id=${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        ACCEPT: "application/json"
+      },
+    })
+      .then(response => response.json())
+      .then(resp => {
+        if (resp.error) return dispatch(deleteFailed(resp.message));
+        dispatch(deleteSuccess(resp.results));
+      })
+      .then(() => dispatch(getUserList()))
+      .catch(err => dispatch(deleteFailed(err.message)));
   }
 }

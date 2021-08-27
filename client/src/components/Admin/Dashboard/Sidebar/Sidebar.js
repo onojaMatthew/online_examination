@@ -43,7 +43,7 @@ const Sidebar = () => {
           <Menu.Item onClick={() => history.push("/dashboard/questions")} key="2" icon={<FaQuestion />}>
             Question Management
           </Menu.Item>
-          <Menu.Item key="3" icon={<FaUser />}>
+          <Menu.Item key="3" onClick={() => history.push("/dashboard/user_management")} icon={<FaUser />}>
             User Management
           </Menu.Item>
           <Menu.Item onClick={onLogout} key="6" icon={<FaPowerOff />}>

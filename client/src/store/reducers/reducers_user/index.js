@@ -8,6 +8,12 @@ import {
   SOLUTION_START,
   SOLUTION_SUCCESS,
   SOLUTION_FAILED,
+  USER_LIST_START,
+  USER_LIST_SUCCESS,
+  USER_LIST_FAILED,
+  DELETE_START,
+  DELETE_SUCCESS,
+  DELETE_FAILED,
 } from "../../actions/actions_user";
 
 const initialState = {
@@ -21,6 +27,10 @@ const initialState = {
   questionSuccess: false,
   solutionLoading: false,
   solutionSuccess: false,
+  list_loading: false,
+  list_success: false,
+  delete_loading: false,
+  delete_success: false,
   error: ""
 }
 
@@ -81,6 +91,46 @@ export const user = (state=initialState, action) => {
       return {
         solutionLoading: false,
         solutionSuccess: false,
+        error: action.error
+      }
+    case USER_LIST_START:
+      return {
+        ...state,
+        list_loading: true,
+        list_success: false,
+      }
+    case USER_LIST_SUCCESS:
+      return {
+        ...state,
+        list_loading: false,
+        list_success: true,
+        users: action.data,
+      }
+    case USER_LIST_FAILED:
+      return {
+        ...state,
+        list_loading: false,
+        list_success: false,
+        error: action.error
+      }
+    case  DELETE_START:
+      return {
+        ...state,
+        delete_loading: true,
+        delete_success: false,
+      }
+    case  DELETE_SUCCESS:
+      return {
+        ...state,
+        delete_loading: false,
+        delete_success: true,
+        user: action.data,
+      }
+    case  DELETE_FAILED:
+      return {
+        ...state,
+        delete_loading: false,
+        delete_success: false,
         error: action.error
       }
     default:
