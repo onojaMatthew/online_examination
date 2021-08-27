@@ -217,6 +217,7 @@ export const createQuestion = (data) => {
         if (resp.error) return dispatch(createQuestionFailed(resp.message));
         dispatch(createQuestionSuccess(resp.results));
       })
+      .then(() => dispatch(getQuestionList()))
       .catch(err => dispatch(createQuestionFailed(err.message)));
   }
 }

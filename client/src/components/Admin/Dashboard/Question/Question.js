@@ -8,9 +8,11 @@ import { getQuestionList, deleteQuestion, createQuestion } from "../../../../sto
 
 import "./Question.css";
 import NewQuestion from "./NewQuestion";
+import { uploader } from "../../../../store/actions/actions_upload";
 
 const Question = () => {
   const dispatch = useDispatch();
+  const { upload, upload_loading, upload_success } = useSelector(state => state.upload);
   const [ modal, setModal ] = useState(false);
   const { questions, list_loading, delete_loading, create_loading } = useSelector(state => state.dashboard_data);
   const { docs } = questions;
@@ -36,6 +38,7 @@ const Question = () => {
 
   const toggle = () => {
     setModal(!modal);
+    setValues({ question: "", answer: "", optionA: "", optionB: "", optionC: "", optionD: "", optionE: "" });
   }
 
   const handleChange = (e) => {
@@ -53,6 +56,92 @@ const Question = () => {
     dispatch(createQuestion(data));
   }
 
+  useEffect(() => {
+    if (create_loading) {
+      setValues({ question: "", answer: "", optionA: "", optionB: "", optionC: "", optionD: "", optionE: "" });
+    }
+  }, [ create_loading ]);
+
+  useEffect(() => {
+    if (answerFile) {
+      dispatch(uploader(answerFile))
+    } else if (optionAFile) {
+      dispatch(uploader(optionAFile))
+    } else if (optionBFile) {
+      dispatch(uploader(optionBFile))
+    } else if (optionCFile) {
+      dispatch(uploader(optionCFile))
+    } else if (optionDFile) {
+      dispatch(uploader(optionDFile))
+    } else if (optionEFile) {
+      dispatch(uploader(optionEFile))
+    }
+  }, [ answerFile, optionAFile, optionBFile, optionCFile, optionDFile, optionEFile ]);
+
+  const handleFileChange = (e) => {
+    const { name, files } = e.target;
+    if (name === "answerFile") {
+      setAnswerFile(files[0])
+      setoptionAFile("")
+      setoptionBFile("")
+      setoptionCFile("")
+      setoptionDFile("")
+      setoptionEFile("")
+    } else if (name === "optionAFile") {
+      setoptionAFile(files[0])
+      setAnswerFile("files[0]")
+      setoptionBFile("")
+      setoptionCFile("")
+      setoptionDFile("")
+      setoptionEFile("")
+    } else if (name === "optionBFile") {
+      setoptionBFile(files[0])
+      setAnswerFile("")
+      setoptionAFile("")
+      setoptionCFile("")
+      setoptionDFile("")
+      setoptionEFile("")
+    } else if (name === "optionCFile") {
+      setoptionCFile(files[0])
+      setAnswerFile("")
+      setoptionAFile("")
+      setoptionBFile("")
+      setoptionDFile("")
+      setoptionEFile("")
+    } else if (name === "optionDFile") {
+      setoptionDFile(files[0]);
+      setAnswerFile("")
+      setoptionAFile("")
+      setoptionBFile("")
+      setoptionCFile("")
+      setoptionEFile("")
+    } else if (name === "optionEFile") {
+      setoptionEFile(files[0]);
+      setAnswerFile("")
+      setoptionAFile("")
+      setoptionBFile("")
+      setoptionCFile("")
+      setoptionDFile("")
+    }
+  }
+
+  useEffect(() => {
+    if (upload_success && answerFile) {
+      setValues({...values, answer: upload.upload && upload.upload.secure_url })
+    } else if (upload_success && optionAFile) {
+      setValues({...values, optionA: upload.upload && upload.upload.secure_url })
+    } else if (upload_success && optionBFile) {
+      setValues({...values, optionB: upload.upload && upload.upload.secure_url })
+    } else if (upload_success && optionCFile) {
+      setValues({...values, optionC: upload.upload && upload.upload.secure_url })
+    } else if (upload_success && optionDFile) {
+      setValues({...values, optionD: upload.upload && upload.upload.secure_url })
+    } else if (upload_success && optionEFile) {
+      setValues({...values, optionE: upload.upload && upload.upload.secure_url })
+    }
+  }, [ upload_loading, answerFile, optionAFile, optionBFile, optionCFile, optionDFile, optionEFile])
+
+  console.log(optionAFile, " the option A")
   return (
     <div>
       <Row>
@@ -120,6 +209,7 @@ const Question = () => {
             handleChange={handleChange}
             handleNewQuestion={handleNewQuestion}
             create_loading={create_loading}
+            handleFileChange={handleFileChange}
           />
         </Col>
       </Row>

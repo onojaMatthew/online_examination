@@ -128,10 +128,6 @@
   display: block;
 }
 
-.option:hover .option-icon {
-  /* display: none; */
-}
-
 .form-control-file {
   border: 1px solid #ced4da;
   height: 45px;
@@ -142,6 +138,33 @@ input #file-upload-button {
   /* height: 100% !important; */
   background: transparent !important;
   border: none !important;
+}
+
+.submit-button {
+  background: #039be5;
+  color: #fff;
+  height: 50px;
+  width: 150px;
+  border-radius: 5px;
+  border: none;
+}
+
+.submit-button:hover {
+  background: #039be5;
+  color: #fff;
+  height: 50px;
+  width: 150px;
+  border-radius: 5px;
+  border: none;
+}
+
+.submit-button:focus {
+  background: #039be5;
+  color: #fff;
+  height: 50px;
+  width: 150px;
+  border-radius: 5px;
+  border: none;
 }
 
 @media only screen and (max-width: 768px) {

@@ -22,6 +22,7 @@ const NewQuestion = ({
   // optionDFile,
   // optionEFile,
   // answerFile,
+  handleFileChange,
   handleNewQuestion
 }) => {
   const [isAnswerFile, setIsAnswerFile ] = useState(false);
@@ -43,7 +44,7 @@ const NewQuestion = ({
             <label htmlFor="answer">Answer</label>
             {isAnswerFile ? (
               <div className="input-option">
-                <Input onChange={(e) => handleChange(e)} type="file" name="answerFile" value={answer} id="answer" />
+                <Input accept="image/*" onChange={(e) => handleFileChange(e)} type="file" name="answerFile" value={answer} id="answer" />
                 <div className="option">
                   <BsChevronDown className="option-icon" />
                   <div className="option-display">
@@ -70,7 +71,7 @@ const NewQuestion = ({
             <label htmlFor="optionA">Option A</label>
             {isAFile ? (
               <div className="input-option">
-                <Input onChange={(e) => handleChange(e)} type="file" name="optionAFile" value={optionA} id="optionA" placeholder="Enter option A here..." />
+                <Input accept="image/*" onChange={(e) => handleFileChange(e)} type="file" name="optionAFile" value={optionA} id="optionA" placeholder="Enter option A here..." />
                 <div className="option">
                   <BsChevronDown className="option-icon" />
                   <span className="option-display">
@@ -97,7 +98,7 @@ const NewQuestion = ({
             <label htmlFor="optionB">Option B</label>
             {isBFile ? (
               <div className="input-option">
-                <Input onChange={(e) => handleChange(e)} type="file" name="optionBFile" value={optionB} id="optionB" placeholder="Enter option B here..." />
+                <Input accept="image/*" onChange={(e) => handleFileChange(e)} type="file" name="optionBFile" value={optionB} id="optionB" placeholder="Enter option B here..." />
                 <div className="option">
                   <BsChevronDown className="option-icon" />
                   <span className="option-display">
@@ -124,7 +125,7 @@ const NewQuestion = ({
             <label htmlFor="optionA">Option C</label>
             {isCFile ? (
               <div className="input-option">
-                <Input onChange={(e) => handleChange(e)} type="file" name="optionCFile" value={optionC} id="optionC" placeholder="Enter option C here..." />
+                <Input accept="image/*" onChange={(e) => handleFileChange(e)} type="file" name="optionCFile" value={optionC} id="optionC" placeholder="Enter option C here..." />
                 <div className="option">
                   <BsChevronDown className="option-icon" />
                   <span className="option-display">
@@ -151,7 +152,7 @@ const NewQuestion = ({
             <label htmlFor="optionA">Option D</label>
             {isDFile ? (
               <div className="input-option">
-                <Input onChange={(e) => handleChange(e)} type="file" name="optionDFile" value={optionD} id="optionD" placeholder="Enter option D here..." />
+                <Input accept="image/*" onChange={(e) => handleFileChange(e)} type="file" name="optionDFile" value={optionD} id="optionD" placeholder="Enter option D here..." />
                 <div className="option">
                   <BsChevronDown className="option-icon" />
                   <span className="option-display">
@@ -178,7 +179,7 @@ const NewQuestion = ({
             <label htmlFor="optionE">Option E</label>
             {isEFile ? (
               <div className="input-option">
-                <Input onChange={(e) => handleChange(e)} type="file" name="optionEFile" value={optionA} id="optionE" placeholder="Enter option E here..." />
+                <Input onChange={(e) => handleFileChange(e)} accept="image/*" type="file" name="optionEFile" value={optionA} id="optionE" placeholder="Enter option E here..." />
                 <div className="option">
                   <BsChevronDown className="option-icon" />
                   <span className="option-display">
@@ -202,10 +203,9 @@ const NewQuestion = ({
           </div>
         </ModalBody>
         <ModalFooter>
-          {create_loading ? <Button loading>Processing...</Button> : 
+          {create_loading ? <Button className="submit-button" loading>Processing...</Button> : 
           <Button className="submit-button" color="primary" onClick={handleNewQuestion}>Submit</Button>}
-          
-          <Button className="submit-button" color="secondary" onClick={toggle}>Cancel</Button>
+          {" "}<Button className="submit-button" color="secondary" onClick={toggle}>Cancel</Button>
         </ModalFooter>
       </Modal>
     </div>
