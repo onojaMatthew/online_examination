@@ -161,8 +161,8 @@ export const deleteQuestionFailed = (error) => {
 export const deleteQuestion = (data) => {
   return dispatch => {
     dispatch(deleteQuestionStart());
-    fetch(`${BASE_URL}/question/delete?id=${data}`, {
-      method: "PUT",
+    fetch(`${BASE_URL}/question/delete?id=${data.id}`, {
+      method: "DELETE",
       headers: {
         "Content-Type": "application/json",
         ACCEPT: "application/json"

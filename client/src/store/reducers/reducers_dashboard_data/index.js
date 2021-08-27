@@ -29,6 +29,7 @@ const initialState = {
 }
 
 export const dashboard_data = (state=initialState, action) => {
+  
   switch (action.type) {
     case GET_DATA_START:
       return {
@@ -80,7 +81,7 @@ export const dashboard_data = (state=initialState, action) => {
         ...state,
         delete_loading: false,
         delete_success: true,
-        questions: state.questions.filter((d) => d._id !== action.data._id),
+        questions: state.questions.docs.filter((d) => d._id !== action.data._id),
       }
     case DELETE_QUESTION_FAILED:
       return {

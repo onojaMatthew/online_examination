@@ -16,6 +16,7 @@ export const create = async (req, res) => {
 }
 
 export const questionList = async (req, res) => {
+
   try {
     const result = await Question.paginate();
     return res.json(success("Success", result, res.statusCode));
@@ -48,6 +49,7 @@ export const deleteQuestion = async (req, res) => {
     const result = await Question.findByIdAndDelete({ _id: req.query.id });
     return res.json(success("Deleted successfully", result, res.statusCode));
   } catch (err) {
+    console.log(err)
     return res.status(400).json(error(err.message, res.statusCode));
   }
 }

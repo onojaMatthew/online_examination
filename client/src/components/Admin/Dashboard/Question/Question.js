@@ -7,19 +7,28 @@ import { Col, Row, Table, Spinner, Card, CardBody } from "reactstrap";
 import { getQuestionList, deleteQuestion } from "../../../../store/actions/actions_dashboard_data";
 
 import "./Question.css";
+import NewQuestion from "./NewQuestion";
 
 const Question = () => {
   const dispatch = useDispatch();
-  const [ toggle, setToggle ] = useState(false);
-  const { questions, list_loading, delete_loading, list_success, question } = useSelector(state => state.dashboard_data);
+  const [ modal, setModal ] = useState(false);
+  const { questions, list_loading, delete_loading } = useSelector(state => state.dashboard_data);
   const { page, totalPages, nextPage, prevPage, docs } = questions;
+  const [ values, setValues ] = useState({ question: "", answer: "", optionA: "", optionB: "", optionC: "", optionD: "", optionE: "" });
+
+  const { question, answer, optionA, optionB, optionC, optionD, optionE } = values;
 
   useEffect(() => {
     dispatch(getQuestionList());
   }, [ dispatch ]);
 
   const onDelete = (id) => {
-    dispatch(deleteQuestion(id));
+    const data = { id }
+    dispatch(deleteQuestion(data));
+  }
+
+  const toggle = () => {
+    setModal(!modal);
   }
 
   return (
@@ -59,7 +68,6 @@ const Question = () => {
                       <td>{d?.optionD}</td>
                       <td>{d?.optionE}</td>
                       <td className="icon-td">
-                        
                         <BsPencilSquare onClick={toggle} className="icon-update" /> {""}{delete_loading ? 
                         <Spinner>
                           <span className="visually-hidden">Loading...</span>
@@ -71,7 +79,17 @@ const Question = () => {
               </Table>
             </CardBody>
           </Card>
-          
+          <NewQuestion
+            question={question}
+            answer={answer}
+            optionA={optionA}
+            optionB={optionB}
+            optionC={optionC}
+            optionD={optionD}
+            optionE={optionE}
+            modal={modal}
+            toggle={toggle}
+          />
         </Col>
       </Row>
     </div>
