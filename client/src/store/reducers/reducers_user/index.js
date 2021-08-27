@@ -14,6 +14,9 @@ import {
   DELETE_START,
   DELETE_SUCCESS,
   DELETE_FAILED,
+  ASSIGN_START,
+  ASSIGN_SUCCESS,
+  ASSIGN_FAILED,
 } from "../../actions/actions_user";
 
 const initialState = {
@@ -31,6 +34,8 @@ const initialState = {
   list_success: false,
   delete_loading: false,
   delete_success: false,
+  assign_loading: false,
+  assign_success: false,
   error: ""
 }
 
@@ -131,6 +136,26 @@ export const user = (state=initialState, action) => {
         ...state,
         delete_loading: false,
         delete_success: false,
+        error: action.error
+      }
+    case ASSIGN_START:
+      return {
+        ...state,
+        assign_loading: true,
+        assign_success: false,
+      }
+    case ASSIGN_SUCCESS:
+      return {
+        ...state,
+        assign_loading: false,
+        assign_success: true,
+        question: action.data,
+      }
+    case ASSIGN_FAILED:
+      return {
+        ...state,
+        assign_loading: false,
+        assign_success: false,
         error: action.error
       }
     default:

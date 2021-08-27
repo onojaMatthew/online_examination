@@ -6,13 +6,13 @@ import { BsPencilSquare } from "react-icons/bs";
 import { Col, Row, Table, Spinner, Card, CardBody } from "reactstrap";
 
 import "../Question/Question.css";
-import { deleteUser, getUserList } from "../../../../store/actions/actions_user";
+import { deleteUser, getUserList, assingQuestions } from "../../../../store/actions/actions_user";
 import UserQuestion from "./UserQuestion";
 import { getQuestionList } from "../../../../store/actions/actions_dashboard_data";
 
 const UserManagement = () => {
   const dispatch = useDispatch();
-  const { users, list_loading, delete_loading } = useSelector(state => state.user);
+  const { users, list_loading, assign_success, assign_loading, delete_loading } = useSelector(state => state.user);
   const questionList = useSelector(state => state.dashboard_data);
   const { docs } = users;
   const [ modal, setModal ] = useState(false);
@@ -41,14 +41,25 @@ const UserManagement = () => {
   }
 
   const handleQuestions = (e) => {
-    setQuestions(...questions, e.target.value);
+    const { value } = e.target;
+    const findx = questions.includes(value)
+    if (!findx) {
+      const questn = [...questions, e.target.value]
+      setQuestions(questn);
+    } else if (e.target.checked === false) {
+      let que = questions;
+      const index = que.indexOf(value);
+      que.splice(index, 1);
+      setQuestions(que)
+    }
   }
 
   const handleCreate = () => {
     const data = { questions, user: userId, time };
+    console.log(data, " the data")
+    dispatch(assingQuestions(data));
   }
 
-  console.log(userId, " the user id");
   return (
     <div>
       {list_loading ?
@@ -109,6 +120,8 @@ const UserManagement = () => {
               questions={questionList && questionList.questions?.docs}
               toggle={toggle}
               handleCreate={handleCreate}
+              assign_loading={assign_loading}
+              assign_success={assign_success}
             />
           </Col>
         </Row>

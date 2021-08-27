@@ -16,9 +16,12 @@ export const USER_LIST_FAILED = "USER_LIST_FAILED";
 export const DELETE_START = "DELETE_START";
 export const DELETE_SUCCESS = "DELETE_SUCCESS";
 export const DELETE_FAILED = "DELETE_FAILED";
+        
+export const ASSIGN_START = "ASSIGN_START";
+export const ASSIGN_SUCCESS = "ASSIGN_SUCCESS";
+export const ASSIGN_FAILED = "ASSIGN_FAILED";
 
 const BASE_URL = process.env.REACT_APP_URL;
-
 
 export const userDetailStart = () => {
   return {
@@ -53,9 +56,7 @@ export const userDetail = (data) => {
       .then(response => response.json())
       .then(resp => {
         if (resp.error) return dispatch(userDetailFailed(resp.message));
-        
         Auth.authenticateUser(JSON.stringify(resp.results));
-        
         dispatch(userDetailSuccess(resp.results));
       })
       .catch(err => dispatch(userDetailFailed("Network error")));
@@ -219,5 +220,45 @@ export const deleteUser = (id) => {
       })
       .then(() => dispatch(getUserList()))
       .catch(err => dispatch(deleteFailed(err.message)));
+  }
+}
+
+export const assingStart = () => {
+  return {
+    type: ASSIGN_START
+  }
+}
+
+export const assingSuccess = (data) => {
+  return {
+    type: ASSIGN_SUCCESS,
+    data
+  }
+}
+
+export const assingFailed = (error) => {
+  return {
+    type: ASSIGN_FAILED,
+    error
+  }
+}
+
+export const assingQuestions = (data) => {
+  return dispatch => {
+    dispatch(assingStart());
+    fetch(`${BASE_URL}/user/question`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        ACCEPT: "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+      .then(response => response.json())
+      .then(resp => {
+        if (resp.error) return dispatch(assingFailed(resp.message));
+        dispatch(assingSuccess(resp.results));
+      })
+      .catch(err => dispatch(assingFailed(err.message)));
   }
 }
