@@ -7,15 +7,22 @@ import { Col, Row, Table, Spinner, Card, CardBody } from "reactstrap";
 
 import "../Question/Question.css";
 import { deleteUser, getUserList } from "../../../../store/actions/actions_user";
+import UserQuestion from "./UserQuestion";
+import { getQuestionList } from "../../../../store/actions/actions_dashboard_data";
 
 const UserManagement = () => {
   const dispatch = useDispatch();
   const { users, list_loading, delete_loading } = useSelector(state => state.user);
+  const questionList = useSelector(state => state.dashboard_data);
   const { docs } = users;
   const [ modal, setModal ] = useState(false);
+  const [ userId, setUserId ] = useState("");
+  const [ questions, setQuestions ] = useState([]);
+  const [ time, setTime ] = useState("");
 
   useEffect(() => {
     dispatch(getUserList());
+    dispatch(getQuestionList());
   }, [ dispatch ]);
 
   const onDelete = (id) => {
@@ -28,6 +35,20 @@ const UserManagement = () => {
 
   const handleToggleCreate = () => {}
 
+  const handleModalToggle = (id) => {
+    setUserId(id);
+    setModal(true);
+  }
+
+  const handleQuestions = (e) => {
+    setQuestions(...questions, e.target.value);
+  }
+
+  const handleCreate = () => {
+    const data = { questions, user: userId, time };
+  }
+
+  console.log(userId, " the user id");
   return (
     <div>
       {list_loading ?
@@ -51,7 +72,8 @@ const UserManagement = () => {
                     <th>Last Name</th>
                     <th>Email</th>
                     <th>Phone</th>
-                    <th>Action</th>
+                    <th>Interview</th>
+                    <th>Delete</th>
                   </thead>
                   <tbody>
                     {docs?.length ? docs.map(u => (
@@ -60,14 +82,17 @@ const UserManagement = () => {
                         <td>{u?.last_name}</td>
                         <td>{u?.email}</td>
                         <td>{u?.phone}</td>
-                        <td>{u?.optionC}</td>
-                        <td>{u?.optionD}</td>
-                        <td>{u?.optionE}</td>
+                        <td className="assign">
+                          <BsPencilSquare onClick={() => handleModalToggle(u?._id)} className="icon-update" />
+                        </td>
                         <td className="icon-td">
-                          <BsPencilSquare onClick={toggle} className="icon-update" /> {""}{delete_loading ? 
-                          <Spinner>
-                            <span className="visually-hidden">Loading...</span>
-                          </Spinner> : <FaTrash onClick={() => onDelete(u?._id)} className="icon-delete" />}
+                          {/* <BsPencilSquare onClick={() => handleModalToggle(u?._id)} className="icon-update" /> {""} */}
+                          {delete_loading ? 
+                            <Spinner>
+                              <span className="visually-hidden">Loading...</span>
+                            </Spinner> : 
+                            <FaTrash onClick={() => onDelete(u?._id)} className="icon-delete" />
+                          }
                         </td>
                       </tr>
                     )) : <div className="no-data"></div>}
@@ -75,27 +100,16 @@ const UserManagement = () => {
                 </Table>
               </CardBody>
             </Card>
-            {/* <NewQuestion
-              question={question}
-              answer={answer}
-              optionA={optionA}
-              optionB={optionB}
-              optionC={optionC}
-              optionD={optionD}
-              optionE={optionE}
+            <UserQuestion 
+              time={time} 
+              setTime={setTime} 
+              handleQuestions={handleQuestions}
+              docs={docs}
               modal={modal}
+              questions={questionList && questionList.questions?.docs}
               toggle={toggle}
-              answerFile={answerFile}
-              optionAFile={optionAFile}
-              optionBFile={optionBFile}
-              optionCFile={optionCFile}
-              optionDFile={optionDFile}
-              optionEFile={optionEFile}
-              handleChange={handleChange}
-              handleNewQuestion={handleNewQuestion}
-              create_loading={create_loading}
-              handleFileChange={handleFileChange}
-            /> */}
+              handleCreate={handleCreate}
+            />
           </Col>
         </Row>
       }
