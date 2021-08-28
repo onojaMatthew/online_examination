@@ -17,6 +17,9 @@ import {
   ASSIGN_START,
   ASSIGN_SUCCESS,
   ASSIGN_FAILED,
+  CREATE_USER_START,
+  CREATE_USER_SUCCESS,
+  CREATE_USER_FAILED,
 } from "../../actions/actions_user";
 
 const initialState = {
@@ -36,6 +39,8 @@ const initialState = {
   delete_success: false,
   assign_loading: false,
   assign_success: false,
+  create_loading: false,
+  create_success: false,
   error: ""
 }
 
@@ -156,6 +161,26 @@ export const user = (state=initialState, action) => {
         ...state,
         assign_loading: false,
         assign_success: false,
+        error: action.error
+      }
+    case CREATE_USER_START:
+      return {
+        ...state,
+        create_loading: true,
+        create_success: false,
+      }
+    case CREATE_USER_SUCCESS:
+      return {
+        ...state,
+        create_loading: false,
+        create_success: true,
+        users: action.data,
+      }
+    case CREATE_USER_FAILED:
+      return {
+        ...state,
+        create_loading: false,
+        create_success: false,
         error: action.error
       }
     default:

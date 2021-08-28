@@ -16,10 +16,12 @@ export const USER_LIST_FAILED = "USER_LIST_FAILED";
 export const DELETE_START = "DELETE_START";
 export const DELETE_SUCCESS = "DELETE_SUCCESS";
 export const DELETE_FAILED = "DELETE_FAILED";
-        
 export const ASSIGN_START = "ASSIGN_START";
 export const ASSIGN_SUCCESS = "ASSIGN_SUCCESS";
 export const ASSIGN_FAILED = "ASSIGN_FAILED";
+export const CREATE_USER_START = "CREATE_USER_START";
+export const CREATE_USER_SUCCESS = "CREATE_USER_SUCCESS";
+export const CREATE_USER_FAILED = "CREATE_USER_FAILED";
 
 const BASE_URL = process.env.REACT_APP_URL;
 
@@ -260,5 +262,46 @@ export const assingQuestions = (data) => {
         dispatch(assingSuccess(resp.results));
       })
       .catch(err => dispatch(assingFailed(err.message)));
+  }
+}
+
+export const createUserStart = () => {
+  return {
+    type: CREATE_USER_START
+  }
+}
+
+export const createUserSuccess = (data) => {
+  return {
+    type: CREATE_USER_SUCCESS,
+    data
+  }
+}
+
+export const createUserFailed = (error) => {
+  return {
+    type: CREATE_USER_FAILED,
+    error
+  }
+}
+
+export const createUser = (data) => {
+  return dispatch => {
+    dispatch(createUserStart());
+    fetch(`${BASE_URL}/user/new`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        ACCEPT: "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+      .then(response => response.json())
+      .then(resp => {
+        if (resp.error) return dispatch(createUserFailed(resp.message));
+        dispatch(createUserSuccess(resp.results));
+      })
+      .then(() => dispatch(getUserList()))
+      .catch(err => dispatch(createUserFailed(err.message)));
   }
 }

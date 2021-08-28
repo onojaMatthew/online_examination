@@ -1,0 +1,14 @@
+.input-wrapper {
+  margin-top: 15px;
+}
+
+button.close {
+  background: transparent;
+  border: none;
+  font-size: 45px;
+  /* color: #; */
+}
+
+.modal-title {
+  color: #039be5;
+}

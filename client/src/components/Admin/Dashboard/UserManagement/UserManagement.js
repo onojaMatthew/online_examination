@@ -6,20 +6,24 @@ import { BsPencilSquare } from "react-icons/bs";
 import { Col, Row, Table, Spinner, Card, CardBody } from "reactstrap";
 
 import "../Question/Question.css";
-import { deleteUser, getUserList, assingQuestions } from "../../../../store/actions/actions_user";
+import { deleteUser, getUserList, assingQuestions, createUser } from "../../../../store/actions/actions_user";
 import UserQuestion from "./UserQuestion";
 import { getQuestionList } from "../../../../store/actions/actions_dashboard_data";
+import NewUser from "./NewUser";
 
 const UserManagement = () => {
   const dispatch = useDispatch();
-  const { users, list_loading, assign_success, assign_loading, delete_loading } = useSelector(state => state.user);
+  const { users, list_loading, assign_success, create_success, create_loading, assign_loading, delete_loading } = useSelector(state => state.user);
   const questionList = useSelector(state => state.dashboard_data);
   const { docs } = users;
   const [ modal, setModal ] = useState(false);
+  const [ userModal, setUserModal ] = useState(false);
+  const [ values, setValues ] = useState({ first_name: "", last_name: "", email: "", phone: "" });
   const [ userId, setUserId ] = useState("");
   const [ questions, setQuestions ] = useState([]);
   const [ time, setTime ] = useState("");
 
+  const { first_name, last_name, email, phone } = values;
   useEffect(() => {
     dispatch(getUserList());
     dispatch(getQuestionList());
@@ -59,6 +63,31 @@ const UserManagement = () => {
     dispatch(assingQuestions(data));
   }
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setValues({...values, [name]: value });
+  }
+
+  const handleUserModal = () => {
+    setUserModal(!userModal);
+  }
+
+  const onCreate = () => {
+    const data = { first_name, last_name, email, phone };
+    dispatch(createUser(data));
+  }
+
+  useEffect(() => {
+    if (create_success) {
+      setValues({
+        first_name: "",
+        last_name: "",
+        email: "",
+        phone: ""
+      })
+    }
+  }, [ create_success ]);
+
   return (
     <div>
       {list_loading ?
@@ -74,7 +103,7 @@ const UserManagement = () => {
               <CardBody>
                 <div className="header-dev">
                   <h2>User List</h2>
-                  <Button onClick={handleToggleCreate}>Set New Question</Button>
+                  <Button onClick={handleUserModal}>Create New Question</Button>
                 </div>
                 <Table responsive hover>
                   <thead className="th">
@@ -121,6 +150,17 @@ const UserManagement = () => {
               handleCreate={handleCreate}
               assign_loading={assign_loading}
               assign_success={assign_success}
+            />
+            <NewUser
+              first_name={first_name}
+              last_name={last_name}
+              email={email}
+              phone={phone}
+              handleChange={handleChange}
+              userModal={userModal}
+              handleUserModal={handleUserModal}
+              onCreate={onCreate}
+              create_loading={create_loading}
             />
           </Col>
         </Row>
