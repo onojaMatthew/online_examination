@@ -32,7 +32,7 @@ const Ul = styled.ul`
   }
 `;
 
-const RightNav = ({ open }) => {
+const RightNav = ({ open, setOpen }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { logoutSuccess } = useSelector(state => state.account);
@@ -47,12 +47,32 @@ const RightNav = ({ open }) => {
     }
   }, [ logoutSuccess, history ]);
 
+  const dashboard = () => {
+    history.push("/dashboard");
+    setOpen(false);
+  }
+
+  const handleQuestion = () => {
+    history.push("/dashboard/questions");
+    setOpen(false);
+  }
+
+  const handleUser = () => {
+    history.push("/dashboard/user_management");
+    setOpen(false);
+  }
+
+  const handleAdmin = () => {
+    history.push("/dashboard/admins");
+    setOpen(false);
+  }
+
   return (
     <Ul open={open}>
-      <li onClick={() => history.push("/dashboard")}>Dashboard</li>
-      <li onClick={() => history.push("/dashboard/admins")}>Manage Admins</li>
-      <li onClick={() => history.push("/dashboard/create-church")}>Create Church</li>
-      <li onClick={() => history.push("/dashboard/church-list")}>Church List</li>
+      <li onClick={dashboard}>Dashboard</li>
+      <li onClick={handleQuestion}>Question Management</li>
+      <li onClick={handleUser}>User Management</li>
+      <li onClick={handleAdmin}>Admin Management</li>
       <li onClick={onLogout}>Logout</li>
     </Ul>
   )

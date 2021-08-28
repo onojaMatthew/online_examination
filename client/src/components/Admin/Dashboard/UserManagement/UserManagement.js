@@ -84,7 +84,8 @@ const UserManagement = () => {
         last_name: "",
         email: "",
         phone: ""
-      })
+      });
+      setUserModal(false);
     }
   }, [ create_success ]);
 

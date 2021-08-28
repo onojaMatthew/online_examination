@@ -209,4 +209,9 @@ input #file-upload-button {
     color: #ff0000;
     cursor: pointer;
   }
+
+  #new-question-modal {
+    min-width: 400px !important;
+    margin-top: 100px;
+  }
 }
