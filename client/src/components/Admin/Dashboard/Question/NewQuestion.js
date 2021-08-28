@@ -16,12 +16,6 @@ const NewQuestion = ({
   modal, 
   toggle,
   create_loading,
-  // optionAFile,
-  // optionBFile,
-  // optionCFile,
-  // optionDFile,
-  // optionEFile,
-  // answerFile,
   handleFileChange,
   handleNewQuestion
 }) => {
@@ -34,7 +28,7 @@ const NewQuestion = ({
   return (
     <div>
       <Modal isOpen={modal} toggle={toggle} id="new-question-modal">
-        <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+        <ModalHeader toggle={toggle} id="modal-header">New Question</ModalHeader>
         <ModalBody>
           <div className="input-container">
             <label htmlFor="question">Question</label>
@@ -205,7 +199,7 @@ const NewQuestion = ({
         <ModalFooter>
           {create_loading ? <Button className="submit-button" loading>Processing...</Button> : 
           <Button className="submit-button" color="primary" onClick={handleNewQuestion}>Submit</Button>}
-          {" "}<Button className="submit-button" color="secondary" onClick={toggle}>Cancel</Button>
+          {" "}<Button className="cancel-button" color="secondary" onClick={toggle}>Cancel</Button>
         </ModalFooter>
       </Modal>
     </div>

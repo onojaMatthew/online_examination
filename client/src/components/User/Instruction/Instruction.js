@@ -16,7 +16,7 @@ const Instruction = () => {
   return (
     <div>
       <Row>
-        <Col xs="12" sm="12" md="12" lg="4" xl="4" className="instruction-left-cont">
+        <Col xs="12" sm="12" md="12" lg="4" xl="4" className="login-left-cont">
           <h3 className="text-center">Welcome to XYZ Test</h3>
           <Row className="mt-5">
             <Col xs="12" sm="12" md="12" lg="12" xl="12">
@@ -72,7 +72,7 @@ const Instruction = () => {
           </Row>
           <Row className="continue-text">
             <Col xs="12" sm="12" md="12" lg="12">
-              <p>To continue taking test, click <span className="continue-span" onClick={() => window.location.href=`/${path}/start`}>continue</span></p>
+              <p>To proceed to test, click <span className="continue-span" onClick={() => window.location.href=`/${path}/start`}>continue</span></p>
             </Col>
           </Row>
         </Col>

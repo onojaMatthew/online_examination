@@ -62,7 +62,7 @@ const HomePage = () => {
           <h3 className="text-center">Welcome</h3>
           <Row className="mt-5">
             <Col xs="12" sm="12" md="12" lg="12" xl="12">
-              <p className="text-center">Login with your credentials</p>
+              <p className="text-center">You're are on GPI Test</p>
             </Col>
           </Row>  
           <Row className="text-center pl-5">

@@ -55,8 +55,7 @@ const UserManagement = () => {
   }
 
   const handleCreate = () => {
-    const data = { questions, user: userId, time };
-    console.log(data, " the data")
+    const data = { questions, user: userId, time: time };
     dispatch(assingQuestions(data));
   }
 
@@ -74,7 +73,7 @@ const UserManagement = () => {
             <Card className="mt-4 questions-card">
               <CardBody>
                 <div className="header-dev">
-                  <h2>Question List</h2>
+                  <h2>User List</h2>
                   <Button onClick={handleToggleCreate}>Set New Question</Button>
                 </div>
                 <Table responsive hover>

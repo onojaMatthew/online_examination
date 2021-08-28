@@ -31,10 +31,9 @@ const UserQuestion = ({
           </div>
         </ModalBody>
         <ModalFooter>
-          
           {assign_loading ? <Button className="submit-button" loading>Processing...</Button> : 
           <Button className="submit-button" color="primary" onClick={handleCreate}>Submit</Button>}
-          {" "}<Button className="submit-button" color="secondary" onClick={toggle}>Cancel</Button>
+          {" "}<Button className="cancel-button" color="secondary" onClick={toggle}>Cancel</Button>
         </ModalFooter>
       </Modal>
     </div>

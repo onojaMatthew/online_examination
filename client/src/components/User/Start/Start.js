@@ -205,7 +205,7 @@ const Start = () => {
                   {currentQuestion && currentQuestion.question?.optionE}
               </p>
               <div className="mt-5">
-                {num === userQuestions.length - 1 ? 
+                {num === userQuestions.length ? 
                   <Button className="question-next-btn" onClick={handleSubmit}>Submit your answers</Button> : solutionLoading && num === userQuestions.length - 1 ? 
                   <Button className="question-next-btn" loading>Processing...</Button> :
                   <Button className="question-next-btn" onClick={() => setNum(num + 1)}>Next question</Button>

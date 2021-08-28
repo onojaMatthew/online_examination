@@ -21,7 +21,9 @@
   font-weight: bold;
 }
 
-
+.rp-container h4 {
+  color: #039be5;
+}
 .fcard-p {
   color: #a5aaad;
   font-size: 14px;
