@@ -1,20 +1,14 @@
 import mongoose from "mongoose";
-import mongoosePaginate from "mongoose-paginate-v2";
-import userSchema from "./user";
-import questionSchema from "./question";
+import { User } from "./user";
+import { RandomQuestions } from "./randomQuestions";
 
-const { Schema } = mongoose;
+const { Schema, ObjectId } = mongoose;
 
 const userQuestionSchema = new Schema({
-  questions: [{
-    question: { type: questionSchema, default: "" },
-    user_answer: { type: String, default: "" },
-  }],
+  questions: { type: ObjectId, ref: RandomQuestions },
   time: { type: String },
-  userId: { type: userSchema },
+  userId: { type: ObjectId, ref: User },
   completed: { type: Boolean, default: false },
 }, { timestamps: true });
-
-userQuestionSchema.plugin(mongoosePaginate);
 
 export const UserQuestion = mongoose.model("UserQuestion", userQuestionSchema);

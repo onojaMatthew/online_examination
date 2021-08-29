@@ -1,51 +1,85 @@
 import { UserQuestion } from "../../models/user_question";
 import { User } from "../../models/user";
 import { Question } from "../../models/question";
+import { RandomQuestions } from "../../models/randomQuestions";
 import { sendEmail } from "../../services/mailer";
 import _ from "underscore";
 import { success, error } from "../../config/response";
 
-export const assign_question = async (req, res) => {
-  const { questions, user, time } = req.body;
+export const randomizeQuestions = async (req, res) => {
+  const { questions, randomCount } = req.body;
   try {
-    let newUserquestion;
-    const question_arr = _.shuffle(questions);
-    // let questnObj = {};
-    let question = [];
-    
-    for (let i = 0; i < question_arr.length; i++) {
-      let que = question_arr[i];
-      const questn = await Question.findById({ _id: que });
-      
-      const dataObj = {
-        question: {
-          _id: questn._id,
-          question: questn && questn.question,
-          answer: questn && questn.answer,
-          optionA: questn && questn.optionA,
-          optionB: questn && questn.optionB,
-          optionC: questn && questn.optionC,
-          optionD: questn && questn.optionD,
-          optionE: questn && questn.optionE,
-        },
-        user_answer: ""
-      }
-      
-      question.push(dataObj);
+    let count = 0;
+    for (let i = 1; i <= randomCount; i++) {
+      count++
+      let shuffled_questions = await shuffle(questions, randomCount);
+      console.log(shuffled_questions)
+      let arr = []
+      await shuffled_questions.forEach(async (q) => {
+        
+        arr.push({question: q, user_answer: "" });
+        
+      });
+
+      let random = new RandomQuestions({ "questions": arr });
+        
+      random = await random.save();
+      if (count === randomCount) return res.json(success("Requestion successfull", [], res.statusCode));
     }
-    
-    const currentUser = await User.findById({ _id: user });
-    newUserquestion = new UserQuestion({ questions: question && question, time });
-    newUserquestion.userId = {
-      _id: currentUser && currentUser._id,
-      email: currentUser && currentUser.email,
-    }
-    newUserquestion = await newUserquestion.save();
-  
-    return res.json(success("Success", newUserquestion, res.statusCode));
   } catch (err) {
+    console.log(err);
+    return res.status(400).json(error(err.message));
+  }
+}
+
+export const getRandomQuestions = async (req, res) => {
+  try {
+    const random = await RandomQuestions.find({}).populate("questions.question");
+    return res.json(success("Success", random, res.statusCode));
+  } catch (err) {
+    return res.status(400).json(error(err.message));
+  }
+}
+
+export const assign_question = async (req, res) => {
+  const { questions, time } = req.body;
+  try {
+    let count = 0;
+    for (let i = 0; i < questions.length; i++){
+      let que = questions[i]
+      // return
+      let userQuestion = new UserQuestion({ questions: que.randomQuestion, time: time, userId: que.user });
+      // userQuestion.questions = que.questions
+      userQuestion = await userQuestion.save();
+      count++;
+    };
+    if (count === questions.length) {
+      return res.json(success("Requestion processed successfully", [], res.statusCode));
+    }
+  } catch (err) {
+    console.log(err)
     return res.status(400).json(error(err.message, res.statusCode));
   }
+}
+
+export const shuffle = (data, randomCount) => {
+  try {
+    for (let i = randomCount - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * i); // no +1 here!
+      let temp = data[i];
+      data[i] = data[j];
+      data[j] = temp;
+    }
+
+    return data;
+  
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export const saveQuestion = async (data) => {
+
 }
 
 export const user_questions = async (req, res) => {
