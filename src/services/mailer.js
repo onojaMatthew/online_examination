@@ -15,7 +15,6 @@ export const sendEmail = async (data) => {
   
   try {
     const result = await sgMail.send(msg);
-    console.log(result, " the result in send grid")
     return result;
   } catch (err) {
     console.log(err.message);
