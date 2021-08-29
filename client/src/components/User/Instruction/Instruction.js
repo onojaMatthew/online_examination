@@ -1,20 +1,51 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouteMatch, useHistory } from "react-router-dom";
 import { Button, Image } from "antd";
-import { Row, Col } from "reactstrap";
+import { Row, Col, Spinner } from "reactstrap";
 import "./Instruction.css";
 import Icon from "../../../assets/images/employee.jpg";
+import { useDispatch, useSelector } from "react-redux";
+import { getQuestions } from "../../../store/actions/actions_user";
+import Auth from "../../../helper/Auth";
 
 const Instruction = () => {
+  const dispatch = useDispatch()
   const [ count, setCount ] = useState(0);
+  const [ token, setToken ] = useState({})
+  const { questions, questionLoading } = useSelector(state => state.user);
   const match = useRouteMatch();
   const history = useHistory();
 
   const url = match.url.split("/").slice(1)
   url.pop();
   const path = url.join("/");
+
+  useEffect(() => {
+    setToken(JSON.parse(Auth.getToken()));
+  }, []);
+
+  useEffect(() => {
+    if (token && token._id) {
+      dispatch(getQuestions(token && token._id));
+    }
+  }, [ dispatch, token ]);
+
+  useEffect(() => {
+    if (questions?.completed) {
+      history.push(`/test/complete`);
+    }
+  }, [ questions ]);
+
+  console.log(token, " the questions")
   return (
     <div>
+      {questionLoading ? (
+        <div className="text-center spin">
+        <Spinner className="my-loader">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      </div>
+      ) : 
       <Row>
         <Col xs="12" sm="12" md="12" lg="4" xl="4" className="login-left-cont">
           <h3 className="text-center">Welcome to XYZ Test</h3>
@@ -76,7 +107,7 @@ const Instruction = () => {
             </Col>
           </Row>
         </Col>
-      </Row> 
+      </Row> }
     </div>
   )
 }

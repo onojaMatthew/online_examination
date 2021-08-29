@@ -42,8 +42,8 @@ const HomePage = () => {
   return (
     <div>
       {loading ? (
-        <div className="text-center spinn">
-          <Spinner style={{ fontSize: 100}}>
+        <div className="text-center spin">
+          <Spinner className="my-loader">
             <span className="visually-hidden">Loading</span>
           </Spinner>
         </div>

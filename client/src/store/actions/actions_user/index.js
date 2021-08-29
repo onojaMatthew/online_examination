@@ -89,7 +89,7 @@ export const getQuestions = (id) => {
   console.log(id, " the id in action")
   return dispatch => {
     dispatch(getQuestionsStart());
-    fetch(`${BASE_URL}/user/user_question?userId=${id}`, {
+    fetch(`${BASE_URL}/user/assigned_questions?id=${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -98,7 +98,6 @@ export const getQuestions = (id) => {
     })
       .then(response => response.json())
       .then(resp => {
-        
         if (resp.error) return dispatch(getQuestionsFailed(resp.message));
         dispatch(getQuestionsSuccess(resp.results));
       })

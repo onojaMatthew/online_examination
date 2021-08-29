@@ -34,10 +34,6 @@ const Start = () => {
 
   useEffect(() => {
     setToken(JSON.parse(Auth.getToken()));
-    const has_submitted = localStorage.getItem("has_submitted");
-    if (has_submitted === true) {
-      window.location.href = `/test/complete`;
-    }
   }, []);
 
   useEffect(() => {
@@ -47,15 +43,15 @@ const Start = () => {
   }, [ dispatch, token ]);
 
   useEffect(() => {
-    if (questions) {
+    if (questions && questions.questions && questions.questions.length > 0) {
       const min = questions.time && Number(questions.time.split(/([0-9]+)/)[1]);
-      setUserQuestions(questions?.questions)
+      setUserQuestions(questions?.questions);
       setTime(min);
     }
   }, [ questions ]);
 
   useEffect(() => {
-    setCurrentQuestion(userQuestions[num]);
+    setCurrentQuestion(userQuestions[num - 1]);
   }, [ num ]);
 
   const handleToggle = () => {
@@ -110,24 +106,22 @@ const Start = () => {
   }
 
   useEffect(() => {
-    if (solutionSuccess) {
-      toggleModal();
-      localStorage.setItem("has_submitted", true);
-      setTimeout(() => {
-        history.push(`/test/complete`);
-      }, 5000);
+    if (questions?.completed || solutionSuccess) {
+      history.push(`/test/complete`);
     }
-  }, [ solutionSuccess ]);
-
-  const toggleModal = () => {
-    setModal(true);
-  }
+  }, [ questions, solutionSuccess ]);
 
   return (
     <div>
-      {solutionLoading ? 
-      <div className="text-center spinn">
-        <Spinner>
+      {questionLoading ? (
+        <div className="text-center spin">
+        <Spinner className="my-loader">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      </div>
+      ) : solutionLoading ? 
+      <div className="text-center spin">
+        <Spinner className="my-loader">
           <span className="visually-hidden">Loading...</span>
         </Spinner>
       </div> :
@@ -161,16 +155,16 @@ const Start = () => {
             ) :
           <Row>
             <Col xs="12" sm="12" md="12" lg="12" xl="12">
-              <h3 className="text-center">Question {" "}{currentQuestion && currentQuestion.question && currentQuestion.question.optionA ? num : null}</h3>
+              <h3 className="text-center">Question {" "}{currentQuestion && currentQuestion.optionA ? num : null}</h3>
               <p className="question"> 
-              {currentQuestion && currentQuestion && currentQuestion.question?.question}</p>
+              {currentQuestion && currentQuestion.question}</p>
               <p>
                 <Input 
                   value={"optionA"} 
                   type="radio" 
                   onChange={(e) => handleChange(e,currentQuestion.question._id)} 
-                  name={`${currentQuestion && currentQuestion.question?.question}`} />{"  "}{currentQuestion && currentQuestion.question && currentQuestion.question.optionA ? "A " : null}{" "} 
-                  {currentQuestion && currentQuestion.question?.optionA}
+                  name={`${currentQuestion && currentQuestion.question?.question}`} />{"  "}{currentQuestion && currentQuestion.optionA ? "A " : null}{" "} 
+                  {currentQuestion?.optionA}
               </p>
               <p>
                 <Input 
@@ -178,31 +172,31 @@ const Start = () => {
                   value="optionB" 
                   onChange={(e) => handleChange(e,currentQuestion.question._id,)} 
                   name={`${currentQuestion && currentQuestion.question?.question}`}/>{"  "}
-                  {currentQuestion && currentQuestion.question && currentQuestion.question.optionA ? "B " : null}{" "} 
-                  {currentQuestion && currentQuestion.question?.optionB}
+                  {currentQuestion && currentQuestion.optionB ? "B " : null}{" "} 
+                  {currentQuestion?.optionB}
               </p>
               <p>
                 <Input 
                   value="optionC" 
                   type="radio" 
                   onChange={(e) => handleChange(e,currentQuestion.question._id)} 
-                  name={`${currentQuestion && currentQuestion.question?.question}`}/>{"  "}{currentQuestion && currentQuestion.question && currentQuestion.question.optionA ? "C " : null}{" "} 
-                  {currentQuestion && currentQuestion.question?.optionC}
+                  name={`${currentQuestion?.question}`}/>{"  "}{currentQuestion && currentQuestion.optionC ? "C " : null}{" "} 
+                  {currentQuestion?.optionC}
               </p>
               <p>
                 <Input 
                   value="optionD" 
                   type="radio" 
                   onChange={(e) => handleChange(e,currentQuestion.question._id)} 
-                  name={`${currentQuestion && currentQuestion.question?.question}`}/>{"  "}{currentQuestion && currentQuestion.question && currentQuestion.question.optionA ? "D " : null}{" "} 
-                  {currentQuestion && currentQuestion.question?.optionD}</p>
+                  name={`${currentQuestion?.question}`}/>{"  "}{currentQuestion && currentQuestion.optionD ? "D " : null}{" "} 
+                  {currentQuestion?.optionD}</p>
               <p>
                 <Input 
                   value="optionE" 
                   type="radio" 
                   onChange={(e) => handleChange(e,currentQuestion.question._id)} 
-                  name={`${currentQuestion && currentQuestion.question?.question}`}/>{"  "}{currentQuestion && currentQuestion.question && currentQuestion.question.optionA ? "E " : null}{" "} 
-                  {currentQuestion && currentQuestion.question?.optionE}
+                  name={`${currentQuestion?.question}`}/>{"  "}{currentQuestion && currentQuestion.optionE ? "E " : null}{" "} 
+                  {currentQuestion?.optionE}
               </p>
               <div className="mt-5">
                 {num === userQuestions.length ? 
