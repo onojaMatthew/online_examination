@@ -22,6 +22,9 @@ export const ASSIGN_FAILED = "ASSIGN_FAILED";
 export const CREATE_USER_START = "CREATE_USER_START";
 export const CREATE_USER_SUCCESS = "CREATE_USER_SUCCESS";
 export const CREATE_USER_FAILED = "CREATE_USER_FAILED";
+export const GET_SHUFFLED_QUESTIONS_START = "GET_SHUFFLED_QUESTIONS_START";
+export const GET_SHUFFLED_QUESTIONS_SUCCESS = "GET_SHUFFLED_QUESTIONS_SUCCESS";
+export const GET_SHUFFLED_QUESTIONS_FAILED = "GET_SHUFFLED_QUESTIONS_FAILED";
 
 const BASE_URL = process.env.REACT_APP_URL;
 
@@ -302,5 +305,46 @@ export const createUser = (data) => {
       })
       .then(() => dispatch(getUserList()))
       .catch(err => dispatch(createUserFailed(err.message)));
+  }
+}
+
+// GET SHUFFLED QUESTION LIST
+export const getShuffledQuestionsStart = () => {
+  return {
+    type: GET_SHUFFLED_QUESTIONS_START
+  }
+}
+
+export const getShuffledQuestionsSuccess = (data) => {
+  return {
+    type: GET_SHUFFLED_QUESTIONS_SUCCESS,
+    data
+  }
+}
+
+export const getShuffledQuestionsFailed = (error) => {
+  return {
+    type: GET_SHUFFLED_QUESTIONS_FAILED,
+    error
+  }
+}
+
+export const getShuffledQuestions = (id) => {
+  console.log(id, " the id in action")
+  return dispatch => {
+    dispatch(getShuffledQuestionsStart());
+    fetch(`${BASE_URL}/user/random`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        ACCEPT: "application/json"
+      }
+    })
+      .then(response => response.json())
+      .then(resp => {
+        if (resp.error) return dispatch(getShuffledQuestionsFailed(resp.message));
+        dispatch(getShuffledQuestionsSuccess(resp.results));
+      })
+      .catch(err => dispatch(getShuffledQuestionsFailed(err.message)));
   }
 }

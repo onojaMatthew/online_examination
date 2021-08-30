@@ -12,3 +12,22 @@ button.close {
 .modal-title {
   color: #039be5;
 }
+
+.question_assign_card {
+  min-height: 80vh;
+  padding: 20px;
+}
+
+.question_assign_card .input-container, .question_assign_card .question-container {
+  margin-bottom: 150x;
+  font-size: 18px;
+}
+
+.question_assign_card .submit-button {
+  margin-right: 30px;
+  margin-top: 15px;
+}
+
+.question_assign_card h3 {
+  color: #039be5;
+}

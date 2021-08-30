@@ -7,6 +7,7 @@ import Dashboard from "./Dasboard";
 import Question from "../Question/Question";
 import Complete from "../../../User/Start/Complete";
 import UserManagement from "../UserManagement/UserManagement";
+import UserQuestion from "../UserManagement/UserQuestion";
 
 const { Content, Footer } = Layout;
 
@@ -22,6 +23,7 @@ const Home = (props) => {
             <Route exact path={`${match.url}`} render={(props) => <Dashboard {...props} />} />
             <Route path={`${match.url}/questions`} render={(props) => <Question {...props} />} />
             <Route path={`${match.url}/user_management`} render={(props) => <UserManagement {...props} />} />
+            <Route path={`${match.url}/assign_question`} render={(props) => <UserQuestion {...props} />} />
           </div>
         </Content>
         <Footer style={{ textAlign: 'center' }}>©2021 Developed by Onoja Igoche Matthew</Footer>

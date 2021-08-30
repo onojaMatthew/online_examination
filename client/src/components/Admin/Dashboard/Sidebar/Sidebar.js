@@ -13,7 +13,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../../../store/actions/actions_login";
 
 const { Sider } = Layout;
-const { SubMenu } = Menu;
 
 const Sidebar = () => {
   const dispatch = useDispatch();
@@ -46,7 +45,10 @@ const Sidebar = () => {
           <Menu.Item key="3" onClick={() => history.push("/dashboard/user_management")} icon={<FaUser />}>
             User Management
           </Menu.Item>
-          <Menu.Item onClick={onLogout} key="6" icon={<FaPowerOff />}>
+          <Menu.Item key="4" onClick={() => history.push("/dashboard/assign_question")} icon={<FaQuestion />}>
+            Assign Question
+          </Menu.Item>
+          <Menu.Item onClick={onLogout} key="5" icon={<FaPowerOff />}>
             Logout
           </Menu.Item>
         </Menu>

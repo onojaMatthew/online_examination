@@ -13,14 +13,14 @@ import NewUser from "./NewUser";
 
 const UserManagement = () => {
   const dispatch = useDispatch();
-  const { users, list_loading, assign_success, create_success, create_loading, assign_loading, delete_loading } = useSelector(state => state.user);
-  const questionList = useSelector(state => state.dashboard_data);
+  const { users, list_loading, create_success, create_loading, delete_loading } = useSelector(state => state.user);
+  // const questionList = useSelector(state => state.dashboard_data);
   const { docs } = users;
   const [ modal, setModal ] = useState(false);
   const [ userModal, setUserModal ] = useState(false);
   const [ values, setValues ] = useState({ first_name: "", last_name: "", email: "", phone: "" });
   const [ userId, setUserId ] = useState("");
-  const [ questions, setQuestions ] = useState([]);
+  
   const [ time, setTime ] = useState("");
 
   const { first_name, last_name, email, phone } = values;
@@ -44,25 +44,7 @@ const UserManagement = () => {
     setModal(true);
   }
 
-  const handleQuestions = (e) => {
-    const { value } = e.target;
-    const findx = questions.includes(value)
-    if (!findx) {
-      const questn = [...questions, e.target.value]
-      setQuestions(questn);
-    } else if (e.target.checked === false) {
-      let que = questions;
-      const index = que.indexOf(value);
-      que.splice(index, 1);
-      setQuestions(que)
-    }
-  }
-
-  const handleCreate = () => {
-    const data = { questions, user: userId, time: time };
-    dispatch(assingQuestions(data));
-  }
-
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues({...values, [name]: value });
@@ -140,7 +122,7 @@ const UserManagement = () => {
                 </Table>
               </CardBody>
             </Card>
-            <UserQuestion 
+            {/* <UserQuestion 
               time={time} 
               setTime={setTime} 
               handleQuestions={handleQuestions}
@@ -151,7 +133,7 @@ const UserManagement = () => {
               handleCreate={handleCreate}
               assign_loading={assign_loading}
               assign_success={assign_success}
-            />
+            /> */}
             <NewUser
               first_name={first_name}
               last_name={last_name}

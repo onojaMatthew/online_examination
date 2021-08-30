@@ -20,6 +20,9 @@ import {
   CREATE_USER_START,
   CREATE_USER_SUCCESS,
   CREATE_USER_FAILED,
+  GET_SHUFFLED_QUESTIONS_START,
+  GET_SHUFFLED_QUESTIONS_SUCCESS,
+  GET_SHUFFLED_QUESTIONS_FAILED,
 } from "../../actions/actions_user";
 
 const initialState = {
@@ -41,6 +44,8 @@ const initialState = {
   assign_success: false,
   create_loading: false,
   create_success: false,
+  shuffled_loading: false,
+  shuffled_success: false,
   error: ""
 }
 
@@ -181,6 +186,26 @@ export const user = (state=initialState, action) => {
         ...state,
         create_loading: false,
         create_success: false,
+        error: action.error
+      }
+    case GET_SHUFFLED_QUESTIONS_START:
+      return {
+        ...state,
+        shuffled_loading: true,
+        shuffled_success: false,
+      }
+    case GET_SHUFFLED_QUESTIONS_SUCCESS:
+      return {
+        ...state,
+        shuffled_loading: false,
+        shuffled_success: true,
+        questions: action.data,
+      }
+    case GET_SHUFFLED_QUESTIONS_FAILED:
+      return {
+        ...state,
+        shuffled_loading: false,
+        shuffled_success: false,
         error: action.error
       }
     default:
