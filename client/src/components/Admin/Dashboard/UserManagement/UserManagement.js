@@ -78,7 +78,7 @@ const UserManagement = () => {
                     <th>Last Name</th>
                     <th>Email</th>
                     <th>Phone</th>
-                    <th>View Solution</th>
+                    <th>Test Solution</th>
                     <th>Delete</th>
                   </thead>
                   <tbody>
@@ -90,7 +90,7 @@ const UserManagement = () => {
                         <td>{u?.phone}</td>
                         <td className="assign">
                         {/* onClick={() => handleModalToggle(u?._id)} */}
-                          <FaEye className="icon-update" />
+                          <FaEye className="icon-update" /> View Test Solution
                         </td>
                         <td className="icon-td">
                           {/* <BsPencilSquare onClick={() => handleModalToggle(u?._id)} className="icon-update" /> {""} */}

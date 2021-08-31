@@ -23,12 +23,15 @@ import {
   GET_SHUFFLED_QUESTIONS_START,
   GET_SHUFFLED_QUESTIONS_SUCCESS,
   GET_SHUFFLED_QUESTIONS_FAILED,
+  GET_USER_SOLUTION_START,
+  GET_USER_SOLUTION_SUCCESS,
+  GET_USER_SOLUTION_FAILED,
 } from "../../actions/actions_user";
 
 const initialState = {
   users: [],
   user: {},
-  questions: {},
+  questions: [],
   solution: {},
   loading: false,
   success: false,
@@ -207,6 +210,26 @@ export const user = (state=initialState, action) => {
         shuffled_loading: false,
         shuffled_success: false,
         error: action.error
+      }
+    case GET_USER_SOLUTION_START:
+      return {
+        ...state,
+        loading: true,
+        success: false,
+      }
+    case GET_USER_SOLUTION_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        success: true,
+        questions: action.data,
+      }
+    case GET_USER_SOLUTION_FAILED:
+      return {
+        ...state,
+        loading: false,
+        success: false,
+        error: action.error,
       }
     default:
       return state;

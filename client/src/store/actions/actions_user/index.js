@@ -25,6 +25,9 @@ export const CREATE_USER_FAILED = "CREATE_USER_FAILED";
 export const GET_SHUFFLED_QUESTIONS_START = "GET_SHUFFLED_QUESTIONS_START";
 export const GET_SHUFFLED_QUESTIONS_SUCCESS = "GET_SHUFFLED_QUESTIONS_SUCCESS";
 export const GET_SHUFFLED_QUESTIONS_FAILED = "GET_SHUFFLED_QUESTIONS_FAILED";
+export const GET_USER_SOLUTION_START = "GET_USER_SOLUTION_START";
+export const GET_USER_SOLUTION_SUCCESS = "GET_USER_SOLUTION_SUCCESS";
+export const GET_USER_SOLUTION_FAILED = "GET_USER_SOLUTION_FAILED";
 
 const BASE_URL = process.env.REACT_APP_URL;
 
@@ -346,5 +349,44 @@ export const getShuffledQuestions = (id) => {
         dispatch(getShuffledQuestionsSuccess(resp.results));
       })
       .catch(err => dispatch(getShuffledQuestionsFailed(err.message)));
+  }
+}
+
+export const getUserSolutionStart = () => {
+  return {
+    type: GET_USER_SOLUTION_START
+  }
+}
+
+export const getUserSolutionSuccess = (data) => {
+  return {
+    type: GET_USER_SOLUTION_SUCCESS,
+    data
+  }
+}
+
+export const getUserSolutionFailed = (error) => {
+  return {
+    type: GET_USER_SOLUTION_FAILED,
+    error
+  }
+}
+
+export const getUserSolution = (id) => {
+  return dispatch => {
+    dispatch(getUserSolutionStart());
+    fetch(`${BASE_URL}/user/user_solution?id=${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        ACCEPT: "application/json"
+      }
+    })
+      .then(response => response.json())
+      .then(resp => {
+        if (resp.error) return dispatch(getUserSolutionFailed(resp.message));
+        dispatch(getUserSolutionSuccess(resp.results));
+      })
+      .catch(err => dispatch(getUserSolutionFailed(err.message)));
   }
 }

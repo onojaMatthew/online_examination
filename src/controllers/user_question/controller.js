@@ -83,7 +83,7 @@ export const assign_question = async (req, res) => {
 
 export const get_assigned_question = async (req, res) => {
   try {
-    const userQuestion = await UserQuestion.findOne({ userId: req.query.id }).populate("userId")
+    const userQuestion = await UserQuestion.findOne({ userId: req.query.id, completed: false }).populate("userId")
     
     return res.json(success("Success", userQuestion, res.statusCode));
   } catch (err) {
@@ -141,7 +141,6 @@ export const answer = async (req, res) => {
       const eachQuestion = qxns[i]
       let questionIndex = question.questions.findIndex(cp => {
         if (cp && cp.question) {
-          console.log(cp._id.toString() === eachQuestion.question && eachQuestion.question.toString(), " the comparism")
           return cp._id.toString() === eachQuestion.question.toString();
         }
       });
@@ -150,7 +149,7 @@ export const answer = async (req, res) => {
       }
     }
   
-    const {_id } = await User.findById({ _id: user })
+    const {_id } = await User.findById({ _id: user });
     
     question.questions = all_questions;
     question.userId = _id;
