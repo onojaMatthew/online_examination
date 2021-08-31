@@ -1,13 +1,11 @@
 import { Button } from "antd";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { FaTrash } from "react-icons/fa";
-import { BsPencilSquare } from "react-icons/bs";
+import { FaTrash, FaEye } from "react-icons/fa";
 import { Col, Row, Table, Spinner, Card, CardBody } from "reactstrap";
 
 import "../Question/Question.css";
-import { deleteUser, getUserList, assingQuestions, createUser } from "../../../../store/actions/actions_user";
-import UserQuestion from "./UserQuestion";
+import { deleteUser, getUserList, createUser } from "../../../../store/actions/actions_user";
 import { getQuestionList } from "../../../../store/actions/actions_dashboard_data";
 import NewUser from "./NewUser";
 
@@ -16,12 +14,9 @@ const UserManagement = () => {
   const { users, list_loading, create_success, create_loading, delete_loading } = useSelector(state => state.user);
   // const questionList = useSelector(state => state.dashboard_data);
   const { docs } = users;
-  const [ modal, setModal ] = useState(false);
   const [ userModal, setUserModal ] = useState(false);
   const [ values, setValues ] = useState({ first_name: "", last_name: "", email: "", phone: "" });
-  const [ userId, setUserId ] = useState("");
   
-  const [ time, setTime ] = useState("");
 
   const { first_name, last_name, email, phone } = values;
   useEffect(() => {
@@ -31,17 +26,6 @@ const UserManagement = () => {
 
   const onDelete = (id) => {
     dispatch(deleteUser(id));
-  }
-
-  const toggle = () => {
-    setModal(!modal);
-  }
-
-  const handleToggleCreate = () => {}
-
-  const handleModalToggle = (id) => {
-    setUserId(id);
-    setModal(true);
   }
 
   
@@ -86,7 +70,7 @@ const UserManagement = () => {
               <CardBody>
                 <div className="header-dev">
                   <h2>User List</h2>
-                  <Button onClick={handleUserModal}>Create New Question</Button>
+                  <Button onClick={handleUserModal}>Create New User</Button>
                 </div>
                 <Table responsive hover>
                   <thead className="th">
@@ -94,7 +78,7 @@ const UserManagement = () => {
                     <th>Last Name</th>
                     <th>Email</th>
                     <th>Phone</th>
-                    <th>Interview</th>
+                    <th>View Solution</th>
                     <th>Delete</th>
                   </thead>
                   <tbody>
@@ -105,7 +89,8 @@ const UserManagement = () => {
                         <td>{u?.email}</td>
                         <td>{u?.phone}</td>
                         <td className="assign">
-                          <BsPencilSquare onClick={() => handleModalToggle(u?._id)} className="icon-update" />
+                        {/* onClick={() => handleModalToggle(u?._id)} */}
+                          <FaEye className="icon-update" />
                         </td>
                         <td className="icon-td">
                           {/* <BsPencilSquare onClick={() => handleModalToggle(u?._id)} className="icon-update" /> {""} */}
@@ -122,18 +107,6 @@ const UserManagement = () => {
                 </Table>
               </CardBody>
             </Card>
-            {/* <UserQuestion 
-              time={time} 
-              setTime={setTime} 
-              handleQuestions={handleQuestions}
-              docs={docs}
-              modal={modal}
-              questions={questionList && questionList.questions?.docs}
-              toggle={toggle}
-              handleCreate={handleCreate}
-              assign_loading={assign_loading}
-              assign_success={assign_success}
-            /> */}
             <NewUser
               first_name={first_name}
               last_name={last_name}

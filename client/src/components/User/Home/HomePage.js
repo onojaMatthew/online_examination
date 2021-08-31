@@ -6,20 +6,14 @@ import "./Login.css";
 import { useDispatch, useSelector } from "react-redux";
 import { userDetail } from "../../../store/actions/actions_user";
 import Icon from "../../../assets/images/employee.jpg";
-import Auth from "../../../helper/Auth";
 
 const HomePage = () => {
   const dispatch = useDispatch();
   const [ domain_name, setSubdomain ] = useState("");
   const { user, loading } = useSelector(state => state.user);
   const [ message, setMessage ] = useState("");
-  const [ token, setToken ] = useState({});
   const match = useRouteMatch();
   const history = useHistory();
-
-  useEffect(() => {
-    setToken(JSON.parse(Auth.getToken()));
-  }, []);
 
   useEffect(() => {
     const url = match.url.split("/").slice(2)

@@ -8,7 +8,7 @@ import Icon from "../../../assets/images/employee.jpg";
 
 const Login = () => {
   const dispatch = useDispatch();
-  const { loginLoading, loginSuccess, error } = useSelector(state => state.account);
+  const { loginLoading, loginSuccess } = useSelector(state => state.account);
   const [ values, setValues ] = useState({ email: "", password: "" });
 
   const { email, password } = values;

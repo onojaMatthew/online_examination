@@ -1,55 +1,52 @@
 import React, { useEffect, useState } from "react";
-import { Row, Col, Modal, ModalBody, ModalHeader, ModalFooter, Input, Card, CardBody, CardHeader, Spinner } from "reactstrap";
-import { Button } from "antd";
+import { Row, Col,  Input, Card, CardBody, Spinner, Alert } from "reactstrap";
+import { Button, message } from "antd";
 import "./User.css"
 import { useDispatch, useSelector } from "react-redux";
-import { getShuffledQuestions, getUserList } from "../../../../store/actions/actions_user";
-import { getQuestionList } from "../../../../store/actions/actions_dashboard_data";
+import { assingQuestions, getShuffledQuestions, getUserList } from "../../../../store/actions/actions_user";
 
-const UserQuestion = ({
-  toggle,
-  modal,
-  time,
-  setTime,
-  // assign_loading,
-  // questions,
-  // handleCreate,
-  // assign_success
-}) => {
+const UserQuestion = () => {
   const dispatch = useDispatch();
   const [ values, setQuestions ] = useState([{ user: "", randomQuestion: "" }]);
   const { users: { docs }, questions, list_loading, assign_success, assign_loading } = useSelector(state => state.user);
   const [ selectedUser, setSelectedUser ] = useState("");
   const [ selectedQuestions, setSelectedQuestion ] = useState("");
-
-  const questionArr = [{ user: "", randomQuestion: "" }];
+  const [ errMsg, setErrMsg ] = useState("");
+  const [ time, setTime ] = useState("");
 
   useEffect(() => {
     dispatch(getUserList());
     dispatch(getShuffledQuestions());
   }, [ dispatch ]);
 
-  const handleQuestions = (e) => {
-    const { value } = e.target;
-    const findx = values.includes(value)
-    if (!findx) {
-      const questn = [...values, e.target.value]
-      setQuestions(questn);
-    } else if (e.target.checked === false) {
-      let que = values;
-      const index = que.indexOf(value);
-      que.splice(index, 1);
-      setQuestions(que)
-    }
-  }
+  // const handleQuestions = (e) => {
+  //   const { value } = e.target;
+  //   const findx = values.includes(value)
+  //   if (!findx) {
+  //     const questn = [...values, e.target.value]
+  //     setQuestions(questn);
+  //   } else if (e.target.checked === false) {
+  //     let que = values;
+  //     const index = que.indexOf(value);
+  //     que.splice(index, 1);
+  //     setQuestions(que)
+  //   }
+  // }
 
   const handleCreate = () => {
-    // const data = { questions, user: userId, time: time };
-    // dispatch(assingQuestions(data));
+    let real_questions = [...values];
+    real_questions.shift();
+    console.log(real_questions, " real questions");
+    const data = { questions: real_questions, time: time };
+    if (!time) {
+      setErrMsg("Please specify test duration");
+    }
+    dispatch(assingQuestions(data));
   }
 
   const onSelectUser = (e) => {
     const { value } = e.target;
+    setErrMsg("")
     setSelectedUser(value);
   }
 
@@ -59,36 +56,28 @@ const UserQuestion = ({
   }
 
   useEffect(() => {
-    let isQuestion;
     if (selectedQuestions.length > 0) {
-      let userIndex = values.findIndex(u => { return u.user === selectedUser });
-      if (userIndex) {
-        isQuestion = values[userIndex].randomQuestion === selectedQuestions;
+      if (selectedUser <= 0) {
+        setErrMsg("A user must be selected first firs");
+        return
       }
-
-      if (isQuestion)  return;
-      // const que = values[userIndex].randomQuestion = selectedQuestions;
-      let newQuestion = [...values, { randomQuestion: selectedQuestions }];
+      let newQuestion = [...values, { user: selectedUser,  randomQuestion: selectedQuestions }];
       setQuestions(newQuestion)
+      setSelectedUser("");
     }
-  }, [ selectedQuestions ]);
+  }, [ selectedQuestions, values, selectedUser ]);
 
   useEffect(() => {
-    let isUser;
-    if (selectedUser.length > 0) {
-      let questionIndex = values.findIndex(u => { return u.randomQuestion === selectedQuestions });
-      if (questionIndex) {
-        isUser = questionArr[questionIndex].user === selectedUser;
-      }
-  
-      if (isUser)  return;
-      const user = questionArr[questionIndex].user = selectedUser;
-      let newQuestion = [...values, { user: selectedUser }];
-      setQuestions(newQuestion);
+    if (assign_success) {
+      message.success("Questions assigned successfully");
     }
-  }, [ selectedUser ]);
+  }, [ assign_success ]);
 
-  console.log(values, " the quesions");
+  const handleTime = (e) => {
+    setErrMsg("");
+    setTime(e.target.value);
+  }
+
   return (
     <div>
       {list_loading ? (
@@ -101,6 +90,7 @@ const UserQuestion = ({
         <Card className="question_assign_card">
           <CardBody>
             <h3>Assign Questions</h3>
+            {errMsg.length > 0 ? <Alert color="danger">{errMsg}</Alert> : null}
             <Row>
               <Col xs="6" sm="6" md="6" lg="6" xl="6">
                 {docs && docs.length > 0 ? docs.map((user, i) => (
@@ -112,7 +102,7 @@ const UserQuestion = ({
               <Col xs="6" sm="6" md="6" lg="6" xl="6">
                 {questions && questions.length > 0 ? questions.map((q, i) => (
                   <div key={i} className="question-container">
-                    <Input type="checkbox" onChange={(e) => onSelectQuestion(e)} value={q?._id} /> <span>{`Question ${i}`}</span>
+                    <Input disabled={selectedUser.length === 0 ? true : false} type="checkbox" onChange={(e) => onSelectQuestion(e)} value={q?._id} /> <span>{`Question ${i}`}</span>
                   </div>
                 )) : <h3>No Question Records yet</h3>}
               </Col>
@@ -121,14 +111,13 @@ const UserQuestion = ({
               <Col xs="12" sm="12" md="12" lg="6" xl="6">
                 <div className="mt-4">
                   <label htmlFor="time">Interview Duration</label>
-                  <Input id="time" value={time} onChange={(e) => setTime(e.target.value)} placeholder="30mins" />
+                  <Input id="time" value={time} onChange={(e) => handleTime(e)} placeholder="30mins" />
                 </div>
               </Col>
             </Row>
-            
             {assign_loading ? <Button className="submit-button" loading>Processing...</Button> : 
               <Button className="submit-button" color="primary" onClick={handleCreate}>Submit</Button>}
-            {" "}<Button className="cancel-button" color="secondary" onClick={toggle}>Cancel</Button>
+            {" "}<Button className="cancel-button" color="secondary">Cancel</Button>
           </CardBody>
         </Card>
       )}

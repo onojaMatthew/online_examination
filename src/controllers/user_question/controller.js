@@ -44,9 +44,11 @@ export const getRandomQuestions = async (req, res) => {
 export const assign_question = async (req, res) => {
   const { questions, time } = req.body;
   try {
+    
     let count = 0;
     for (let i = 0; i < questions.length; i++){
       let que = questions[i]
+      if (!que.randomQuestion || !que.user) return res.status(400).json(error("Invalid users or questions", res.statusCode)); 
       // return
       let randomQue = await RandomQuestions.findById({ _id: que.randomQuestion}).populate("questions.question");
       let arr = [];

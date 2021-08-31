@@ -76,7 +76,7 @@ const Question = () => {
     } else if (optionEFile) {
       dispatch(uploader(optionEFile))
     }
-  }, [ answerFile, optionAFile, optionBFile, optionCFile, optionDFile, optionEFile ]);
+  }, [ dispatch, answerFile, optionAFile, optionBFile, optionCFile, optionDFile, optionEFile ]);
 
   const handleFileChange = (e) => {
     const { name, files } = e.target;
@@ -139,9 +139,8 @@ const Question = () => {
     } else if (upload_success && optionEFile) {
       setValues({...values, optionE: upload.upload && upload.upload.secure_url })
     }
-  }, [ upload_loading, answerFile, optionAFile, optionBFile, optionCFile, optionDFile, optionEFile])
+  }, [ upload_success, upload, values, upload_loading, answerFile, optionAFile, optionBFile, optionCFile, optionDFile, optionEFile])
 
-  console.log(optionAFile, " the option A")
   return (
     <div>
       <Row>

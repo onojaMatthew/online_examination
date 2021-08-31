@@ -36,7 +36,6 @@ const Instruction = () => {
     }
   }, [ questions ]);
 
-  console.log(token, " the questions")
   return (
     <div>
       {questionLoading ? (

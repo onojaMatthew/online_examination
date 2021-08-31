@@ -5,7 +5,6 @@ import Sidebar from "../Sidebar/Sidebar";
 import Head from "../Header/Head";
 import Dashboard from "./Dasboard";
 import Question from "../Question/Question";
-import Complete from "../../../User/Start/Complete";
 import UserManagement from "../UserManagement/UserManagement";
 import UserQuestion from "../UserManagement/UserQuestion";
 
