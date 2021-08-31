@@ -69,17 +69,17 @@ const Question = () => {
   }, [ create_loading ]);
 
   useEffect(() => {
-    if (answerFile) {
+    if (answerFile && answerFile.name) {
       dispatch(uploader(answerFile))
-    } else if (optionAFile) {
+    } else if (optionAFile && optionAFile.name) {
       dispatch(uploader(optionAFile))
-    } else if (optionBFile) {
+    } else if (optionBFile && optionBFile.name) {
       dispatch(uploader(optionBFile))
-    } else if (optionCFile) {
+    } else if (optionCFile && optionCFile.name) {
       dispatch(uploader(optionCFile))
-    } else if (optionDFile) {
+    } else if (optionDFile && optionDFile.name) {
       dispatch(uploader(optionDFile))
-    } else if (optionEFile) {
+    } else if (optionEFile && optionEFile.name) {
       dispatch(uploader(optionEFile))
     }
   }, [ dispatch, answerFile, optionAFile, optionBFile, optionCFile, optionDFile, optionEFile ]);

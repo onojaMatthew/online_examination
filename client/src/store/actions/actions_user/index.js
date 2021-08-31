@@ -28,6 +28,9 @@ export const GET_SHUFFLED_QUESTIONS_FAILED = "GET_SHUFFLED_QUESTIONS_FAILED";
 export const GET_USER_SOLUTION_START = "GET_USER_SOLUTION_START";
 export const GET_USER_SOLUTION_SUCCESS = "GET_USER_SOLUTION_SUCCESS";
 export const GET_USER_SOLUTION_FAILED = "GET_USER_SOLUTION_FAILED";
+export const CREATE_RANDOM_START = "CREATE_RANDOM_START";
+export const CREATE_RANDOM_SUCCESS = "CREATE_RANDOM_SUCCESS";
+export const CREATE_RANDOM_FAILED = "CREATE_RANDOM_FAILED";
 
 const BASE_URL = process.env.REACT_APP_URL;
 
@@ -388,5 +391,45 @@ export const getUserSolution = (id) => {
         dispatch(getUserSolutionSuccess(resp.results));
       })
       .catch(err => dispatch(getUserSolutionFailed(err.message)));
+  }
+}
+
+export const createRandomStart = () => {
+  return {
+    type: CREATE_RANDOM_START
+  }
+}
+
+export const createRandomSuccess = (data) => {
+  return {
+    type: CREATE_RANDOM_SUCCESS,
+    data
+  }
+}
+
+export const createRandomFailed = (error) => {
+  return {
+    type: CREATE_RANDOM_FAILED,
+    error
+  }
+}
+
+export const createRandomQuestions = (data) => {
+  return dispatch => {
+    dispatch(createRandomStart());
+    fetch(`${BASE_URL}/user/question/randomize`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        ACCEPT: "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+      .then(response => response.json())
+      .then(resp => {
+        if (resp.error) return dispatch(createRandomFailed(resp.message));
+        dispatch(createRandomSuccess(resp.results));
+      })
+      .catch(err => dispatch(createRandomFailed(err.message)));
   }
 }

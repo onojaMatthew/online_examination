@@ -26,12 +26,16 @@ import {
   GET_USER_SOLUTION_START,
   GET_USER_SOLUTION_SUCCESS,
   GET_USER_SOLUTION_FAILED,
+  CREATE_RANDOM_START,
+  CREATE_RANDOM_SUCCESS,
+  CREATE_RANDOM_FAILED,
 } from "../../actions/actions_user";
 
 const initialState = {
   users: [],
   user: {},
   questions: [],
+  random: {},
   solution: {},
   loading: false,
   success: false,
@@ -49,6 +53,8 @@ const initialState = {
   create_success: false,
   shuffled_loading: false,
   shuffled_success: false,
+  random_loading: false,
+  random_success: false,
   error: ""
 }
 
@@ -230,6 +236,26 @@ export const user = (state=initialState, action) => {
         loading: false,
         success: false,
         error: action.error,
+      }
+    case CREATE_RANDOM_START:
+      return {
+        ...state,
+        random_loading: true,
+        random_success: false,
+      }
+    case CREATE_RANDOM_SUCCESS:
+      return {
+        ...state,
+        random_loading: false,
+        random_success: true,
+        random: action.data,
+      }
+    case CREATE_RANDOM_FAILED:
+      return {
+        ...state,
+        random_loading: false,
+        random_success: false,
+        error: action.error
       }
     default:
       return state;

@@ -198,6 +198,44 @@ input #file-upload-button {
   border: none;
 }
 
+.modal-body {
+  padding: 20px !important;
+}
+
+.random-list input {
+  margin-bottom: 20px;
+}
+
+.random-button {
+  background: #039be5;
+  color: #fff;
+  height: 50px;
+  width: 150px;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: none;
+}
+
+.random-button:hover {
+  background: #039be5;
+  color: #fff;
+  height: 50px;
+  width: 150px;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: none;
+}
+
+.random-button:focus {
+  background: #039be5;
+  color: #fff;
+  height: 50px;
+  width: 150px;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: none;
+}
+
 @media only screen and (max-width: 768px) {
   .icon-update {
     color: #039be5;
