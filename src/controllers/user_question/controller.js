@@ -167,7 +167,7 @@ export const answer = async (req, res) => {
 export const getUserSolution = async (req, res) => {
   const { id } = req.query;
   try {
-    const result = await UserQuestion.findOne({ userId: id, completed: true });
+    const result = await UserQuestion.findOne({ userId: id, completed: true }).populate("userId");
     return res.json(success("Success", result, res.statusCode));
   } catch (err) {
     return res.status(400).json(error(err.message, res.statusCode));

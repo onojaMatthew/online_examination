@@ -20,8 +20,6 @@ const UserSolution = () => {
     }
   }, [ dispatch ]);
 
-  console.log(history, " the question")
-
   return (
     <div>
       {loading ? (
@@ -34,10 +32,10 @@ const UserSolution = () => {
         <Row>
           <Col xs="12" sm="12" md="12">
             <Card className="mt-4 questions-card">
+              <FaArrowLeft style={{ cursor: "pointer", fontSize: "18px"}} onClick={() => history.goBack()} />
               <CardBody>
                 <div className="header-dev">
-                  <h2>Question List</h2>
-                  <Button onClick={handleQuestionList}>Set New Question</Button>
+                  <h2>{questions && questions.questions ? `${questions && questions.userId && questions.userId.first_name}'s` : ""} Test Solution</h2>
                 </div>
                 <Table responsive hover>
                   <thead className="th">
@@ -51,7 +49,7 @@ const UserSolution = () => {
                     <th>Option E</th>
                   </thead>
                   <tbody>
-                    {questions.questions?.length ? questions.questions.map(d => (
+                    {questions && questions.questions?.length ? questions.questions.map(d => (
                       <tr>
                         <td>{d?.question}</td>
                         <td>{d?.answer}</td>
@@ -61,9 +59,11 @@ const UserSolution = () => {
                         <td>{d?.optionC}</td>
                         <td>{d?.optionD}</td>
                         <td>{d?.optionE}</td>
-                        
                       </tr>
-                    )) : <div className="no-data"></div>}
+                    )) : 
+                    <div className="no-data">
+                      <h3 className="text-center mt-5">No Records Found</h3>
+                    </div>}
                   </tbody>
                 </Table>
               </CardBody>

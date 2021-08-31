@@ -9,6 +9,7 @@ import { getQuestionList, deleteQuestion, createQuestion } from "../../../../sto
 import "./Question.css";
 import NewQuestion from "./NewQuestion";
 import { uploader } from "../../../../store/actions/actions_upload";
+import RandomQuestions from "./RandomQuestions";
 
 const Question = () => {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ const Question = () => {
   const [ modal, setModal ] = useState(false);
   const { questions, list_loading, delete_loading, create_loading } = useSelector(state => state.dashboard_data);
   const { docs } = questions;
+  const [ randomModal, setRandomModal ] = useState(false);
   // page, totalPages, nextPage, prevPage, 
   const [ answerFile, setAnswerFile ] = useState({});
   const [ optionAFile, setoptionAFile ] = useState({});
@@ -39,6 +41,10 @@ const Question = () => {
   const toggle = () => {
     setModal(!modal);
     setValues({ question: "", answer: "", optionA: "", optionB: "", optionC: "", optionD: "", optionE: "" });
+  }
+
+  const toggleRandomModal = () => {
+    setRandomModal(!randomModal);
   }
 
   const handleChange = (e) => {
@@ -149,6 +155,7 @@ const Question = () => {
             <CardBody>
               <div className="header-dev">
                 <h2>Question List</h2>
+                <Button onClick={toggleRandomModal}>Set New Question</Button>
                 <Button onClick={handleToggleCreate}>Set New Question</Button>
               </div>
               <Table responsive hover>
@@ -212,6 +219,11 @@ const Question = () => {
           />
         </Col>
       </Row>
+      <RandomQuestions 
+        toggleRandomModal={toggleRandomModal} 
+        questions={questions} 
+        randomModal={randomModal} 
+      />
     </div>
   )
 }

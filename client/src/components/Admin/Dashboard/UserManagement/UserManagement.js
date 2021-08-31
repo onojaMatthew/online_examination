@@ -1,5 +1,6 @@
 import { Button } from "antd";
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { FaTrash, FaEye } from "react-icons/fa";
 import { Col, Row, Table, Spinner, Card, CardBody } from "reactstrap";
@@ -12,13 +13,13 @@ import NewUser from "./NewUser";
 const UserManagement = () => {
   const dispatch = useDispatch();
   const { users, list_loading, create_success, create_loading, delete_loading } = useSelector(state => state.user);
-  // const questionList = useSelector(state => state.dashboard_data);
   const { docs } = users;
   const [ userModal, setUserModal ] = useState(false);
+  const history = useHistory();
   const [ values, setValues ] = useState({ first_name: "", last_name: "", email: "", phone: "" });
-  
 
   const { first_name, last_name, email, phone } = values;
+
   useEffect(() => {
     dispatch(getUserList());
     dispatch(getQuestionList());
@@ -27,7 +28,6 @@ const UserManagement = () => {
   const onDelete = (id) => {
     dispatch(deleteUser(id));
   }
-
   
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -65,7 +65,6 @@ const UserManagement = () => {
         </div> : 
         <Row>
           <Col xs="12" sm="12" md="12">
-            
             <Card className="mt-4 questions-card">
               <CardBody>
                 <div className="header-dev">
@@ -88,7 +87,7 @@ const UserManagement = () => {
                         <td>{u?.last_name}</td>
                         <td>{u?.email}</td>
                         <td>{u?.phone}</td>
-                        <td className="assign">
+                        <td className="assign" onClick={() => history.push(`/dashboard/user/${u._id}`)}>
                         {/* onClick={() => handleModalToggle(u?._id)} */}
                           <FaEye className="icon-update" /> View Test Solution
                         </td>
