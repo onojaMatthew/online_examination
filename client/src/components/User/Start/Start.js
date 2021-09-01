@@ -11,13 +11,12 @@ import "./Start.css";
 
 const Start = () => {
   const dispatch = useDispatch();
-  const { questions, questionLoading, solutionLoading, solutionSuccess, error } = useSelector(state => state.user);
+  const { questions, questionLoading, solutionLoading, solutionSuccess } = useSelector(state => state.user);
   const [ userQuestions, setUserQuestions ] = useState([]);
   const [ time, setTime ] = useState(0);
   const [ counter, setCounter ] = useState("");
   const [ num, setNum ] = useState(0);
   const [ toggle, setToggle ] = useState(false);
-  const [ modal, setModal ] = useState(false);
   const [ token, setToken ] = useState({});
   const [ currentQuestion, setCurrentQuestion ] = useState({});
   const [ userAnswer, setUserAnswer ] = useState([{ "ans": "", "question": "" }]);
@@ -111,6 +110,7 @@ const Start = () => {
     }
   }, [ questions, solutionSuccess ]);
 
+  console.log(userAnswer, currentQuestion, " the user answer")
   return (
     <div>
       {questionLoading ? (
@@ -162,16 +162,16 @@ const Start = () => {
                 <Input 
                   value={"optionA"} 
                   type="radio" 
-                  onChange={(e) => handleChange(e,currentQuestion.question._id)} 
-                  name={`${currentQuestion && currentQuestion.question?.question}`} />{"  "}{currentQuestion && currentQuestion.optionA ? "A " : null}{" "} 
+                  onChange={(e) => handleChange(e,currentQuestion._id)} 
+                  name={`${currentQuestion && currentQuestion?.question.trim()}`} />{"  "}{currentQuestion && currentQuestion.optionA ? "A " : null}{" "} 
                   {currentQuestion?.optionA}
               </p>
               <p>
                 <Input 
                   type="radio"
                   value="optionB" 
-                  onChange={(e) => handleChange(e,currentQuestion.question._id,)} 
-                  name={`${currentQuestion && currentQuestion.question?.question}`}/>{"  "}
+                  onChange={(e) => handleChange(e,currentQuestion._id,)} 
+                  name={`${currentQuestion?.question && currentQuestion?.question.trim()}`}/>{"  "}
                   {currentQuestion && currentQuestion.optionB ? "B " : null}{" "} 
                   {currentQuestion?.optionB}
               </p>
@@ -179,23 +179,23 @@ const Start = () => {
                 <Input 
                   value="optionC" 
                   type="radio" 
-                  onChange={(e) => handleChange(e,currentQuestion.question._id)} 
-                  name={`${currentQuestion?.question}`}/>{"  "}{currentQuestion && currentQuestion.optionC ? "C " : null}{" "} 
+                  onChange={(e) => handleChange(e,currentQuestion._id)} 
+                  name={`${currentQuestion?.question && currentQuestion?.question.trim()}`}/>{"  "}{currentQuestion && currentQuestion.optionC ? "C " : null}{" "} 
                   {currentQuestion?.optionC}
               </p>
               <p>
                 <Input 
                   value="optionD" 
                   type="radio" 
-                  onChange={(e) => handleChange(e,currentQuestion.question._id)} 
-                  name={`${currentQuestion?.question}`}/>{"  "}{currentQuestion && currentQuestion.optionD ? "D " : null}{" "} 
+                  onChange={(e) => handleChange(e,currentQuestion._id)} 
+                  name={`${currentQuestion?.question && currentQuestion?.question.trim()}`}/>{"  "}{currentQuestion && currentQuestion.optionD ? "D " : null}{" "} 
                   {currentQuestion?.optionD}</p>
               <p>
                 <Input 
                   value="optionE" 
                   type="radio" 
-                  onChange={(e) => handleChange(e,currentQuestion.question._id)} 
-                  name={`${currentQuestion?.question}`}/>{"  "}{currentQuestion && currentQuestion.optionE ? "E " : null}{" "} 
+                  onChange={(e) => handleChange(e,currentQuestion._id)} 
+                  name={`${currentQuestion?.question && currentQuestion?.question.trim()}`}/>{"  "}{currentQuestion && currentQuestion.optionE ? "E " : null}{" "} 
                   {currentQuestion?.optionE}
               </p>
               <div className="mt-5">

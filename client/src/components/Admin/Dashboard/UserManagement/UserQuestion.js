@@ -12,6 +12,7 @@ const UserQuestion = () => {
   const [ selectedUser, setSelectedUser ] = useState("");
   const [ selectedQuestions, setSelectedQuestion ] = useState("");
   const [ errMsg, setErrMsg ] = useState("");
+  const [ updated, setUpdated ] = useState(false);
   const [ time, setTime ] = useState("");
 
   useEffect(() => {
@@ -37,6 +38,7 @@ const UserQuestion = () => {
   }
 
   const onSelectQuestion = (e) => {
+    if (e.target.checked === false) return;
     const { value } = e.target;
     setSelectedQuestion(value);
   }
@@ -45,9 +47,17 @@ const UserQuestion = () => {
     if (selectedQuestions.length > 0) {
       let newQuestion = [...values, { user: selectedUser, randomQuestion: selectedQuestions }];
       setQuestions(newQuestion);
-      setSelectedUser("");
+      setUpdated(true);
     }
-  }, [ selectedQuestions, values, selectedUser ]);
+  }, [ selectedQuestions, selectedUser ]);
+
+  useEffect(() => {
+    if (updated) {
+      setSelectedQuestion("");
+      setSelectedUser("");
+      setUpdated(false)
+    }
+  }, [ updated ]);
 
   useEffect(() => {
     if (assign_success) {
@@ -56,17 +66,17 @@ const UserQuestion = () => {
   }, [ assign_success ]);
 
   const handleTime = (e) => {
-    console.log(e, " the on change")
     setErrMsg("");
     setTime(e.target.value);
   }
 
   useEffect(() => {
-    // if (error && error.length > 0) {
-    //   setErrMsg(error);
-    // }
+    if (error && error.length > 0) {
+      setErrMsg(error);
+    }
   }, [ error ]);
 
+  console.log(values, " the values")
 
   return (
     <div>

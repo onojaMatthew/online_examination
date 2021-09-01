@@ -144,7 +144,8 @@ export const answer = async (req, res) => {
       const eachQuestion = qxns[i]
       let questionIndex = question.questions.findIndex(cp => {
         if (cp && cp.question) {
-          return cp._id.toString() === eachQuestion.question.toString();
+          console.log(cp, "cp", eachQuestion)
+          return cp._id && cp._id.toString() === eachQuestion.question.toString();
         }
       });
       if (questionIndex >= 0) {
@@ -152,17 +153,21 @@ export const answer = async (req, res) => {
       }
     }
   
-    const {_id } = await User.findById({ _id: user });
+    let current_user = await User.findById({ _id: user });
     
     question.questions = all_questions;
-    question.userId = _id;
+    question.userId = current_user && current_user._id;
     question.completed = true
 
     question = await question.save();
 
+    current_user.interviewing = true;
+    await current_user.save()
+
     return res.json(success("Success", question, res.statusCode));
     
   } catch (err) {
+    console.log(err)
     return res.status(400).json(error(err.message, res.statusCode));
   } 
 }
