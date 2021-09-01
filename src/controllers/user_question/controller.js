@@ -24,7 +24,8 @@ export const randomizeQuestions = async (req, res) => {
       let random = new RandomQuestions({ "questions": arr });
         
       random = await random.save();
-      if (count === randomCount) return res.json(success("Requestion successfull", [], res.statusCode));
+      console.log(count, randomCount)
+      if (Number(count) === Number(randomCount)) return res.json(success("Requestion successfull", [], res.statusCode));
     }
   } catch (err) {
     console.log(err);
@@ -43,9 +44,11 @@ export const getRandomQuestions = async (req, res) => {
 
 export const assign_question = async (req, res) => {
   const { questions, time } = req.body;
+ 
   try {
     
     let count = 0;
+    if (questions.length <= 0) return res.status(400).json(error("No candidates selected for this test", res.statusCode));
     for (let i = 0; i < questions.length; i++){
       let que = questions[i]
       if (!que.randomQuestion || !que.user) return res.status(400).json(error("Invalid users or questions", res.statusCode)); 

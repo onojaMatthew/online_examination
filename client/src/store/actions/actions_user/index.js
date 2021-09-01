@@ -233,29 +233,30 @@ export const deleteUser = (id) => {
   }
 }
 
-export const assingStart = () => {
+export const assignStart = () => {
   return {
     type: ASSIGN_START
   }
 }
 
-export const assingSuccess = (data) => {
+export const assignSuccess = (data) => {
   return {
     type: ASSIGN_SUCCESS,
     data
   }
 }
 
-export const assingFailed = (error) => {
+export const assignFailed = (error) => {
   return {
     type: ASSIGN_FAILED,
     error
   }
 }
 
-export const assingQuestions = (data) => {
+export const assignQuestions = (data) => { 
+  console.log(data, " the data")
   return dispatch => {
-    dispatch(assingStart());
+    dispatch(assignStart());
     fetch(`${BASE_URL}/user/question`, {
       method: "POST",
       headers: {
@@ -266,10 +267,10 @@ export const assingQuestions = (data) => {
     })
       .then(response => response.json())
       .then(resp => {
-        if (resp.error) return dispatch(assingFailed(resp.message));
-        dispatch(assingSuccess(resp.results));
+        if (resp.error) return dispatch(assignFailed(resp.message));
+        dispatch(assignSuccess(resp.results));
       })
-      .catch(err => dispatch(assingFailed(err.message)));
+      .catch(err => dispatch(assignFailed(err.message)));
   }
 }
 
