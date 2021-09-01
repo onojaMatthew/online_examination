@@ -78,6 +78,7 @@ const UserManagement = () => {
                     <th>Email</th>
                     <th>Phone</th>
                     <th>Test Solution</th>
+                    <th>Interview Status</th>
                     <th>Delete</th>
                   </thead>
                   <tbody>
@@ -91,6 +92,7 @@ const UserManagement = () => {
                         {/* onClick={() => handleModalToggle(u?._id)} */}
                           <FaEye className="icon-update" /> View Test Solution
                         </td>
+                        <td>{u.has_interview && u.has_interview === false ? "No interview" : "Interviewing"}</td>
                         <td className="icon-td">
                           {/* <BsPencilSquare onClick={() => handleModalToggle(u?._id)} className="icon-update" /> {""} */}
                           {delete_loading ? 

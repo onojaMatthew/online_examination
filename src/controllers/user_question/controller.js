@@ -161,7 +161,7 @@ export const answer = async (req, res) => {
 
     question = await question.save();
 
-    current_user.interviewing = true;
+    current_user.has_interview = false;
     await current_user.save()
 
     return res.json(success("Success", question, res.statusCode));
@@ -186,6 +186,8 @@ export const emial_notification = async (data) => {
   
   try {
     let isUser = await User.findById({ _id: data.user });
+    isUser.has_interview = true;
+    isUser = await isUser.save();
     if (isUser) {
       const user_name = isUser && isUser.email.split("@")[0];
       isUser.domain_name = user_name;

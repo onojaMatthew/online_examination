@@ -67,16 +67,21 @@ const RightNav = ({ open, setOpen }) => {
     setOpen(false);
   }
 
+  const handleAssign = () => {
+    history.push("/dashboard/assign_question");
+    setOpen(false);
+  }
+
   return (
     <Ul open={open}>
       <li onClick={dashboard}>Dashboard</li>
       <li onClick={handleQuestion}>Question Management</li>
       <li onClick={handleUser}>User Management</li>
       <li onClick={handleAdmin}>Admin Management</li>
+      <li onClick={handleAssign}>Assign Question</li>
       <li onClick={onLogout}>Logout</li>
     </Ul>
   )
 }
-
 
 export default RightNav;

@@ -10,6 +10,7 @@ const userSchema = new Schema({
   password: { type: String },
   domain_name: { type: String },
   phone: { type: String },
+  has_interview: { type: Boolean, default: false },
 }, { timestamps: true });
 
 userSchema.plugin(mongoosePaginate);
